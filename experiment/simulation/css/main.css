@@ -1,1 +1,103 @@
-/* You CSS goes in here */
+.instruction-box {
+    position: relative;
+    width: 100%;
+    transition: width 0.2s ease-out;
+    border: 0.1vw solid grey;
+    z-index: 10;
+    margin-bottom: 2vh;
+}
+
+.instruction-button {
+    background-color: Transparent;
+    color: "grey";
+    cursor: pointer;
+    width: 100%;
+    border: none;
+    text-align: center;
+    outline: none;
+    font-weight: bold;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+.instruction-button::-moz-focus-inner {
+    border: 0;
+}
+
+.active,
+.instruction-button:hover {
+    background-color: "white";
+}
+
+.instruction-button:after {
+    content: "\25BE";
+    color: "grey";
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+.active:after {
+    content: "\25B4";
+}
+
+.instructions {
+    padding: 0 1.8vw;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background-color: "white";
+}
+
+.main-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.selection {
+    max-width: 15%;
+}
+
+.experiment-label {
+    display: block;
+    font-size: large;
+    font-weight: 300;
+}
+
+#experiment {
+    margin-top: 10%;
+    margin-bottom: 10%;
+    display: block;
+}
+
+.experiment {
+    width: 75vw;
+    /* border: 1px solid grey; */
+    display: flex;
+    justify-content: space-around;
+}
+
+.prettyprint {
+    border: none !important;
+    translate: -5vw 0;
+}
+
+.task {
+    max-width: 20vw;
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+span {
+    /* display: inline-block; */
+    font-size: x-large;
+    margin-bottom: 3vh;
+    vertical-align: bottom;
+}
+
+@media screen and (max-width: 500px) {
+    .main-container {
+        flex-direction: column;
+    }
+}

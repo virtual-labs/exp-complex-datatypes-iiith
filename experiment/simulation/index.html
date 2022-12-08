@@ -1,13 +1,81 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<!-- Add CSS at the head of HTML file -->
-    <link rel="stylesheet" href="./css/main.css">
-</head>
-<body>
-		<!-- Your code goes here-->
 
-	<!-- Add JS at the bottom of HTML file --> 
-        <script src="./js/main.js"></script>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>  -->
+	<script defer src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+	<link rel="stylesheet" href="./css/main.css">
+	<link rel="stylesheet" href="./css/list.css">
+</head>
+
+<body>
+	<div class="instruction-box">
+		<button class="instruction-button" onclick="showInstructions()"> Instructions </button>
+		<div class="instructions">
+			<ul>
+				<li>Click on the button</li>
+			</ul>
+		</div>
+	</div>
+	<div class="main-container">
+		<div class="selection">
+			<label for="experiment" class="experiment-label">Select Data Type</label>
+			<select name="experiment" id="experiment" style="display: block;">
+				<option value="List" selected>List</option>
+				<option value="Dictionary">Dictionary</option>
+				<option value="Set">Set</option>
+			</select>
+			<label for="mode" class="experiment-label" style="margin-bottom: 10%;">Select learning mode</label>
+			<select name="mode" id="mode">
+				<option value="Learn" selected>Learn</option>
+				<option value="Practice">Practice</option>
+			</select>
+		</div>
+		<div class="experiment">
+			<p class="task">Make a program that modifies the list given below to display numbers from 1 to 8 in
+				descending order</p>
+
+			<pre class="prettyprint lang-py">
+list.<span class="nocode"><select name="pop" id="pop">
+	<option value="remove" selected>remove()</option>
+	<option value="pop">pop()</option>
+	<option value="reduce">reduce()</option>
+</select></span>
+list.<span class="nocode"><select name="append" id="append">
+	<option value="append" selected>append(8)</option>
+	<option value="add">add(8)</option>
+	<option value="insert">insert(8)</option>
+</select></span>
+list.<span class="nocode"><select name="sort" id="sort">
+	<option value="order" selected>order()</option>
+	<option value="ascending">ascending()</option>
+	<option value="sort">sort()</option>
+</select></span>
+list.<span class="nocode"><select name="reverse" id="reverse">
+	<option value="rev" selected>rev()</option>
+	<option value="reverse">reverse()</option>
+	<option value="opposite">opposite()</option>
+</select></span>
+			</pre>
+		</div>
+	</div>
+	<div>
+		<div id="wrapper">
+			<div id="cards"></div>
+
+			<div id="observations"></div>
+		</div>
+		<!-- <div class="buttons-wrapper">
+			<input class="button-input" type="button" value="Reverse" id="reverse">
+			<input class="button-input" type="button" value="Append" id="append">
+			<input class="button-input" type="button" value="Pop" id="pop">
+		</div> -->
+	</div>
+
+	<script src="./js/main.js"></script>
+	<script src="./js/list.js"></script>
 </body>
+
 </html>
