@@ -15,7 +15,15 @@
 		<button class="instruction-button" onclick="showInstructions()"> Instructions </button>
 		<div class="instructions">
 			<ul>
-				<li>Click on the button</li>
+				<li>There are two Learning modes in this experiment - <ol>
+						<li>Learn - Complete the program to get the required output.</li>
+						<li>Practice - Play around with the functions of the data type.</li>
+					</ol>
+				</li>
+				<li>Select the data type you want to learn from the drop-down.</li>
+				<li>Select those options in order from below to complete the python program to perform the specific task
+					on the
+					data type.</li>
 			</ul>
 		</div>
 	</div>
@@ -36,30 +44,43 @@
 		<div class="experiment">
 			<p class="task">Make a program that modifies the list given below to display numbers from 1 to 8 in
 				descending order</p>
-
-			<pre class="prettyprint lang-py">
+			<div>
+				<pre class="prettyprint lang-py">
 list.<span class="nocode"><select name="pop" id="pop">
-	<option value="remove" selected>remove()</option>
+	<option value="" selected hidden></option>
+	<option value="remove">remove()</option>
 	<option value="pop">pop()</option>
 	<option value="reduce">reduce()</option>
 </select></span>
-list.<span class="nocode"><select name="append" id="append">
-	<option value="append" selected>append(8)</option>
+list.<span class="nocode"><select disabled name="append" id="append">
+	<option value="" selected hidden></option>
+	<option value="append">append(8)</option>
 	<option value="add">add(8)</option>
 	<option value="insert">insert(8)</option>
 </select></span>
-list.<span class="nocode"><select name="sort" id="sort">
-	<option value="order" selected>order()</option>
+list.<span class="nocode"><select disabled name="sort" id="sort">
+	<option value="" selected hidden></option>
+	<option value="order">order()</option>
 	<option value="ascending">ascending()</option>
 	<option value="sort">sort()</option>
 </select></span>
-list.<span class="nocode"><select name="reverse" id="reverse">
-	<option value="rev" selected>rev()</option>
+list.<span class="nocode"><select disabled name="reverse" id="reverse">
+	<option value="" selected hidden></option>
+	<option value="rev">rev()</option>
 	<option value="reverse">reverse()</option>
 	<option value="opposite">opposite()</option>
 </select></span>
-			</pre>
+				</pre>
+				<button onclick="submit()" class="submit">
+					Submit
+				</button>
+			</div>
 		</div>
+
+	</div>
+	<div class="observations">
+		<h3 style="text-align: center;display: block;">Observations</h3>
+		<p id="observation"></p>
 	</div>
 	<div>
 		<div id="wrapper">
@@ -75,7 +96,7 @@ list.<span class="nocode"><select name="reverse" id="reverse">
 	</div>
 
 	<script src="./js/main.js"></script>
-	<script src="./js/list.js"></script>
+	<!-- <script src="./js/list.js"></script> -->
 </body>
 
 </html>

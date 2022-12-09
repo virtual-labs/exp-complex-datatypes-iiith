@@ -69,11 +69,11 @@
     margin-top: 10%;
     margin-bottom: 10%;
     display: block;
+
 }
 
 .experiment {
     width: 75vw;
-    /* border: 1px solid grey; */
     display: flex;
     justify-content: space-around;
 }
@@ -90,7 +90,6 @@
 }
 
 span {
-    /* display: inline-block; */
     font-size: x-large;
     margin-bottom: 3vh;
     vertical-align: bottom;
