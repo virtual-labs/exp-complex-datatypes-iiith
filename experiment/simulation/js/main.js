@@ -89,6 +89,7 @@ function rebuild() {
 function addElements() {
     var classToFill = document.getElementById("cards");
     var newdiv = document.createElement("div");
+    document.body.appendChild(newdiv)
     newdiv.outerHTML = "<br><br>"
     for (var i = 0; i < list.numOfCards; i++) {
         if (i != list.numOfCards - 1)

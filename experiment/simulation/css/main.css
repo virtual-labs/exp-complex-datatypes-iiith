@@ -110,7 +110,8 @@
     font-weight: 500;
 }
 
-span {
+span,
+pre {
     font-size: x-large;
     margin-bottom: 3vh;
     vertical-align: bottom;
@@ -186,6 +187,23 @@ span {
     font-size: large;
 }
 
+
+@media screen and (min-width: 751px) and (max-width: 900px) {
+
+    span,
+    pre {
+        font-size: large;
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 750px) {
+
+    span,
+    pre {
+        font-size: small;
+    }
+}
+
 @media screen and (max-width: 600px) {
 
     /* .main-container,
@@ -195,7 +213,8 @@ span {
         align-items: center;
     } */
 
-    span {
+    span,
+    pre {
         font-size: x-large;
     }
 
@@ -203,17 +222,5 @@ span {
         width: 90vw;
         height: fit-content;
         margin-bottom: 2vh;
-    }
-}
-
-@media screen and (min-width: 750px) and (max-width: 900px) {
-    span {
-        font-size: large;
-    }
-}
-
-@media screen and (min-width: 600px) and (max-width: 750px) {
-    span {
-        font-size: small;
     }
 }
