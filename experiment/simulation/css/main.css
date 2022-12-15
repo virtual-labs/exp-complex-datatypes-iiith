@@ -52,29 +52,49 @@
 .main-container {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-around;
 }
 
-.selection {
-    max-width: 15%;
+.box {
+    width: 28vw;
+    height: 60vh;
+    border: 1.5px solid #000;
+    border-radius: 10px;
+    position: relative;
+}
+
+.thin {
+    width: 20vw;
+}
+
+.header {
+    background-color: #eee;
+    padding: 15px 0;
+    margin: 0;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    text-align: center;
 }
 
 .experiment-label {
+    text-align: center;
     display: block;
-    font-size: large;
+    font-size: x-large;
     font-weight: 300;
+    margin-top: 10%;
 }
 
-#experiment {
-    margin-top: 10%;
-    margin-bottom: 10%;
+.select {
+    margin: 10% auto;
     display: block;
-
+    font-size: medium;
 }
 
 .experiment {
     width: 75vw;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
 }
 
@@ -84,7 +104,8 @@
 }
 
 .task {
-    max-width: 20vw;
+    text-align: center;
+    display: table-row;
     font-size: 1.4rem;
     font-weight: 500;
 }
@@ -95,8 +116,104 @@ span {
     vertical-align: bottom;
 }
 
-@media screen and (max-width: 500px) {
-    .main-container {
+.program {
+    font-size: x-large;
+    font-family: 'Fira Mono', monospace;
+    text-align: center;
+    padding: 3%;
+}
+
+.blank {
+    display: inline-block;
+    border: 3px solid darkgray;
+    border-radius: 10%;
+    background-color: #ddd;
+    width: fit-content;
+    height: 1.3rem;
+    font-size: large;
+    cursor: move;
+}
+
+.options {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.option {
+    padding: 0.3% 1%;
+    font-size: x-large;
+    display: inline-block;
+    border: 3px solid darkgray;
+    margin: 1%;
+    background-color: #ddd;
+    border-radius: 10%;
+    cursor: move;
+}
+
+.over {
+    border: 3px dotted darkgray;
+}
+
+.submit,
+.reset {
+    height: 2.25rem;
+    width: 5.25rem;
+    border-radius: 5px;
+    margin: 0 auto;
+    display: block;
+    font-size: medium;
+    color: #fff;
+    background-color: #337ab7;
+    border-color: #2e6da4;
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.green {
+    color: green;
+}
+
+.red {
+    color: red;
+}
+
+.observations {
+    font-size: large;
+}
+
+@media screen and (max-width: 600px) {
+
+    /* .main-container,
+    .experiment {
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    } */
+
+    span {
+        font-size: x-large;
+    }
+
+    .box {
+        width: 90vw;
+        height: fit-content;
+        margin-bottom: 2vh;
+    }
+}
+
+@media screen and (min-width: 750px) and (max-width: 900px) {
+    span {
+        font-size: large;
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 750px) {
+    span {
+        font-size: small;
     }
 }

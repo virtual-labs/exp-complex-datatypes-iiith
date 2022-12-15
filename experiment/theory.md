@@ -249,7 +249,47 @@ Table 1.5
 - The syntax for clear() method is **dictionary\_name.clear()**
 - **college.clear()** , will remove all the elements from the dictionary
 
-Now sanjay understood all the complex data types and he further decided to develop programs for the railway management system using lists, tuples and dictionaries. 
+**What are sets in python?**
+
+- Sets are used to store collections of data which are not ordered.
+- All the elements present in the set are not changeable and does not have any index
+- Set cannot consists of any duplicate elements
+- Once your set is created you cannot change/modify set elements but you can add new elements to your set
+
+**How to create a set in python?**
+
+- Sets in python are created using curly brackets i.e **{}**
+- For eg: If you want to create a set of fruits then the syntax would be **set\_name={set\_elements} i.e fruits={‘apple’,’grapes’,’banana’,’kiwi’,’strawberry’}**
+
+**How to access set elements?**
+
+- Since set is not indexed, you will be unable to access items in a set by referring to its index position
+- But you can use for loop to access set elements
+- To access the above set elements using for loop the code is displayed below:
+```.py
+for elements in fruits:
+    print(elements)
+
+strawberry
+grapes
+apple
+banana
+kiwi
+```
+
+**Python set add()**
+
+- To add an element to a set , we can use add() method
+- To add new fruit named orange to the set we created above, the syntax would be **fruits.add(‘orange’)**
+
+**Python set remove()**
+
+- To remove an element from a set , we can use remove() method
+- To remove a fruit name ‘kiwi’ from the above set, the syntax would be **fruits.remove(‘kiwi’)**
+
+
+
+Now sanjay understood all the complex data types and he further decided to develop programs for the railway management system using lists, tuples,dictionaries and sets. 
 
 Image 3. Represents that sanjay started writing the code for booking train tickets by using list data type. Before starting with the coding part , he first defined all the inputs and functionalities step by step so while writing code, he had a proper mind map regarding what he was doing. All the functionalities  and inputs which he wanted to include in his program is listed below:
 
@@ -258,19 +298,19 @@ Step 1: He created a list of source stations from where the user can board a tra
 Step 2: He created a list of destination stations i.e **destination\_stations=['goa','mumbai','delhi']**, the user would be able to get down only at the stations mentioned above
 
 Step 3: further he created the following list:
+```.py
+passanger_name=[] → stores the passenger name
 
-passanger\_name=[] → stores the passenger name
+passanger_age=[] → stores the passenger age
 
-passanger\_age=[] → stores the passenger age
-
-passanger\_birth\_list=['Upper\_Birth','Middle\_Birth','Lower\_birth'] → stores different types of birth available
+passanger_birth_list=['Upper\_Birth','Middle\_Birth','Lower\_birth'] → stores different types of birth available
 
 birth\_assigned=[] → stores the birth which is assigned to passenger based on his/her age
 
 seat\_no=[] → stores seat number assigned to passengers
 
 boarding\_station=[] → stores the passenger boarding station
-
+```
 Step 4: He kept an input statement which asks the user to enter name of the station from where the wish to board train, only if the user enters the name of the station which is present inside source\_station list, the user is further allowed to proceed, otherwise an appropriate message is displayed to the user and the program terminates 
 
 Step 5: If the source station entered by the user in step(4) exists then the user is again asked to enter his/her destination station. If the destination station which is entered by the user is present inside destionation\_station list ,the user is further allowed to proceed, otherwise an appropriate message is displayed to the user and the program terminates
@@ -289,24 +329,6 @@ Image 4 represents that next day, he tried to write code for the same program wh
 
 All the list which were created above were converted into tuples , now since tuples are immutable , he was not able to  provide a functionality which will allow the user to change his/her boarding stations (from  stations available in source\_stations tuple) At any point in time.
 
-Image 5 represents that after writing programs using list and tuples data types, he created another program by using dictionary data types. He utilised dictionary to create food menu(which consisted of food name and price in the form of key value pair) which are available in the train canteen and it would be beneficial for all the passengers travelling on the train to have a look at the menu and order food in the train accordingly 
+Image 5 represents that after writing programs using list and tuples data types, he created another program by using dictionary data types. He utilised dictionary to create food menu(which consisted of food name and price in the form of key value pair) which are available in the train canteen and it would be beneficial for all the passengers travelling on the train to have a look at the menu and order food in the train accordingly. By utilizing set data type, he created a set which consists of all the stations where the train will halt during the journey from source to destination station
 
 Image 6 represents that sanjay is happy , because all his codes are working fine and he would be able to submit his assignment before the deadline
-
-
-Image References
-
-1.<https://konversations.com/stories/index/why-cse-computer-science-engineering-1>
-
-2.<https://www.dreamstime.com/stock-image-confused-man-question-mark-sitting-computer-above-head-image40156351>
-
-\3. <https://www.hostinger.com/tutorials/learn-coding-online-for-free>
-
-4.<https://www.vit.edu/blog/item/546-top-reasons-to-choose-computer-engineering-or-it-engineering>
-
-\5. <https://realpython.com/courses/python-dictionary-iteration/>
-
-6.<https://www.shutterstock.com/image-vector/software-developer-work-program-code-programmer-2079511849>
-
-
-

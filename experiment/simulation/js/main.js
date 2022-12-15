@@ -1,14 +1,3 @@
-function showInstructions() {
-    let ele = document.getElementsByClassName("instruction-button")[0]
-    ele.classList.toggle("active");
-    let content = ele.nextElementSibling;
-    if (content.style.maxHeight) {
-        content.style.maxHeight = null;
-    } else {
-        content.style.maxHeight = content.scrollHeight + "px";
-    }
-}
-
 class List {
     constructor() {
         this.iterator1 = 0;
@@ -28,10 +17,74 @@ class List {
 };
 let list = new List();
 
-function main_functions() {
-    addElements();
-};
-document.body.onload = function () { main_functions(); }
+let experiments = ['list-practice','list-learn','dictionary-learn','dictionary-practice','set-learn','set-practice']
+let datatypes = ['list','dictionary','set']
+window.onload = () => {
+    let curr = localStorage.getItem('currentExperiment')
+    if(curr){
+        curr = JSON.parse(curr)
+        document.getElementsByClassName('list-practice')[0].style.display = 'none'
+        document.getElementsByClassName('list')[0].style.display = 'none'
+        document.getElementsByClassName(`${curr.type}-${curr.mode}`)[0].style.display = 'flex'
+        document.getElementsByClassName(`${curr.type}`)[0].style.display = 'block'
+        document.getElementById("experiment").value = curr.type
+        document.getElementById("mode").value = curr.mode
+    }
+    if(!curr || curr.type == 'list')
+        addElements()
+}
+
+function changeExperiment() {
+    let datatype = document.getElementById("experiment").value
+    let mode = document.getElementById("mode").value
+    localStorage.setItem('currentExperiment',JSON.stringify({"type": datatype,"mode": mode}));
+    experiments.forEach(exp => {
+        let element = document.getElementsByClassName(exp)[0]
+        console.log(`${datatype}-${mode}`)
+        if (exp === `${datatype}-${mode}`) {
+            element.style.display = 'flex'
+        } else {
+            element.style.display = 'none'
+        }
+    });
+    if(datatype == 'list')
+        addElements()
+    datatypes.forEach(exp => {
+        let element = document.getElementsByClassName(exp)[0]
+        if (exp === datatype) {
+            element.style.display = 'block'
+        } else {
+            element.style.display = 'none'
+        }
+    });
+}
+
+function showInstructions() {
+    let ele = document.getElementsByClassName("instruction-button")[0]
+    ele.classList.toggle("active");
+    let content = ele.nextElementSibling;
+    if (content.style.maxHeight) {
+        content.style.maxHeight = null;
+    } else {
+        content.style.maxHeight = content.scrollHeight + "px";
+    }
+}
+
+function rebuild() {
+    var classToFill = document.getElementById("cards");
+    var newdiv = document.createElement("div");
+    newdiv.outerHTML = "<br><br>"
+    for (var i = 0; i < list.numOfCards; i++) {
+        var temp = document.createElement("div");
+        temp.className = "card";
+        temp.innerHTML = list.num[i];
+        temp.style.fontStyle = "normal";
+        temp.style.color = "white";
+        classToFill.appendChild(temp);
+    }
+    classToFill.appendChild(newdiv)
+    list.flag = 0;
+}
 
 function addElements() {
     var classToFill = document.getElementById("cards");
@@ -50,7 +103,7 @@ function addElements() {
     list.num[index] = list.num[list.numOfCards - 1];
     list.num[list.numOfCards - 1] = list.numOfCards + 9;
     let code = document.getElementsByClassName("prettyprint")[0]
-    code.innerHTML = `list = [${list.num}]\n` + code.innerHTML;
+    code.innerHTML = `       list = [${list.num}]\n` + code.innerHTML;
     for (var i = 0; i < list.numOfCards; i++) {
         var temp = document.createElement("div");
         temp.className = "card";
@@ -71,159 +124,200 @@ function clear() {
 };
 
 function randomise() {
-    var classToFill = document.getElementById("cards");
-    var newdiv = document.createElement("div");
-    newdiv.outerHTML = "<br><br>"
     for (var i = 0; i < list.numOfCards; i++) {
         list.num[i] = Math.floor(Math.random() * 90 + 10);
-        var temp = document.createElement("div");
-        temp.className = "card";
-        temp.innerHTML = list.num[i];
-        temp.style.fontStyle = "normal";
-        temp.style.color = "white";
-        classToFill.appendChild(temp);
     }
-    classToFill.appendChild(newdiv)
-    list.flag = 0;
-};
-
-function reverse() {
-    var classToFill = document.getElementById("observations");
-    var newdiv = document.createElement("div");
-    newdiv.outerHTML = "<br><br>"
-    for (var i = 0; i < list.numOfCards; i++) {
-        var temp = document.createElement("div");
-        temp.className = "card";
-        temp.innerHTML = list.num[list.numOfCards - i - 1];
-        temp.style.fontStyle = "normal";
-        temp.style.color = "white";
-        classToFill.appendChild(temp);
-    }
-    classToFill.appendChild(newdiv)
-    list.flag = 0;
-};
-
-function append(val) {
-    clear();
-    list.numOfCards += 1;
-    list.num[list.numOfCards - 1] = val;
-    console.log(list.num);
-    var classToFill = document.getElementById("cards");
-    var newdiv = document.createElement("div");
-    newdiv.outerHTML = "<br><br>"
-    for (var i = 0; i < list.numOfCards; i++) {
-        var temp = document.createElement("div");
-        temp.className = "card";
-        temp.innerHTML = list.num[i];
-        temp.style.fontStyle = "normal";
-        temp.style.color = "white";
-        classToFill.appendChild(temp);
-    }
-    classToFill.appendChild(newdiv)
-    list.flag = 0;
-};
-
-function pop() {
-    clear();
-    list.numOfCards -= 1;
-    list.num.pop();
-    var classToFill = document.getElementById("cards");
-    var newdiv = document.createElement("div");
-    newdiv.outerHTML = "<br><br>"
-    for (var i = 0; i < list.numOfCards; i++) {
-        var temp = document.createElement("div");
-        temp.className = "card";
-        temp.innerHTML = list.num[i];
-        temp.style.fontStyle = "normal";
-        temp.style.color = "white";
-        classToFill.appendChild(temp);
-    }
-    classToFill.appendChild(newdiv)
-    list.flag = 0;
-};
-
-function reverse() {
-    clear();
-    var classToFill = document.getElementById("cards");
-    var newdiv = document.createElement("div");
-    newdiv.outerHTML = "<br><br>"
-    for (var i = 0; i < list.numOfCards; i++) {
-        var temp = document.createElement("div");
-        temp.className = "card";
-        temp.innerHTML = list.num[list.numOfCards - i - 1];
-        temp.style.fontStyle = "normal";
-        temp.style.color = "white";
-        classToFill.appendChild(temp);
-    }
-    classToFill.appendChild(newdiv)
-    list.flag = 0;
-};
-
-function sort() {
-    clear();
-    list.num.sort();
-    console.log(list.num);
-    var classToFill = document.getElementById("cards");
-    var newdiv = document.createElement("div");
-    newdiv.outerHTML = "<br><br>"
-    for (var i = 0; i < list.numOfCards; i++) {
-        var temp = document.createElement("div");
-        temp.className = "card";
-        temp.innerHTML = list.num[i];
-        temp.style.fontStyle = "normal";
-        temp.style.color = "white";
-        classToFill.appendChild(temp);
-    }
-    classToFill.appendChild(newdiv)
-    list.flag = 0;
+    rebuild()
 };
 
 function reload() {
     location.reload(true);
 };
 
-let set = [false, false, false, false]
+const delay = (delayInms) => {
+    return new Promise(resolve => setTimeout(resolve, delayInms));
+}
+
+function process(operation) {
+    let obs = document.getElementById("observation")
+    obs.classList.remove('green')
+    obs.classList.remove('red')
+    clear()
+    if (operation == 'pop()') {
+        list.numOfCards -= 1;
+        list.num.pop();
+        obs.innerHTML = 'Removed element at the end of the list'
+    } else if (operation == 'remove(8)') {
+        let index = list.num.findIndex((a) => a == 8);
+        if (index > -1){
+            list.numOfCards -= 1;
+            list.num.splice(index, 1)
+            obs.innerHTML = 'Removed 8 from the list'
+        }else{
+            obs.innerHTML = 'The list did not contain 8 to remove'
+        }
+    } else if (operation == 'append(8)') {
+        list.numOfCards += 1;
+        list.num[list.numOfCards - 1] = 8;
+        obs.innerHTML = 'Added 8 to end of the list'
+    } else if (operation == 'reverse()') {
+        list.num.reverse()
+        obs.innerHTML = 'Reversed the list'
+    } else if (operation == 'sort()') {
+        list.num.sort();
+        obs.innerHTML = 'Sorted the list'
+    } else if (operation == 'insert(0,8)') {
+        list.numOfCards += 1;
+        list.num.splice(0, 0, 8);
+        obs.innerHTML = 'Inserted 8 at index 0 in the list'
+    }
+    rebuild();
+}
 
 function submit() {
-    let obs = document.getElementById("observation")
-    if (!set[0]) {
-        let ele = document.getElementById("pop")
-        if (ele.value == "pop") {
-            set[0] = true
-            document.getElementById("append").disabled = false
-            obs.innerHTML = "Correct! You removed an element from the list."
-            pop()
-        } else {
-            obs.innerHTML = "Wrong! SyntaxError."
+    console.log('here')
+    let obs = document.getElementById('observation')
+    let elements = [...document.getElementsByClassName('blank')]
+    let blank = false
+    elements.forEach(ele => {
+        if (ele.innerHTML == "Blank") {
+            blank = true
         }
-    } else if (!set[1]) {
-        let ele = document.getElementById("append")
-        if (ele.value == "append") {
-            set[1] = true
-            document.getElementById("sort").disabled = false
-            obs.innerHTML = "Correct! You added 8 to the end of the list."
-            append(8)
-        } else {
-            obs.innerHTML = "Wrong! SyntaxError."
-        }
-    } else if (!set[2]) {
-        let ele = document.getElementById("sort")
-        if (ele.value == "sort") {
-            set[2] = true
-            document.getElementById("reverse").disabled = false
-            obs.innerHTML = "Correct! You sorted the list."
-            sort()
-        } else {
-            obs.innerHTML = "Wrong! SyntaxError."
-        }
+    })
+    if (blank) {
+        obs.innerHTML = 'Match all blanks with a python operation.'
     } else {
-        let ele = document.getElementById("reverse")
-        if (ele.value == "reverse") {
-            set[3] = true
-            obs.innerHTML = "Correct! You reversed the list to form the final correct list."
-            reverse()
-        } else {
-            obs.innerHTML = "Wrong! SyntaxError."
-        }
+        let sub = document.getElementsByClassName('submit')[0]
+        sub.disabled = true
+        let time = 1
+        process(elements[0].innerHTML)
+        let interval = setInterval(() => {
+            if(time < elements.length)
+                process(elements[time++].innerHTML)
+            else if(time == elements.length){
+                let ans = [8,7,6,5,4,3,2,1]
+                if(ans.join() == list.num.join()) {
+                    obs.innerHTML = 'You successfully completed the experiment!'
+                    obs.classList.add('green')
+                }else {
+                    obs.innerHTML = 'The order of operations is incorrect! Please reset and try again'
+                    obs.classList.add('red')
+                }
+                time++
+            }else{
+                sub.disabled = false
+                console.log(sub.disabled)
+                clearInterval(interval)
+            }
+        }, 3000);
     }
 }
+
+document.addEventListener('DOMContentLoaded', (event) => {
+
+    function handleDragStart(e) {
+        this.style.opacity = '0.4';
+
+        dragSrcEl = this;
+
+        e.dataTransfer.effectAllowed = 'move';
+        e.dataTransfer.setData('text/html', this.innerHTML);
+    }
+
+    function handleDragEnd(e) {
+        this.style.opacity = '1';
+
+        items.forEach(function (item) {
+            item.classList.remove('over');
+        });
+    }
+
+    function handleDragOver(e) {
+        e.preventDefault();
+        return false;
+    }
+
+    function handleDragEnter(e) {
+        this.classList.add('over');
+    }
+
+    function handleDragLeave(e) {
+        this.classList.remove('over');
+    }
+
+    function handleDrop(e) {
+        e.stopPropagation(); // stops the browser from redirecting.
+        if (dragSrcEl !== this) {
+            dragSrcEl.innerHTML = this.innerHTML;
+            this.innerHTML = e.dataTransfer.getData('text/html');
+        }
+
+        return false;
+    }
+
+    let items = document.querySelectorAll('.option');
+    items = [...items, ...document.querySelectorAll('.blank')];
+    items.forEach(function (item) {
+        item.addEventListener('dragstart', handleDragStart);
+        item.addEventListener('dragover', handleDragOver);
+        item.addEventListener('dragenter', handleDragEnter);
+        item.addEventListener('dragleave', handleDragLeave);
+        item.addEventListener('dragend', handleDragEnd);
+        item.addEventListener('drop', handleDrop);
+    });
+});
+
+/* Touch API for mobile phones
+// Get the container element where the drag and drop interface will be displayed
+const container = document.getElementById("drag-and-drop-container");
+
+// Get the tiles and blank spaces elements
+const tiles = container.querySelectorAll(".tile");
+const blanks = container.querySelectorAll(".blank");
+
+// Keep track of the currently dragged tile
+let currentTile = null;
+
+// Handle the touchstart event on the tiles
+tiles.addEventListener("touchstart", (event) => {
+  // Get the element that was touched
+  const touchedElement = event.target;
+  // Check if the touched element is a tile
+  if (tiles.contains(touchedElement)) {
+    // Set the currently dragged tile to the touched element
+    currentTile = touchedElement;
+    // Add the "dragging" class to the tile to apply a visual effect
+    currentTile.classList.add("dragging");
+  }
+});
+
+// Handle the touchmove event on the container
+container.addEventListener("touchmove", (event) => {
+  // Check if there is a current tile being dragged
+  if (currentTile) {
+    // Update the position of the tile based on the touch event coordinates
+    currentTile.style.left = event.touches[0].clientX + "px";
+    currentTile.style.top = event.touches[0].clientY + "px";
+  }
+});
+
+// Handle the touchend event on the container
+container.addEventListener("touchend", (event) => {
+  // Check if there is a current tile being dragged
+  if (currentTile) {
+    // Remove the "dragging" class from the tile to remove the visual effect
+    currentTile.classList.remove("dragging");
+
+    // Check if the tile is dropped on a blank space
+    for (const blank of blanks) {
+      if (blank.contains(currentTile)) {
+        // If so, place the tile in the blank space
+        blank.appendChild(currentTile);
+        break;
+      }
+    }
+    // Set the current tile to null
+    currentTile = null;
+  }
+});
+*/
