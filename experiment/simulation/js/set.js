@@ -19,17 +19,17 @@ function rebuildSet() {
     let classesToFill = [...document.getElementsByClassName("cards-set")]
     classesToFill.forEach(classToFill => {
         let newdiv = document.createElement("div");
+        classToFill.appendChild(newdiv)
         newdiv.outerHTML = "<br><br>"
         let itr = set.num.values()
         for (let i of itr) {
             let temp = document.createElement("div");
+            classToFill.appendChild(temp);
             temp.className = "card";
             temp.innerHTML = i;
             temp.style.fontStyle = "normal";
             temp.style.color = "white";
-            classToFill.appendChild(temp);
         }
-        classToFill.appendChild(newdiv)
     })
 }
 

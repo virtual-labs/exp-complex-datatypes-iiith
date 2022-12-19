@@ -10,16 +10,16 @@ function rebuildList() {
     var classesToFill = [...document.getElementsByClassName("cards")]
     classesToFill.forEach(classToFill => {
         var newdiv = document.createElement("div");
+        classToFill.appendChild(newdiv)
         newdiv.outerHTML = "<br><br>"
         for (var i = 0; i < list.numOfCards; i++) {
             var temp = document.createElement("div");
+            classToFill.appendChild(temp);
             temp.className = "card";
             temp.innerHTML = list.num[i];
             temp.style.fontStyle = "normal";
             temp.style.color = "white";
-            classToFill.appendChild(temp);
         }
-        classToFill.appendChild(newdiv)
     })
 }
 
