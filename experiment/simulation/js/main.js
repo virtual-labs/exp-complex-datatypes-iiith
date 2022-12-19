@@ -1,62 +1,63 @@
 class List {
     constructor() {
-        this.iterator1 = 0;
-        this.iterator2 = 0;
         this.numOfCards = 8;
-        this.finished = false;
-        this.action = 0;
-        this.fn_name = "";
-        this.card;
-        this.comparisons = 0;
-        this.swaps = 0;
-        this.operation = "";
-        this.interval = 0;
         this.num = [];
-        this.flag = 0;
     };
 };
 let list = new List();
 
-let experiments = ['list-practice','list-learn','dictionary-learn','dictionary-practice','set-learn','set-practice']
-let datatypes = ['list','dictionary','set']
+let experiments = ['list-practice', 'list-learn', 'dictionary-learn', 'dictionary-practice', 'set-learn', 'set-practice']
+let datatypes = ['list', 'dictionary', 'set']
 window.onload = () => {
     let curr = localStorage.getItem('currentExperiment')
-    if(curr){
+    if (curr) {
         curr = JSON.parse(curr)
         document.getElementsByClassName('list-practice')[0].style.display = 'none'
-        document.getElementsByClassName('list')[0].style.display = 'none'
-        document.getElementsByClassName(`${curr.type}-${curr.mode}`)[0].style.display = 'flex'
-        document.getElementsByClassName(`${curr.type}`)[0].style.display = 'block'
+        document.getElementsByClassName('list-practice')[1].style.display = 'none'
+        // document.getElementsByClassName('list')[0].style.display = 'none'
+        let ele = document.getElementsByClassName(`${curr.type}-${curr.mode}`)
+        ele[0].style.display = 'flex'
+        if (ele.length > 1)
+            ele[1].style.display = 'block'
+        // document.getElementsByClassName(`${curr.type}`)[0].style.display = 'block'
         document.getElementById("experiment").value = curr.type
         document.getElementById("mode").value = curr.mode
     }
-    if(!curr || curr.type == 'list')
-        addElements()
+    if (!curr || curr.type == 'list') {
+        if (curr.mode == 'practice')
+            addElements()
+        else
+            randomise()
+    }
 }
 
 function changeExperiment() {
     let datatype = document.getElementById("experiment").value
     let mode = document.getElementById("mode").value
-    localStorage.setItem('currentExperiment',JSON.stringify({"type": datatype,"mode": mode}));
+    localStorage.setItem('currentExperiment', JSON.stringify({ "type": datatype, "mode": mode }));
     experiments.forEach(exp => {
-        let element = document.getElementsByClassName(exp)[0]
+        let element = document.getElementsByClassName(exp)
         console.log(`${datatype}-${mode}`)
         if (exp === `${datatype}-${mode}`) {
-            element.style.display = 'flex'
+            element[0].style.display = 'flex'
+            if (element.length > 1)
+                element[1].style.display = 'block'
         } else {
-            element.style.display = 'none'
+            element[0].style.display = 'none'
+            if (element.length > 1)
+                element[1].style.display = 'none'
         }
     });
-    if(datatype == 'list')
+    if (datatype == 'list')
         addElements()
-    datatypes.forEach(exp => {
-        let element = document.getElementsByClassName(exp)[0]
-        if (exp === datatype) {
-            element.style.display = 'block'
-        } else {
-            element.style.display = 'none'
-        }
-    });
+    // datatypes.forEach(exp => {
+    //     let element = document.getElementsByClassName(exp)[0]
+    //     if (exp === datatype) {
+    //         element.style.display = 'block'
+    //     } else {
+    //         element.style.display = 'none'
+    //     }
+    // });
 }
 
 function showInstructions() {
@@ -71,26 +72,25 @@ function showInstructions() {
 }
 
 function rebuild() {
-    var classToFill = document.getElementById("cards");
-    var newdiv = document.createElement("div");
-    newdiv.outerHTML = "<br><br>"
-    for (var i = 0; i < list.numOfCards; i++) {
-        var temp = document.createElement("div");
-        temp.className = "card";
-        temp.innerHTML = list.num[i];
-        temp.style.fontStyle = "normal";
-        temp.style.color = "white";
-        classToFill.appendChild(temp);
-    }
-    classToFill.appendChild(newdiv)
-    list.flag = 0;
+    var classesToFill = [...document.getElementsByClassName("cards")]
+    classesToFill.forEach(classToFill => {
+        var newdiv = document.createElement("div");
+        newdiv.outerHTML = "<br><br>"
+        for (var i = 0; i < list.numOfCards; i++) {
+            var temp = document.createElement("div");
+            temp.className = "card";
+            temp.innerHTML = list.num[i];
+            temp.style.fontStyle = "normal";
+            temp.style.color = "white";
+            classToFill.appendChild(temp);
+        }
+        classToFill.appendChild(newdiv)
+        list.flag = 0;
+    })
 }
 
 function addElements() {
-    var classToFill = document.getElementById("cards");
-    var newdiv = document.createElement("div");
-    document.body.appendChild(newdiv)
-    newdiv.outerHTML = "<br><br>"
+    clear()
     for (var i = 0; i < list.numOfCards; i++) {
         if (i != list.numOfCards - 1)
             list.num[i] = i + 1;
@@ -103,25 +103,18 @@ function addElements() {
     let index = list.num.findIndex((ele) => ele == list.numOfCards + 9)
     list.num[index] = list.num[list.numOfCards - 1];
     list.num[list.numOfCards - 1] = list.numOfCards + 9;
-    let code = document.getElementsByClassName("prettyprint")[0]
-    code.innerHTML = `       list = [${list.num}]\n` + code.innerHTML;
-    for (var i = 0; i < list.numOfCards; i++) {
-        var temp = document.createElement("div");
-        temp.className = "card";
-        temp.innerHTML = list.num[i];
-        temp.style.fontStyle = "normal";
-        temp.style.color = "white";
-        classToFill.appendChild(temp);
-    }
-    classToFill.appendChild(newdiv)
-    list.flag = 0;
+    let code = document.getElementById("input-list")
+    code.innerHTML = `list = [${list.num}]\n`;
+    rebuild()
 };
 
 function clear() {
-    const rem = document.getElementById('cards');
-    while (rem.firstChild) {
-        rem.removeChild(rem.lastChild);
-    }
+    const rems = [...document.getElementsByClassName('cards')];
+    rems.forEach(rem => {
+        while (rem.firstChild) {
+            rem.removeChild(rem.lastChild);
+        }
+    })
 };
 
 function randomise() {
@@ -135,50 +128,49 @@ function reload() {
     location.reload(true);
 };
 
-const delay = (delayInms) => {
-    return new Promise(resolve => setTimeout(resolve, delayInms));
-}
-
 function process(operation) {
-    let obs = document.getElementById("observation")
-    obs.classList.remove('green')
-    obs.classList.remove('red')
-    clear()
-    if (operation == 'pop()') {
-        list.numOfCards -= 1;
-        list.num.pop();
-        obs.innerHTML = 'Removed element at the end of the list'
-    } else if (operation == 'remove(8)') {
-        let index = list.num.findIndex((a) => a == 8);
-        if (index > -1){
+    let obss = [...document.getElementsByClassName("observation")]
+    obss.forEach(obs => {
+        obs.classList.remove('green')
+        obs.classList.remove('red')
+        clear()
+        if (operation == 'pop()') {
             list.numOfCards -= 1;
-            list.num.splice(index, 1)
-            obs.innerHTML = 'Removed 8 from the list'
-        }else{
-            obs.innerHTML = 'The list did not contain 8 to remove'
+            list.num.pop();
+            obs.innerHTML = 'Removed element at the end of the list'
+        } else if (operation == 'remove(8)') {
+            let index = list.num.findIndex((a) => a == 8);
+            if (index > -1) {
+                list.numOfCards -= 1;
+                list.num.splice(index, 1)
+                obs.innerHTML = 'Removed 8 from the list'
+            } else {
+                obs.innerHTML = 'The list did not contain 8 to remove'
+            }
+        } else if (operation == 'append(8)') {
+            list.numOfCards += 1;
+            list.num[list.numOfCards - 1] = 8;
+            obs.innerHTML = 'Added 8 to end of the list'
+        } else if (operation == 'reverse()') {
+            list.num.reverse()
+            obs.innerHTML = 'Reversed the list'
+        } else if (operation == 'sort()') {
+            list.num.sort();
+            obs.innerHTML = 'Sorted the list'
+        } else if (operation == 'insert(0,8)') {
+            list.numOfCards += 1;
+            list.num.splice(0, 0, 8);
+            obs.innerHTML = 'Inserted 8 at index 0 in the list'
         }
-    } else if (operation == 'append(8)') {
-        list.numOfCards += 1;
-        list.num[list.numOfCards - 1] = 8;
-        obs.innerHTML = 'Added 8 to end of the list'
-    } else if (operation == 'reverse()') {
-        list.num.reverse()
-        obs.innerHTML = 'Reversed the list'
-    } else if (operation == 'sort()') {
-        list.num.sort();
-        obs.innerHTML = 'Sorted the list'
-    } else if (operation == 'insert(0,8)') {
-        list.numOfCards += 1;
-        list.num.splice(0, 0, 8);
-        obs.innerHTML = 'Inserted 8 at index 0 in the list'
-    }
+    })
     rebuild();
 }
 
-function submit() {
+function submitListPractice() {
     console.log('here')
-    let obs = document.getElementById('observation')
-    let elements = [...document.getElementsByClassName('blank')]
+    let obss = [...document.getElementsByClassName('observation')]
+
+    let elements = [...document.getElementsByClassName('blank-list')]
     let blank = false
     elements.forEach(ele => {
         if (ele.innerHTML == "Blank") {
@@ -186,31 +178,35 @@ function submit() {
         }
     })
     if (blank) {
-        obs.innerHTML = 'Match all blanks with a python operation.'
+        obss.forEach(obs => {
+            obs.innerHTML = 'Match all blanks with a python operation.'
+        })
     } else {
         let sub = document.getElementsByClassName('submit')[0]
         sub.disabled = true
         let time = 1
         process(elements[0].innerHTML)
         let interval = setInterval(() => {
-            if(time < elements.length)
+            if (time < elements.length)
                 process(elements[time++].innerHTML)
-            else if(time == elements.length){
-                let ans = [8,7,6,5,4,3,2,1]
-                if(ans.join() == list.num.join()) {
-                    obs.innerHTML = 'You successfully completed the experiment!'
-                    obs.classList.add('green')
-                }else {
-                    obs.innerHTML = 'The order of operations is incorrect! Please reset and try again'
-                    obs.classList.add('red')
-                }
+            else if (time == elements.length) {
+                let ans = [8, 7, 6, 5, 4, 3, 2, 1]
+                obss.forEach(obs => {
+                    if (ans.join() == list.num.join()) {
+                        obs.innerHTML = 'You successfully completed the experiment!'
+                        obs.classList.add('green')
+                    } else {
+                        obs.innerHTML = 'The order of operations is incorrect! Please reset and try again'
+                        obs.classList.add('red')
+                    }
+                })
                 time++
-            }else{
+            } else {
                 sub.disabled = false
                 console.log(sub.disabled)
                 clearInterval(interval)
             }
-        }, 3000);
+        }, 2500);
     }
 }
 
@@ -267,6 +263,68 @@ document.addEventListener('DOMContentLoaded', (event) => {
         item.addEventListener('drop', handleDrop);
     });
 });
+
+function submitListLearn() {
+    let val = document.getElementsByClassName("list-learn-command")[0].value
+    let obs = document.getElementById('list-learn-observation')
+    document.getElementsByClassName("list-learn-command")[0].value = ''
+    val = val.replace('(', ',')
+    val = val.replace(')', ',')
+    arr = val.split(',')
+    arr.pop()
+    let error = () => {
+        obs.classList.add('red')
+        obs.innerHTML = 'Enter a valid python function'
+    }
+    let message = (msg) => {
+        obs.classList.remove('red')
+        obs.innerHTML = msg
+    }
+    // console.log(val, arr)
+    if (arr.length == 0) {
+        error()
+        return
+    }
+    clear()
+    switch (arr[0]) {
+        case 'append':
+            if (arr.length > 2)
+                error()
+            else {
+                list.numOfCards += 1;
+                list.num.push(parseInt(arr[1]))
+                message(`You added ${arr[1]} to the list`)
+            }
+            break;
+        case 'pop':
+            if (arr.length > 2 && arr[1] !== '')
+                error()
+            else {
+                list.numOfCards -= 1
+                list.num.pop()
+                message(`You removed the last element from the list`)
+            }
+        case 'sort':
+            if(arr.length > 2 && arr[1] !== '')
+                error()
+            else {
+                list.num.sort()
+                message("You sorted the list")
+            }
+        case 'reverse':
+            
+        default:
+            break;
+    }
+    rebuild()
+}
+
+function enterTextField(event) {
+    if (event.key == 'Enter') {
+        event.preventDefault();
+        document.getElementById('list-learn-submit').click();
+    }
+}
 
 /* Touch API for mobile phones
 // Get the container element where the drag and drop interface will be displayed

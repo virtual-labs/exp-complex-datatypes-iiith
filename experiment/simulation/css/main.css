@@ -58,7 +58,7 @@
 
 .box {
     width: 28vw;
-    height: 60vh;
+    /* height: 60vh; */
     border: 1.5px solid #000;
     border-radius: 10px;
     position: relative;
@@ -105,20 +105,19 @@
 
 .task {
     text-align: center;
-    display: table-row;
+    /* display: table-row; */
     font-size: 1.4rem;
     font-weight: 500;
 }
 
-span,
-pre {
+span {
     font-size: x-large;
     margin-bottom: 3vh;
     vertical-align: bottom;
 }
 
 .program {
-    font-size: x-large;
+    font-size: large;
     font-family: 'Fira Mono', monospace;
     text-align: center;
     padding: 3%;
@@ -142,7 +141,8 @@ pre {
 
 .option {
     padding: 0.3% 1%;
-    font-size: x-large;
+    font-size: medium;
+    font-family: 'Fira Mono', monospace;
     display: inline-block;
     border: 3px solid darkgray;
     margin: 1%;
@@ -187,40 +187,42 @@ pre {
     font-size: large;
 }
 
-
-@media screen and (min-width: 751px) and (max-width: 900px) {
-
-    span,
-    pre {
-        font-size: large;
-    }
+.input {
+    font-family: 'Fira Mono', monospace;
+    font-size: x-large;
 }
 
-@media screen and (min-width: 600px) and (max-width: 750px) {
-
-    span,
-    pre {
-        font-size: small;
-    }
+.list-learn-command {
+    height: 3%;
+    margin-top: 2.5%;
+    margin-left: 2%;
 }
 
-@media screen and (max-width: 600px) {
+.list-learn-div {
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+}
 
-    /* .main-container,
+.list-learn-label {
+    font-family: 'Fira Mono', monospace;
+}
+@media screen and  (max-width: 900px) {
     .experiment {
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    } */
-
-    span,
-    pre {
-        font-size: x-large;
     }
-
     .box {
-        width: 90vw;
-        height: fit-content;
+        width: auto;
         margin-bottom: 2vh;
     }
 }
+/* @media screen and (max-width: 500px) {
+    .main-container {
+        flex-direction: column;
+    }
+
+    .box {
+        height: fit-content;
+        margin-bottom: 2vh;
+    }
+} */

@@ -1,8 +1,8 @@
-#wrapper {
+.wrapper {
     padding-top: 2%;
 }
 
-#cards {
+.cards {
     position: relative;
     text-align: center;
 }
