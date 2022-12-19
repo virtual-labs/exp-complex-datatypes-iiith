@@ -201,21 +201,21 @@ span {
     font-size: x-large;
 }
 
-.list-practice-command {
+.practice-command {
     height: 3%;
     margin-top: 2.5%;
     margin-left: 2%;
     font-family: 'Fira Mono', monospace;
 }
 
-.list-practice-div {
+.practice-div {
     display: flex;
     justify-content: center;
     margin-top: 3%;
     font-family: 'Fira Mono', monospace;
 }
 
-.list-practice-functions {
+.practice-functions {
     font-family: 'Fira Mono', monospace;
     text-align: center;
 }

@@ -51,7 +51,9 @@
 				<h3 class="header">Objective</h3><br>
 				<p class="task">Make a program that modifies the list given below to display numbers from 1 to 8 in
 					descending order.<br><br>Input List is:</p>
-				<p class="input" id="input-list"></p>
+				<p class="input" id="input-list"></p><br>
+				<p class="task">Final List required is: </p>
+				<p class="input">list = [8,7,6,5,4,3,2,1]</p>
 			</div>
 			<div class="box">
 				<h3 class="header">Complete the program</h3>
@@ -82,15 +84,15 @@
 		<div class="list-practice" style="display: none;">
 			<div class="box" style="width:56vw; min-height: 60vh;">
 				<h3 class="header">Fill this blank with any python list function and see that change happen in the list</h3><br>
-				<div class="list-practice-functions">
+				<div class="practice-functions">
 					<h4 style="display: inline;">Supported functions: </h4>
 					<p style="display: inline;">append(value), pop(), clear(), count(value), insert(index,value), remove(value), reverse(), sort()</p><br><br>
 					<h4 style="display: inline;">Syntax: </h4>
 					<p style="display: inline;">list.(function)</p>
 				</div>
-				<div class="list-practice-div">
+				<div class="practice-div">
 					<h4>Enter command: </h4>
-					<input type="text" class="list-practice-command" onkeypress="enterTextField(event)">
+					<input type="text" class="practice-command" id="list-practice-command" onkeypress="enterTextField(event,'list')">
 				</div>
 				<button onclick="submitListPractice()" id="list-practice-submit" class="submit">Submit</button>
 				<br>
@@ -106,7 +108,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="dictionary-practice experiment" style="display: none;">
+		<div class="dictionary-learn experiment" style="display: none;">
 			<div class="box" style="display: inline-block;">
 				<h3 class="header">Objective</h3>
 				<p class="task">Make a program that modifies the list given below to make a dictionar which has the following contents and print all the fruit names.<br><br>Input is:</p>
@@ -140,14 +142,38 @@
 				</div>
 			</div>
 		</div>
-		<div class="dictionary-learn" style="display: none;">
-
-		</div>
-		<div class="set-practice" style="display: none;">
+		<div class="dictionary-practice" style="display: none;">
 
 		</div>
 		<div class="set-learn" style="display: none;">
 
+		</div>
+		<div class="set-practice" style="display: none;">
+			<div class="box" style="width:56vw; min-height: 60vh;">
+				<h3 class="header">Fill this blank with any python set function and see that change happen in the set</h3><br>
+				<div class="practice-functions">
+					<h4 style="display: inline;">Supported functions: </h4>
+					<p style="display: inline;">add(value), pop(), remove(value), clear()</p><br><br>
+					<h4 style="display: inline;">Syntax: </h4>
+					<p style="display: inline;">set.(function)</p>
+				</div>
+				<div class="practice-div">
+					<h4>Enter command: </h4>
+					<input type="text" class="practice-command" id="set-practice-command" onkeypress="enterTextField(event,'set')">
+				</div>
+				<button onclick="submitSetPractice()" id="set-practice-submit" class="submit">Submit</button>
+				<br>
+				<div class="observations">
+					<h3 style="text-align: center;display: block;">Observations</h3>
+					<p id="set-practice-observation"></p>
+				</div>
+				<div>
+					<div class="wrapper" style="margin-bottom: 5%;">
+						<div class="cards-set" style="width: 150%; translate: -15%"></div>
+						<div class="observations-set"></div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 	<div class="list-learn">
@@ -170,7 +196,8 @@
 	</div>
 
 	<script src="./js/main.js"></script>
-	<!-- <script src="./js/list.js"></script> -->
+	<script src="./js/list.js"></script>
+	<script src="./js/set.js"></script>
 </body>
 
 </html>
