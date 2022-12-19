@@ -2,38 +2,70 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "This is a Sample Question 1?",
+      "question": "Lists in python allows you to store different data types",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
-      },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+        "a": "True",
+        "b": "False",
+        "c": "Neither true nor false",
+        "d": "None of the above"
       },
       "correctAnswer": "a",
       "difficulty": "beginner"
     },
     {
-      "question": "This is a Sample Question 2?",
+      "question": "When you try to access indices which are not present in the list what will happen?",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "It will raise and error ",
+        "b": "It will raise an IndexErrorException",
+        "c": "No output",
+        "d": "None of the above"
       },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
-      },
-      "correctAnswer": "c",
+      "correctAnswer": "b",
       "difficulty": "beginner"
+    },
+    {
+      "question": "In order to access a range of elements from a tuple, which of the following operator is used?",
+      "answers": {
+        "a": ":",
+        "b": ";",
+        "c": "Both (a) and (b)",
+        "d": "None of the above"
+      },
+      "correctAnswer": "a",
+      "difficulty": "Intermediate"
+    },
+    {
+      "question": "Which of the following datatypes once created does not allows you to modify or change elements?",
+      "answers": {
+        "a": "Set",
+        "b": "List",
+        "c": "Tuples",
+        "d": "None of the above"
+      },
+      "correctAnswer": "a",
+      "difficulty": "Intermediate"
+    },
+    {
+      "question": "numbers=(1,2,2,3,4,5,6,7,7,7), numbers.count(2) will return the output as ?",
+      "answers": {
+        "a": "2",
+        "b": "3",
+        "c": "4",
+        "d": "Error"
+      },
+      "correctAnswer": "a",
+      "difficulty": "Hard"
+    },
+    {
+      "question": "numbers=(1,2,2,3,4,5,6,7,7,7), numbers.index(7) will return the output as?",
+      "answers": {
+        "a": "2",
+        "b": "5",
+        "c": "6",
+        "d": "7"
+      },
+      "correctAnswer": "d",
+      "difficulty": "Hard"
     }
   ]
 }
