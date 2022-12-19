@@ -10,7 +10,7 @@
         "d": "None of the above"
       },
       "correctAnswer": "a",
-      "difficulty": "Beginner"
+      "difficulty": "beginner"
     },
     {
       "question": "When you try to access indices which are not present in the list what will happen?",
@@ -21,7 +21,7 @@
         "d": "None of the above"
       },
       "correctAnswer": "b",
-      "difficulty": "Beginner"
+      "difficulty": "beginner"
     },
     {
       "question": "In order to access a range of elements from a tuple, which of the following operator is used?",
@@ -32,7 +32,7 @@
         "d": "None of the above"
       },
       "correctAnswer": "a",
-      "difficulty": "Intermediate"
+      "difficulty": "intermediate"
     },
     {
       "question": "Which of the following datatypes once created does not allows you to modify or change elements?",
@@ -43,7 +43,7 @@
         "d": "None of the above"
       },
       "correctAnswer": "a",
-      "difficulty": "Intermediate"
+      "difficulty": "intermediate"
     },
     {
       "question": "numbers=(1,2,2,3,4,5,6,7,7,7), numbers.count(2) will return the output as ?",
@@ -54,7 +54,7 @@
         "d": "Error"
       },
       "correctAnswer": "a",
-      "difficulty": "Hard"
+      "difficulty": "advanced"
     },
     {
       "question": "numbers=(1,2,2,3,4,5,6,7,7,7), numbers.index(7) will return the output as?",
@@ -65,7 +65,7 @@
         "d": "7"
       },
       "correctAnswer": "d",
-      "difficulty": "Hard"
+      "difficulty": "advanced"
     }
   ]
 }

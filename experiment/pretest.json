@@ -1,71 +1,71 @@
 {
-  "version": 2.0,
-  "questions": [
-    {
-      "question": "Lists in python are not mutable",
-      "answers": {
-        "a": "True",
-        "b": "False",
-        "c": "Neither true nor false",
-        "d": "None of the above"
-      },
-      "correctAnswer": "b",
-      "difficulty": "Beginner"
-    },
-    {
-      "question": "Lists in python can be created using curly brackets",
-      "answers": {
-        "a": "False",
-        "b": "True",
-        "c": "Neither true nor false",
-        "d": "None of the above"
-      },
-      "correctAnswer": "a",
-      "difficulty": "Beginner"
-    },
-    {
-      "question": "Tuples in python are _____; and lists are ______",
-      "answers": {
-        "a": "immutable, mutable",
-        "b": "mutable,immutable",
-        "c": "Both (a) and (b)",
-        "d": "None of the above"
-      },
-      "correctAnswer": "a",
-      "difficulty": "Intermediate"
-    },
-    {
-      "question": "Which of the following datatypes does not contains duplicate elements",
-      "answers": {
-        "a": "Set",
-        "b": "List",
-        "c": "Tuples",
-        "d": "None of the above"
-      },
-      "correctAnswer": "a",
-      "difficulty": "Intermediate"
-    },
-    {
-      "question": "Which of the following data types stores data in key-value format",
-      "answers": {
-        "a": "List",
-        "b": "Set",
-        "c": "Dictionaries",
-        "d": "Tuples"
-      },
-      "correctAnswer": "c",
-      "difficulty": "Hard"
-    },
-    {
-      "question": "Which of the following method is used to add elements at the end of a list?",
-      "answers": {
-        "a": "append",
-        "b": "extend",
-        "c": "pop",
-        "d": "reverse"
-      },
-      "correctAnswer": "a",
-      "difficulty": "Hard"
-    }
-  ]
+	"version": 2.0,
+	"questions": [
+		{
+			"question": "Lists in python are not mutable",
+			"answers": {
+				"a": "True",
+				"b": "False",
+				"c": "Neither true nor false",
+				"d": "None of the above"
+			},
+			"correctAnswer": "b",
+			"difficulty": "beginner"
+		},
+		{
+			"question": "Lists in python can be created using curly brackets",
+			"answers": {
+				"a": "False",
+				"b": "True",
+				"c": "Neither true nor false",
+				"d": "None of the above"
+			},
+			"correctAnswer": "a",
+			"difficulty": "beginner"
+		},
+		{
+			"question": "Tuples in python are _____; and lists are ______",
+			"answers": {
+				"a": "immutable, mutable",
+				"b": "mutable,immutable",
+				"c": "Both (a) and (b)",
+				"d": "None of the above"
+			},
+			"correctAnswer": "a",
+			"difficulty": "intermediate"
+		},
+		{
+			"question": "Which of the following datatypes does not contains duplicate elements",
+			"answers": {
+				"a": "Set",
+				"b": "List",
+				"c": "Tuples",
+				"d": "None of the above"
+			},
+			"correctAnswer": "a",
+			"difficulty": "intermediate"
+		},
+		{
+			"question": "Which of the following data types stores data in key-value format",
+			"answers": {
+				"a": "List",
+				"b": "Set",
+				"c": "Dictionaries",
+				"d": "Tuples"
+			},
+			"correctAnswer": "c",
+			"difficulty": "advanced"
+		},
+		{
+			"question": "Which of the following method is used to add elements at the end of a list?",
+			"answers": {
+				"a": "append",
+				"b": "extend",
+				"c": "pop",
+				"d": "reverse"
+			},
+			"correctAnswer": "a",
+			"difficulty": "advanced"
+		}
+	]
 }
