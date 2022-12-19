@@ -12,8 +12,8 @@ window.onload = () => {
     let curr = localStorage.getItem('currentExperiment')
     if (curr) {
         curr = JSON.parse(curr)
-        document.getElementsByClassName('list-practice')[0].style.display = 'none'
-        document.getElementsByClassName('list-practice')[1].style.display = 'none'
+        document.getElementsByClassName('list-learn')[0].style.display = 'none'
+        document.getElementsByClassName('list-learn')[1].style.display = 'none'
         // document.getElementsByClassName('list')[0].style.display = 'none'
         let ele = document.getElementsByClassName(`${curr.type}-${curr.mode}`)
         ele[0].style.display = 'flex'
@@ -24,7 +24,7 @@ window.onload = () => {
         document.getElementById("mode").value = curr.mode
     }
     if (!curr || curr.type == 'list') {
-        if (curr.mode == 'practice')
+        if (!curr || curr.mode == 'learn')
             addElements()
         else
             randomise()
@@ -48,16 +48,8 @@ function changeExperiment() {
                 element[1].style.display = 'none'
         }
     });
-    if (datatype == 'list')
+    if (datatype == 'list' && mode == 'learn')
         addElements()
-    // datatypes.forEach(exp => {
-    //     let element = document.getElementsByClassName(exp)[0]
-    //     if (exp === datatype) {
-    //         element.style.display = 'block'
-    //     } else {
-    //         element.style.display = 'none'
-    //     }
-    // });
 }
 
 function showInstructions() {
@@ -91,6 +83,7 @@ function rebuild() {
 
 function addElements() {
     clear()
+    list.numOfCards = 8
     for (var i = 0; i < list.numOfCards; i++) {
         if (i != list.numOfCards - 1)
             list.num[i] = i + 1;
@@ -118,6 +111,9 @@ function clear() {
 };
 
 function randomise() {
+    let obs = document.getElementById('list-practice-observation')
+    obs.innerHTML = ''
+    list.numOfCards = 8
     for (var i = 0; i < list.numOfCards; i++) {
         list.num[i] = Math.floor(Math.random() * 90 + 10);
     }
@@ -129,47 +125,43 @@ function reload() {
 };
 
 function process(operation) {
-    let obss = [...document.getElementsByClassName("observation")]
-    obss.forEach(obs => {
-        obs.classList.remove('green')
-        obs.classList.remove('red')
-        clear()
-        if (operation == 'pop()') {
+    let obs = document.getElementById("list-learn-observation")
+    obs.classList.remove('green')
+    obs.classList.remove('red')
+    clear()
+    if (operation == 'pop()') {
+        list.numOfCards -= 1;
+        list.num.pop();
+        obs.innerHTML = 'Removed element at the end of the list'
+    } else if (operation == 'remove(8)') {
+        let index = list.num.findIndex((a) => a == 8);
+        if (index > -1) {
             list.numOfCards -= 1;
-            list.num.pop();
-            obs.innerHTML = 'Removed element at the end of the list'
-        } else if (operation == 'remove(8)') {
-            let index = list.num.findIndex((a) => a == 8);
-            if (index > -1) {
-                list.numOfCards -= 1;
-                list.num.splice(index, 1)
-                obs.innerHTML = 'Removed 8 from the list'
-            } else {
-                obs.innerHTML = 'The list did not contain 8 to remove'
-            }
-        } else if (operation == 'append(8)') {
-            list.numOfCards += 1;
-            list.num[list.numOfCards - 1] = 8;
-            obs.innerHTML = 'Added 8 to end of the list'
-        } else if (operation == 'reverse()') {
-            list.num.reverse()
-            obs.innerHTML = 'Reversed the list'
-        } else if (operation == 'sort()') {
-            list.num.sort();
-            obs.innerHTML = 'Sorted the list'
-        } else if (operation == 'insert(0,8)') {
-            list.numOfCards += 1;
-            list.num.splice(0, 0, 8);
-            obs.innerHTML = 'Inserted 8 at index 0 in the list'
+            list.num.splice(index, 1)
+            obs.innerHTML = 'Removed 8 from the list'
+        } else {
+            obs.innerHTML = 'The list did not contain 8 to remove'
         }
-    })
+    } else if (operation == 'append(8)') {
+        list.numOfCards += 1;
+        list.num[list.numOfCards - 1] = 8;
+        obs.innerHTML = 'Added 8 to end of the list'
+    } else if (operation == 'reverse()') {
+        list.num.reverse()
+        obs.innerHTML = 'Reversed the list'
+    } else if (operation == 'sort()') {
+        list.num.sort();
+        obs.innerHTML = 'Sorted the list'
+    } else if (operation == 'insert(0,8)') {
+        list.numOfCards += 1;
+        list.num.splice(0, 0, 8);
+        obs.innerHTML = 'Inserted 8 at index 0 in the list'
+    }
     rebuild();
 }
 
-function submitListPractice() {
-    console.log('here')
-    let obss = [...document.getElementsByClassName('observation')]
-
+function submitListLearn() {
+    let obs = document.getElementById('list-learn-observation')
     let elements = [...document.getElementsByClassName('blank-list')]
     let blank = false
     elements.forEach(ele => {
@@ -178,28 +170,36 @@ function submitListPractice() {
         }
     })
     if (blank) {
-        obss.forEach(obs => {
-            obs.innerHTML = 'Match all blanks with a python operation.'
-        })
+        obs.innerHTML = 'Match all blanks with a python operation.'
     } else {
         let sub = document.getElementsByClassName('submit')[0]
         sub.disabled = true
         let time = 1
         process(elements[0].innerHTML)
+        if (elements[0].innerHTML !== 'pop()') {
+            obs.innerHTML = 'You went wrong in this operation! Reset to try again.'
+            obs.classList.add('red')
+            return
+        }
+        let answer = ['append(8)', 'sort()', 'reverse()']
         let interval = setInterval(() => {
-            if (time < elements.length)
-                process(elements[time++].innerHTML)
-            else if (time == elements.length) {
+            if (time < elements.length) {
+                process(elements[time].innerHTML)
+                if (elements[time].innerHTML !== answer[time - 1]) {
+                    obs.innerHTML = 'You went wrong in this operation! Reset to try again.'
+                    obs.classList.add('red')
+                    return
+                }
+                time++
+            } else if (time == elements.length) {
                 let ans = [8, 7, 6, 5, 4, 3, 2, 1]
-                obss.forEach(obs => {
-                    if (ans.join() == list.num.join()) {
-                        obs.innerHTML = 'You successfully completed the experiment!'
-                        obs.classList.add('green')
-                    } else {
-                        obs.innerHTML = 'The order of operations is incorrect! Please reset and try again'
-                        obs.classList.add('red')
-                    }
-                })
+                if (ans.join() == list.num.join()) {
+                    obs.innerHTML = 'You successfully completed the experiment!'
+                    obs.classList.add('green')
+                } else {
+                    obs.innerHTML = 'The order of operations is incorrect! Please reset and try again'
+                    obs.classList.add('red')
+                }
                 time++
             } else {
                 sub.disabled = false
@@ -264,56 +264,139 @@ document.addEventListener('DOMContentLoaded', (event) => {
     });
 });
 
-function submitListLearn() {
-    let val = document.getElementsByClassName("list-learn-command")[0].value
-    let obs = document.getElementById('list-learn-observation')
-    document.getElementsByClassName("list-learn-command")[0].value = ''
-    val = val.replace('(', ',')
-    val = val.replace(')', ',')
-    arr = val.split(',')
-    arr.pop()
-    let error = () => {
+function submitListPractice() {
+    let val = document.getElementsByClassName("list-practice-command")[0].value
+    let obs = document.getElementById('list-practice-observation')
+    document.getElementsByClassName("list-practice-command")[0].value = ''
+    val = val.split('.')
+    let error = (msg = 'Enter a valid python function from the list of supported functions') => {
         obs.classList.add('red')
-        obs.innerHTML = 'Enter a valid python function'
+        obs.innerHTML = msg
     }
     let message = (msg) => {
         obs.classList.remove('red')
         obs.innerHTML = msg
     }
-    // console.log(val, arr)
-    if (arr.length == 0) {
+    let checkNumber = (num) => {
+        if (!parseInt(num) && num != '0') {
+            error('Enter a number')
+            rebuild()
+            return
+        }
+    }
+    if (val[0] !== 'list') {
+        error()
+        return;
+    }
+    val = val[1]
+    let args = /\(([^)]+)\)/.exec(val)
+    if (args) {
+        args = args[1]
+        args = args.split(',')
+    }
+    let func = /([^)]+)\(/.exec(val)
+    if (!func) {
         error()
         return
     }
+    func = func[1]
     clear()
-    switch (arr[0]) {
+    switch (func) {
         case 'append':
-            if (arr.length > 2)
+            if (!args || args.length != 1)
                 error()
             else {
-                list.numOfCards += 1;
-                list.num.push(parseInt(arr[1]))
-                message(`You added ${arr[1]} to the list`)
+                if (list.numOfCards < 12) {
+                    checkNumber(args[0])
+                    list.numOfCards += 1;
+                    list.num.push(parseInt(args[0]))
+                    message(`You added ${args[0]} to the list`)
+                } else
+                    error('You have exceeded maximum number of elements in the list')
             }
             break;
         case 'pop':
-            if (arr.length > 2 && arr[1] !== '')
+            if (args)
                 error()
             else {
-                list.numOfCards -= 1
-                list.num.pop()
-                message(`You removed the last element from the list`)
+                if (list.numOfCards > 0) {
+                    list.numOfCards -= 1
+                    list.num.pop()
+                    message(`You removed the last element from the list`)
+                } else
+                    error('The list is empty')
             }
+            break;
         case 'sort':
-            if(arr.length > 2 && arr[1] !== '')
+            if (args)
                 error()
             else {
-                list.num.sort()
+                list.num.sort((a, b) => a - b)
                 message("You sorted the list")
             }
+            break;
         case 'reverse':
-            
+            if (args)
+                error()
+            else {
+                list.num.reverse()
+                message("You reversed the list")
+            }
+            break;
+        case 'clear':
+            if (args)
+                error()
+            else {
+                list.numOfCards = 0;
+                list.num.reduce((x) => false)
+                message("You cleared the list")
+            }
+            break
+        case 'count':
+            if (!args || args.length != 1)
+                error()
+            else {
+                checkNumber(args[0])
+                let find = parseInt(args[0]), count = 0
+                list.num.forEach(x => { if (x == find) count++ })
+                message(`The count of ${find} is ${count}`)
+            }
+            break
+        case 'remove':
+            if (!args || args.length != 1)
+                error()
+            else {
+                checkNumber(args[0])
+                if (list.numOfCards > 0) {
+                    let rem = parseInt(args[0])
+                    let index = list.num.findIndex((a) => a == rem);
+                    if (index > -1) {
+                        list.numOfCards -= 1;
+                        list.num.splice(index, 1)
+                        obs.innerHTML = `Removed ${rem} from the list`
+                    } else {
+                        obs.innerHTML = `The list did not contain ${rem} to remove`
+                    }
+                } else
+                    error('The list is empty')
+            }
+            break;
+        case 'insert':
+            if (!args || args.length != 2)
+                error()
+            else {
+                checkNumber(args[0])
+                checkNumber(args[1])
+                if (list.numOfCards < 12) {
+                    list.numOfCards += 1;
+                    list.num.splice(parseInt(args[0]), 0, parseInt(args[1]))
+                    message(`You added ${args[1]} at index ${args[0]} in the list`)
+                } else
+                    error('You have exceeded maximum number of elements in the list')
+            }
+            break;
         default:
+            error()
             break;
     }
     rebuild()
@@ -322,10 +405,9 @@ function submitListLearn() {
 function enterTextField(event) {
     if (event.key == 'Enter') {
         event.preventDefault();
-        document.getElementById('list-learn-submit').click();
+        document.getElementById('list-practice-submit').click();
     }
 }
-
 /* Touch API for mobile phones
 // Get the container element where the drag and drop interface will be displayed
 const container = document.getElementById("drag-and-drop-container");

@@ -58,7 +58,7 @@
 
 .box {
     width: 28vw;
-    /* height: 60vh; */
+    min-height: 50vh;
     border: 1.5px solid #000;
     border-radius: 10px;
     position: relative;
@@ -128,10 +128,17 @@ span {
     border: 3px solid darkgray;
     border-radius: 10%;
     background-color: #ddd;
-    width: fit-content;
+    min-width: 60px;
     height: 1.3rem;
     font-size: large;
     cursor: move;
+    /* margin-bottom: 1%; */
+}
+
+.blank-p {
+    display: inline;
+    margin-top: 0;
+    translate: 0 -10px;
 }
 
 .options {
@@ -140,8 +147,10 @@ span {
 }
 
 .option {
+    min-width: 60px;
+    min-height: 19px;
     padding: 0.3% 1%;
-    font-size: medium;
+    font-size: large;
     font-family: 'Fira Mono', monospace;
     display: inline-block;
     border: 3px solid darkgray;
@@ -192,21 +201,25 @@ span {
     font-size: x-large;
 }
 
-.list-learn-command {
+.list-practice-command {
     height: 3%;
     margin-top: 2.5%;
     margin-left: 2%;
-}
-
-.list-learn-div {
-    display: flex;
-    justify-content: center;
-    margin-top: 5%;
-}
-
-.list-learn-label {
     font-family: 'Fira Mono', monospace;
 }
+
+.list-practice-div {
+    display: flex;
+    justify-content: center;
+    margin-top: 3%;
+    font-family: 'Fira Mono', monospace;
+}
+
+.list-practice-functions {
+    font-family: 'Fira Mono', monospace;
+    text-align: center;
+}
+
 @media screen and  (max-width: 900px) {
     .experiment {
         flex-direction: column;

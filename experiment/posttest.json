@@ -10,7 +10,7 @@
         "d": "None of the above"
       },
       "correctAnswer": "a",
-      "difficulty": "beginner"
+      "difficulty": "Beginner"
     },
     {
       "question": "When you try to access indices which are not present in the list what will happen?",
@@ -21,7 +21,7 @@
         "d": "None of the above"
       },
       "correctAnswer": "b",
-      "difficulty": "beginner"
+      "difficulty": "Beginner"
     },
     {
       "question": "In order to access a range of elements from a tuple, which of the following operator is used?",

@@ -42,11 +42,11 @@
 			</select>
 			<label for="mode" class="experiment-label" style="margin-bottom: 10%;">Select learning mode</label>
 			<select name="mode" id="mode" class="select" onchange="changeExperiment()">
-				<option value="practice" selected>Practice</option>
-				<option value="learn">Learn</option>
+				<option value="learn" selected>Learn</option>
+				<option value="practice">Practice</option>
 			</select>
 		</div>
-		<div class="list-practice experiment">
+		<div class="list-learn experiment">
 			<div class="box">
 				<h3 class="header">Objective</h3><br>
 				<p class="task">Make a program that modifies the list given below to display numbers from 1 to 8 in
@@ -56,10 +56,10 @@
 			<div class="box">
 				<h3 class="header">Complete the program</h3>
 				<div class="program">
-					>>> list.<div class="blank" draggable="true">Blank</div><br>
-					>>> list.<div class="blank" draggable="true">Blank</div><br>
-					>>> list.<div class="blank" draggable="true">Blank</div><br>
-					>>> list.<div class="blank" draggable="true">Blank</div><br>
+					>>> list.<div class="blank blank-list" draggable="true"></div><br>
+					>>> list.<div class="blank blank-list" draggable="true"></div><br>
+					>>> list.<div class="blank blank-list" draggable="true"></div><br>
+					>>> list.<div class="blank blank-list" draggable="true"></div><br>
 				</div>
 				<div class="options">
 					<div class="option" draggable="true">pop()</div>
@@ -70,7 +70,7 @@
 					<div class="option" draggable="true">sort()</div>
 				</div><br>
 				<div class="buttons">
-					<button onclick="submitListPractice()" class="submit">
+					<button onclick="submitListLearn()" class="submit">
 						Submit
 					</button>
 					<button onclick="reload()" class="reset">
@@ -79,22 +79,28 @@
 				</div>
 			</div>
 		</div>
-		<div class="list-learn" style="display: none;">
-			<div class="box" style="width: 56vw;">
-				<h3 class="header">Fill this blank with any python list function and see that change happen in the list</h3>
-				<div class="list-learn-div">
-					<h4 class="list-learn-label">Enter command: </h4>
-					<input type="text" class="list-learn-command" onkeypress="enterTextField(event)">
+		<div class="list-practice" style="display: none;">
+			<div class="box" style="width:56vw; min-height: 60vh;">
+				<h3 class="header">Fill this blank with any python list function and see that change happen in the list</h3><br>
+				<div class="list-practice-functions">
+					<h4 style="display: inline;">Supported functions: </h4>
+					<p style="display: inline;">append(value), pop(), clear(), count(value), insert(index,value), remove(value), reverse(), sort()</p><br><br>
+					<h4 style="display: inline;">Syntax: </h4>
+					<p style="display: inline;">list.(function)</p>
 				</div>
-				<button onclick="submitListLearn()" id="list-learn-submit" class="submit">Submit</button>
+				<div class="list-practice-div">
+					<h4>Enter command: </h4>
+					<input type="text" class="list-practice-command" onkeypress="enterTextField(event)">
+				</div>
+				<button onclick="submitListPractice()" id="list-practice-submit" class="submit">Submit</button>
 				<br>
 				<div class="observations">
 					<h3 style="text-align: center;display: block;">Observations</h3>
-					<p id="list-learn-observation"></p>
+					<p id="list-practice-observation"></p>
 				</div>
 				<div>
-					<div class="wrapper">
-						<div class="cards" style="width: 200%; translate: -24%"></div>
+					<div class="wrapper" style="margin-bottom: 5%;">
+						<div class="cards" style="width: 150%; translate: -15%"></div>
 						<div class="observations"></div>
 					</div>
 				</div>
@@ -125,12 +131,12 @@
 					<div class="option" draggable="true">pop('dog')</div>
 				</div><br>
 				<div class="buttons">
-					<button onclick="submitListPractice()" class="submit">
+					<!-- <button onclick="submitListLeanr()" class="submit">
 						Submit
 					</button>
 					<button onclick="reload()" class="reset">
 						Reset
-					</button>
+					</button> -->
 				</div>
 			</div>
 		</div>
@@ -144,10 +150,10 @@
 
 		</div>
 	</div>
-	<div class="list-practice">
+	<div class="list-learn">
 		<div class="observations">
 			<h3 style="text-align: center;display: block;">Observations</h3>
-			<p class="observation"></p>
+			<p id="list-learn-observation"></p>
 		</div>
 		<div>
 			<div class="wrapper">

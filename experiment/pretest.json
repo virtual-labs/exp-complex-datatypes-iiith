@@ -10,7 +10,7 @@
         "d": "None of the above"
       },
       "correctAnswer": "b",
-      "difficulty": "beginner"
+      "difficulty": "Beginner"
     },
     {
       "question": "Lists in python can be created using curly brackets",
@@ -21,7 +21,7 @@
         "d": "None of the above"
       },
       "correctAnswer": "a",
-      "difficulty": "beginner"
+      "difficulty": "Beginner"
     },
     {
       "question": "Tuples in python are _____; and lists are ______",
