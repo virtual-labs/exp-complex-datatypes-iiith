@@ -23,6 +23,13 @@ window.onload = () => {
     } else if (curr.type == 'set') {
         if (curr.mode == 'practice')
             randomiseSet()
+        else
+            addElementsSet()
+    } else if (curr.type == 'dictionary') {
+        if (curr.mode == 'practice')
+            randomiseDictionary()
+        else
+            addElementsDictionary()
     }
 }
 
@@ -45,10 +52,16 @@ function changeExperiment() {
     });
     if (datatype == 'list' && mode == 'learn')
         addElementsList()
+    if (datatype == 'set' && mode == 'learn')
+        addElementsSet()
+    if (datatype == 'dictionary' && mode == 'learn')
+        addElementsDictionary()
     if (datatype == 'list' && mode == 'practice')
         randomiseList()
     if (datatype == 'set' && mode == 'practice')
         randomiseSet()
+    if (datatype == 'dictionary' && mode == 'practice')
+        randomiseDictionary()
 }
 
 function showInstructions() {
@@ -120,7 +133,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     });
 });
 
-function enterTextField(event,datatype) {
+function enterTextField(event, datatype) {
     if (event.key == 'Enter') {
         event.preventDefault();
         document.getElementById(`${datatype}-practice-submit`).click();

@@ -104,7 +104,7 @@ function submitListLearn() {
     let elements = [...document.getElementsByClassName('blank-list')]
     let blank = false
     elements.forEach(ele => {
-        if (ele.innerHTML == "Blank") {
+        if (ele.innerHTML == "") {
             blank = true
         }
     })
@@ -123,12 +123,12 @@ function submitListLearn() {
         let answer = ['append(8)', 'sort()', 'reverse()']
         let interval = setInterval(() => {
             if (time < elements.length) {
-                process(elements[time].innerHTML)
                 if (elements[time].innerHTML !== answer[time - 1]) {
                     obs.innerHTML = 'You went wrong in this operation! Reset to try again.'
                     obs.classList.add('red')
                     return
                 }
+                process(elements[time].innerHTML)
                 time++
             } else if (time == elements.length) {
                 let ans = [8, 7, 6, 5, 4, 3, 2, 1]

@@ -13,9 +13,31 @@
       "difficulty": "beginner"
     },
     {
+      "question": "student_names=('karthik','Raj','Selvi','Mayank','Rupali'), **len(student_names)** will return _______",
+      "answers": {
+        "a": "4",
+        "b": "5",
+        "c": "3",
+        "d": "Error"
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "student_info={\"name\":\"Prasad\",\"Age\":24,\"Hometown\":\"mumbai\",\"Occupation\":\"Engineer\"}, **student_info.keys()** will return _________",
+      "answers": {
+        "a": "(['name', 'Age', 'Hometown', 'Occupation'])",
+        "b": "(['Prasad',24, 'mumbai', 'Engineer'])",
+        "c": "Error",
+        "d": "None of the above"
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+    {
       "question": "When you try to access indices which are not present in the list what will happen?",
       "answers": {
-        "a": "It will raise and error ",
+        "a": "It will raise an error ",
         "b": "It will raise an IndexErrorException",
         "c": "No output",
         "d": "None of the above"
@@ -29,6 +51,39 @@
         "a": ":",
         "b": ";",
         "c": "Both (a) and (b)",
+        "d": "None of the above"
+      },
+      "correctAnswer": "a",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "student_names=('karthik','Raj','Selvi','Mayank','Rupali'), **student_names[1:2]** will return?",
+      "answers": {
+        "a": "('Raj',)",
+        "b": "('Raj', 'Selvi')",
+        "c": "('Raj', 'Selvi', 'Mayank')",
+        "d": "Error"
+      },
+      "correctAnswer": "a",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "student_names=('karthik','Raj','Selvi','Mayank','Rupali'), **student_names[-1:-2]** will return?",
+      "answers": {
+        "a": "('Rupali',)",
+        "b": "()",
+        "c": "('Raj', 'Selvi', 'Mayank')",
+        "d": "Error"
+      },
+      "correctAnswer": "b",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "Which of the following datatypes once created does not allows you to modify or change elements?",
+      "answers": {
+        "a": "Set",
+        "b": "List",
+        "c": "Tuples",
         "d": "None of the above"
       },
       "correctAnswer": "a",
@@ -54,6 +109,28 @@
         "d": "Error"
       },
       "correctAnswer": "a",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "student_info={\"name\":\"Prasad\",\"Age\":24,\"Hometown\":\"mumbai\",\"Occupation\":\"Engineer\"}, **student_info.items()** will return?",
+      "answers": {
+        "a": "([('name', 'Prasad'), ('Age', 24), ('Hometown', 'mumbai'), ('Occupation', 'Engineer')])",
+        "b": "(['name', 'Age', 'Hometown', 'Occupation'])",
+        "c": "(['Prasad', 24, 'mumbai', 'Engineer'])",
+        "d": "Error"
+      },
+      "correctAnswer": "a",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "fruits={'apple','grapes','banana','kiwi','strawberry'}, fruits.index(0) will return _____",
+      "answers": {
+        "a": "apple",
+        "b": "grapes",
+        "c": "AttributeError",
+        "d": "IndexError"
+      },
+      "correctAnswer": "c",
       "difficulty": "advanced"
     },
     {

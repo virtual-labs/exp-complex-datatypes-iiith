@@ -1,6 +1,6 @@
 class Sets {
     constructor() {
-        this.numOfCards = 8;
+        this.numOfCards = 5;
         this.num = new Set();
     }
 }
@@ -38,6 +38,7 @@ function randomiseSet() {
     let obs = document.getElementById('set-practice-observation')
     obs.innerHTML = ''
     set.numOfCards = 8
+    set.num.clear()
     while (set.num.size < set.numOfCards) {
         set.num.add(Math.floor(Math.random() * 90 + 10));
         console.log(set.num)
@@ -61,7 +62,7 @@ function submitSetPractice() {
     let checkNumber = (num) => {
         if (!parseInt(num) && num != '0') {
             error('Enter a number')
-            rebuildList()
+            rebuildSet()
             return
         }
     }
@@ -90,8 +91,10 @@ function submitSetPractice() {
                 if (set.numOfCards < 12) {
                     checkNumber(args[0])
                     set.num.add(parseInt(args[0]))
-                    set.numOfCards = set.num.size;
-                    message(`You added ${args[0]} to the set`)
+                    if(set.numOfCards == set.num.size)
+                        message(`${args[0]} was already there in the set`)
+                    else
+                        message(`You added ${args[0]} to the set`)
                 } else
                     error('You have exceeded maximum number of elements in the set')
             }
@@ -147,3 +150,96 @@ function submitSetPractice() {
     }
     rebuildSet()
 }
+
+function process(operation) {
+    console.log('ye')
+    let obs = document.getElementById("set-learn-observation")
+    obs.classList.remove('green')
+    obs.classList.remove('red')
+    clearSet()
+    if (operation == 'add(8)') {
+        set.numOfCards += 1;
+        set.num.add(8);
+        obs.innerHTML = 'Added 8 to the set.'
+    } else if (operation == 'difference_update({9})') {
+        set.numOfCards -= 1
+        set.num.delete(9)
+        obs.innerHTML = 'Removed 9 from the set by taking difference from {9}.'
+    } else if (operation == 'update({10})') {
+        set.numOfCards += 1;
+        set.num.add(10)
+        obs.innerHTML = 'Added 10 to the set by taking union with {10}.'
+    } else if (operation == 'remove(7)') {
+        set.numOfCards -= 1
+        set.num.delete(7)
+        obs.innerHTML = 'Removed 7 from the set.'
+    }
+    rebuildSet();
+}
+
+function submitSetLearn() {
+    let obs = document.getElementById('set-learn-observation')
+    let elements = [...document.getElementsByClassName('blank-set')]
+    let blank = false
+    elements.forEach(ele => {
+        if (ele.innerHTML == "") {
+            blank = true
+        }
+    })
+    if (blank) {
+        obs.innerHTML = 'Match all blanks with a python operation.'
+    } else {
+        let sub = document.getElementsByClassName('submit-set')[0]
+        sub.disabled = true
+        let time = 1
+        let answer = ['update({10})','difference_update({9})', 'remove(7)', 'add(8)']
+        if (!answer.includes(elements[0].innerHTML)) {
+            obs.innerHTML = 'You went wrong in this operation! Reset to try again.'
+            obs.classList.add('red')
+            return
+        }
+        process(elements[0].innerHTML)
+        let interval = setInterval(() => {
+            if (time < elements.length) {
+                if (!answer.includes(elements[time].innerHTML)) {
+                    obs.innerHTML = 'You went wrong in this operation! Reset to try again.'
+                    obs.classList.add('red')
+                    return
+                }
+                process(elements[time].innerHTML)
+                time++
+            } else if (time == elements.length) {
+                let ans = [2, 4, 6, 8, 10]
+                if (ans.join() == (new Array(...set.num)).join()) {
+                    obs.innerHTML = 'You successfully completed the experiment!'
+                    obs.classList.add('green')
+                } else {
+                    obs.innerHTML = 'The order of operations is incorrect! Please reset and try again'
+                    obs.classList.add('red')
+                }
+                time++
+            } else {
+                sub.disabled = false
+                clearInterval(interval)
+            }
+        }, 2500);
+    }
+}
+
+function addElementsSet() {
+    clearSet()
+    set.num.clear()
+    set.numOfCards = 5
+    for (var i = 0; i < set.numOfCards; i++) {
+        if(i == 4)
+            set.num.add(9)
+        else if(i == 3)
+            set.num.add(7)
+        else
+            set.num.add(2*(i+1))
+    }
+    let code = document.getElementById("input-set")
+    code.innerHTML = `set = {${new Array(...set.num)}}\n`;
+    console.log(set.num)
+    rebuildSet()
+};

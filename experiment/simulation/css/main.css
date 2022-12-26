@@ -229,13 +229,36 @@ span {
         margin-bottom: 2vh;
     }
 }
-/* @media screen and (max-width: 500px) {
-    .main-container {
-        flex-direction: column;
-    }
 
-    .box {
-        height: fit-content;
-        margin-bottom: 2vh;
-    }
-} */
+.cards,
+.cards-set,
+.cards-dictionary {
+    position: relative;
+    text-align: center;
+}
+
+.cards-dictionary :nth-child(2n+1) {
+    margin-left: 1%;
+}
+
+.card,
+.key {
+    display: inline-block;
+    padding: 1.7%;
+    margin: 0.05%;
+    color: white;
+    background-color: #288ec8;
+}
+
+p,
+span {
+    text-align: center;
+}
+
+.value {
+    display: inline-block;
+    padding: 1.7%;
+    margin: 0.05%;
+    color: white;
+    background-color: hsl(120, 67%, 47%);
+}
