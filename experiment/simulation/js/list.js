@@ -63,7 +63,7 @@ function randomiseList() {
     rebuildList()
 };
 
-function process(operation) {
+function processList(operation) {
     let obs = document.getElementById("list-learn-observation")
     obs.classList.remove('green')
     obs.classList.remove('red')
@@ -114,7 +114,7 @@ function submitListLearn() {
         let sub = document.getElementsByClassName('submit')[0]
         sub.disabled = true
         let time = 1
-        process(elements[0].innerHTML)
+        processList(elements[0].innerHTML)
         if (elements[0].innerHTML !== 'pop()') {
             obs.innerHTML = 'You went wrong in this operation! Reset to try again.'
             obs.classList.add('red')
@@ -128,7 +128,7 @@ function submitListLearn() {
                     obs.classList.add('red')
                     return
                 }
-                process(elements[time].innerHTML)
+                processList(elements[time].innerHTML)
                 time++
             } else if (time == elements.length) {
                 let ans = [8, 7, 6, 5, 4, 3, 2, 1]

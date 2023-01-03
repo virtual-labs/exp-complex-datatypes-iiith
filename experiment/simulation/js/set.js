@@ -151,7 +151,7 @@ function submitSetPractice() {
     rebuildSet()
 }
 
-function process(operation) {
+function processSet(operation) {
     console.log('ye')
     let obs = document.getElementById("set-learn-observation")
     obs.classList.remove('green')
@@ -198,7 +198,7 @@ function submitSetLearn() {
             obs.classList.add('red')
             return
         }
-        process(elements[0].innerHTML)
+        processSet(elements[0].innerHTML)
         let interval = setInterval(() => {
             if (time < elements.length) {
                 if (!answer.includes(elements[time].innerHTML)) {
@@ -206,7 +206,7 @@ function submitSetLearn() {
                     obs.classList.add('red')
                     return
                 }
-                process(elements[time].innerHTML)
+                processSet(elements[time].innerHTML)
                 time++
             } else if (time == elements.length) {
                 let ans = [2, 4, 6, 8, 10]

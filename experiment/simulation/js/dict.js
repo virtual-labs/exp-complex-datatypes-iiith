@@ -68,8 +68,8 @@ function rebuildDict() {
     })
 }
 
-function process(operation) {
-    console.log(operation)
+function processDict(operation) {
+    // console.log(operation)
     let obs = document.getElementById('dict-learn-observation')
     obs.classList.remove('green')
     obs.classList.remove('red')
@@ -109,10 +109,10 @@ function submitDictLearn() {
         sub.disabled = true
         sub.style.cursor = 'default'
         let time = 1
-        process(elements[0].innerHTML)
+        processDict(elements[0].innerHTML)
         let interval = setInterval(() => {
             if (time == 1) {
-                process(elements[1].innerHTML)
+                processDict(elements[1].innerHTML)
             } else if (time == 2) {
                 if (elements[2].innerHTML == 'keys()') {
                     obs.innerHTML = `Output: ${dict.key}`
