@@ -64,17 +64,6 @@ function changeExperiment() {
         randomiseDictionary()
 }
 
-function showInstructions() {
-    let ele = document.getElementsByClassName("instruction-button")[0]
-    ele.classList.toggle("active");
-    let content = ele.nextElementSibling;
-    if (content.style.maxHeight) {
-        content.style.maxHeight = null;
-    } else {
-        content.style.maxHeight = content.scrollHeight + "px";
-    }
-}
-
 function reload() {
     location.reload(true);
 };
@@ -139,58 +128,3 @@ function enterTextField(event, datatype) {
         document.getElementById(`${datatype}-practice-submit`).click();
     }
 }
-
-/* Touch API for mobile phones
-// Get the container element where the drag and drop interface will be displayed
-const container = document.getElementById("drag-and-drop-container");
-
-// Get the tiles and blank spaces elements
-const tiles = container.querySelectorAll(".tile");
-const blanks = container.querySelectorAll(".blank");
-
-// Keep track of the currently dragged tile
-let currentTile = null;
-
-// Handle the touchstart event on the tiles
-tiles.addEventListener("touchstart", (event) => {
-  // Get the element that was touched
-  const touchedElement = event.target;
-  // Check if the touched element is a tile
-  if (tiles.contains(touchedElement)) {
-    // Set the currently dragged tile to the touched element
-    currentTile = touchedElement;
-    // Add the "dragging" class to the tile to apply a visual effect
-    currentTile.classList.add("dragging");
-  }
-});
-
-// Handle the touchmove event on the container
-container.addEventListener("touchmove", (event) => {
-  // Check if there is a current tile being dragged
-  if (currentTile) {
-    // Update the position of the tile based on the touch event coordinates
-    currentTile.style.left = event.touches[0].clientX + "px";
-    currentTile.style.top = event.touches[0].clientY + "px";
-  }
-});
-
-// Handle the touchend event on the container
-container.addEventListener("touchend", (event) => {
-  // Check if there is a current tile being dragged
-  if (currentTile) {
-    // Remove the "dragging" class from the tile to remove the visual effect
-    currentTile.classList.remove("dragging");
-
-    // Check if the tile is dropped on a blank space
-    for (const blank of blanks) {
-      if (blank.contains(currentTile)) {
-        // If so, place the tile in the blank space
-        blank.appendChild(currentTile);
-        break;
-      }
-    }
-    // Set the current tile to null
-    currentTile = null;
-  }
-});
-*/
