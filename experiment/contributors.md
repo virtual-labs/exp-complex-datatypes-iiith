@@ -1,8 +1,8 @@
 ### Subject Matter Experts
-| SNo. | Name | Email | Institute | ID |
-| :---: | :---: | :---: | :---: | :---: |
-| 1 | Raghu Reddy | raghu.reddy@iiit.ac.in | IIIT Hyderabad | id |
-| 2 | Karthik Vaidhyanathan | karthik.vaidhyanathan@iiit.ac.in | IIIT Hyderabad | id |
+| SNo. | Name | Email | Institute |
+| :---: | :---: | :---: | :---: |
+| 1 | Raghu Reddy | raghu.reddy@iiit.ac.in | IIIT Hyderabad |
+| 2 | Karthik Vaidhyanathan | karthik.vaidhyanathan@iiit.ac.in | IIIT Hyderabad |
 
 ### Developers
 | SNo. | Name | Email | Institute | ID |
