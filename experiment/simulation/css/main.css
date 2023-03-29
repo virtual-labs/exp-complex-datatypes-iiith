@@ -1,213 +1,228 @@
 .main-container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 .box {
-    width: 28vw;
-    min-height: 50vh;
-    border: 1.5px solid #000;
-    border-radius: 10px;
-    position: relative;
+  width: 28vw;
+  min-height: 50vh;
+  border: 1.5px solid #000;
+  border-radius: 10px;
+  position: relative;
 }
 
 .thin {
-    width: 20vw;
+  width: 20vw;
 }
 
 .header {
-    background-color: #eee;
-    padding: 15px 0;
-    margin: 0;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    text-align: center;
+  background-color: #eee;
+  padding: 15px 0;
+  margin: 0;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  text-align: center;
 }
 
 .experiment-label {
-    text-align: center;
-    display: block;
-    font-size: x-large;
-    font-weight: 300;
-    margin-top: 10%;
+  text-align: center;
+  display: block;
+  font-size: x-large;
+  font-weight: 300;
+  margin-top: 10%;
 }
 
 .select {
-    margin: 10% auto;
-    display: block;
-    font-size: medium;
+  margin: 10% auto;
+  display: block;
+  font-size: medium;
 }
 
 .experiment {
-    width: 75vw;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+  width: 75vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 .prettyprint {
-    border: none !important;
-    translate: -5vw 0;
+  border: none !important;
+  translate: -5vw 0;
 }
 
 .task {
-    text-align: center;
-    /* display: table-row; */
-    font-size: 1.4rem;
-    font-weight: 500;
+  text-align: center;
+  /* display: table-row; */
+  font-size: 1.4rem;
+  font-weight: 500;
 }
 
 span {
-    font-size: x-large;
-    margin-bottom: 3vh;
-    vertical-align: bottom;
+  font-size: x-large;
+  margin-bottom: 3vh;
+  vertical-align: bottom;
 }
 
 .program {
-    font-size: large;
-    font-family: 'Fira Mono', monospace;
-    text-align: center;
-    padding: 3%;
+  font-size: large;
+  font-family: "Fira Mono", monospace;
+  text-align: center;
+  padding: 3%;
 }
 
 .blank {
-    display: inline-block;
-    border: 3px solid darkgray;
-    border-radius: 10%;
-    background-color: #ddd;
-    min-width: 60px;
-    height: 1.3rem;
-    font-size: large;
-    cursor: move;
-    /* margin-bottom: 1%; */
+  display: inline-block;
+  border: 3px solid darkgray;
+  border-radius: 10%;
+  background-color: #ddd;
+  min-width: 60px;
+  height: 1.3rem;
+  font-size: large;
+  cursor: move;
+  -ms-touch-action: none;
+  touch-action: none;
 }
 
 .blank-p {
-    display: inline;
-    margin-top: 0;
-    translate: 0 -10px;
+  display: inline;
+  margin-top: 0;
+  translate: 0 -10px;
 }
 
 .options {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .option {
-    min-width: 60px;
-    min-height: 19px;
-    padding: 0.3% 1%;
-    font-size: large;
-    font-family: 'Fira Mono', monospace;
-    display: inline-block;
-    border: 3px solid darkgray;
-    margin: 1%;
-    background-color: #ddd;
-    border-radius: 10%;
-    cursor: move;
+  min-width: 60px;
+  min-height: 19px;
+  padding: 0.3% 1%;
+  font-size: large;
+  font-family: "Fira Mono", monospace;
+  display: inline-block;
+  border: 3px solid darkgray;
+  margin: 1%;
+  background-color: #ddd;
+  border-radius: 10%;
+  cursor: move;
+  -ms-touch-action: none;
+  touch-action: none;
 }
 
 .over {
-    border: 3px dotted darkgray;
+  border: 3px dotted darkgray;
 }
 
 .submit,
 .reset {
-    height: 2.25rem;
-    width: 5.25rem;
-    border-radius: 5px;
-    margin: 0 auto;
-    display: block;
-    font-size: medium;
-    color: #fff;
-    background-color: #337ab7;
-    border-color: #2e6da4;
-    cursor: pointer;
-    border: 1px solid transparent;
+  height: 2.25rem;
+  width: 5.25rem;
+  border-radius: 5px;
+  margin: 0 auto;
+  display: block;
+  font-size: medium;
+  color: #fff;
+  background-color: #337ab7;
+  border-color: #2e6da4;
+  cursor: pointer;
+  border: 1px solid transparent;
 }
 
 .buttons {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .green {
-    color: green;
+  color: green;
 }
 
 .red {
-    color: red;
+  color: red;
 }
 
 .observations {
-    font-size: large;
+  font-size: large;
 }
 
 .input {
-    font-family: 'Fira Mono', monospace;
-    font-size: x-large;
+  font-family: "Fira Mono", monospace;
+  font-size: x-large;
 }
 
 .practice-command {
-    height: 3%;
-    margin-top: 2.5%;
-    margin-left: 2%;
-    font-family: 'Fira Mono', monospace;
+  height: 3%;
+  margin-top: 2.5%;
+  margin-left: 2%;
+  font-family: "Fira Mono", monospace;
 }
 
 .practice-div {
-    display: flex;
-    justify-content: center;
-    margin-top: 3%;
-    font-family: 'Fira Mono', monospace;
+  display: flex;
+  justify-content: center;
+  margin-top: 3%;
+  font-family: "Fira Mono", monospace;
 }
 
 .practice-functions {
-    font-family: 'Fira Mono', monospace;
-    text-align: center;
+  font-family: "Fira Mono", monospace;
+  text-align: center;
 }
 
-@media screen and  (max-width: 900px) {
-    .experiment {
-        flex-direction: column;
-    }
-    .box {
-        width: auto;
-        margin-bottom: 2vh;
-    }
+@media screen and (max-width: 900px) {
+  .experiment {
+    flex-direction: column;
+  }
+  .box {
+    width: auto;
+    margin-bottom: 2vh;
+  }
 }
 
 .cards,
 .cards-set,
 .cards-dictionary {
-    position: relative;
-    text-align: center;
+  position: relative;
+  text-align: center;
 }
 
-.cards-dictionary :nth-child(2n+1) {
-    margin-left: 1%;
+.cards-dictionary :nth-child(2n + 1) {
+  margin-left: 1%;
 }
 
 .card,
 .key {
-    display: inline-block;
-    padding: 1.7%;
-    margin: 0.05%;
-    color: white;
-    background-color: #288ec8;
+  display: inline-block;
+  padding: 1.7%;
+  margin: 0.05%;
+  color: white;
+  background-color: #288ec8;
 }
 
 p,
 span {
-    text-align: center;
+  text-align: center;
 }
 
 .value {
-    display: inline-block;
-    padding: 1.7%;
-    margin: 0.05%;
-    color: white;
-    background-color: hsl(120, 67%, 47%);
+  display: inline-block;
+  padding: 1.7%;
+  margin: 0.05%;
+  color: white;
+  background-color: hsl(120, 67%, 47%);
+}
+
+.drop-active {
+  border-style: dashed;
+}
+
+.drop-target {
+  background-color: #ccc;
+}
+
+.can-drop {
+  opacity: 0.5;
 }

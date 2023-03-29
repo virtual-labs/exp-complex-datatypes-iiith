@@ -4,6 +4,7 @@
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<script defer src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Fira+Mono&display=swap" rel="stylesheet">
@@ -39,18 +40,18 @@
 			<div class="box">
 				<h3 class="header">Complete the program</h3>
 				<div class="program">
-					>>> list.<div class="blank blank-list" draggable="true"></div><br>
-					>>> list.<div class="blank blank-list" draggable="true"></div><br>
-					>>> list.<div class="blank blank-list" draggable="true"></div><br>
-					>>> list.<div class="blank blank-list" draggable="true"></div><br>
+					>>> list.<div class="blank blank-list drag" draggable="true"></div><br>
+					>>> list.<div class="blank blank-list drag" draggable="true"></div><br>
+					>>> list.<div class="blank blank-list drag" draggable="true"></div><br>
+					>>> list.<div class="blank blank-list drag" draggable="true"></div><br>
 				</div>
 				<div class="options">
-					<div class="option" draggable="true">pop()</div>
-					<div class="option" draggable="true">remove(8)</div>
-					<div class="option" draggable="true">append(8)</div>
-					<div class="option" draggable="true">reverse()</div>
-					<div class="option" draggable="true">insert(0,8)</div>
-					<div class="option" draggable="true">sort()</div>
+					<div class="option drag" draggable="true">pop()</div>
+					<div class="option drag" draggable="true">remove(8)</div>
+					<div class="option drag" draggable="true">append(8)</div>
+					<div class="option drag" draggable="true">reverse()</div>
+					<div class="option drag" draggable="true">insert(0,8)</div>
+					<div class="option drag" draggable="true">sort()</div>
 				</div><br>
 				<div class="buttons">
 					<button onclick="submitListLearn()" class="submit">
@@ -105,17 +106,17 @@
 			<div class="box">
 				<h3 class="header">Complete the program</h3>
 				<div class="program">
-					dictionary.<div class="blank blank-dict" draggable="true"></div><br>
-					dictionary.<div class="blank blank-dict" draggable="true"></div><br>
-					print(dictionary.<div class="blank blank-dict" draggable="true"></div>)<br>
+					dictionary.<div class="blank blank-dict drag" draggable="true"></div><br>
+					dictionary.<div class="blank blank-dict drag" draggable="true"></div><br>
+					print(dictionary.<div class="blank blank-dict drag" draggable="true"></div>)<br>
 				</div><br>
 				<div class="options">
-					<div class="option" draggable="true">values()</div>
-					<div class="option" draggable="true">update({'kiwi':'brown'})</div>
-					<div class="option" draggable="true">keys()</div>
-					<div class="option" draggable="true">popitem()</div>
-					<div class="option" draggable="true">pop('dog')</div>
-					<div class="option" draggable="true">add('kiwi','brown')</div>
+					<div class="option drag" draggable="true">values()</div>
+					<div class="option drag" draggable="true">update({'kiwi':'brown'})</div>
+					<div class="option drag" draggable="true">keys()</div>
+					<div class="option drag" draggable="true">popitem()</div>
+					<div class="option drag" draggable="true">pop('dog')</div>
+					<div class="option drag" draggable="true">add('kiwi','brown')</div>
 				</div><br>
 				<div class="buttons">
 					<button onclick="submitDictLearn()" class="submit submit-dict">
@@ -171,18 +172,18 @@
 			<div class="box">
 				<h3 class="header">Complete the program</h3>
 				<div class="program">
-					>>> set.<div class="blank blank-set" draggable="true"></div><br>
-					>>> set.<div class="blank blank-set" draggable="true"></div><br>
-					>>> set.<div class="blank blank-set" draggable="true"></div><br>
-					>>> set.<div class="blank blank-set" draggable="true"></div><br>
+					>>> set.<div class="blank blank-set drag" draggable="true"></div><br>
+					>>> set.<div class="blank blank-set drag" draggable="true"></div><br>
+					>>> set.<div class="blank blank-set drag" draggable="true"></div><br>
+					>>> set.<div class="blank blank-set drag" draggable="true"></div><br>
 				</div>
 				<div class="options">
-					<div class="option" draggable="true">add(8)</div>
-					<div class="option" draggable="true">add({10})</div>
-					<div class="option" draggable="true">update({10})</div>
-					<div class="option" draggable="true">remove(7)</div>
-					<div class="option" draggable="true">intersection_update({9})</div>
-					<div class="option" draggable="true">difference_update({9})</div>
+					<div class="option drag" draggable="true">add(8)</div>
+					<div class="option drag" draggable="true">add({10})</div>
+					<div class="option drag" draggable="true">update({10})</div>
+					<div class="option drag" draggable="true">remove(7)</div>
+					<div class="option drag" draggable="true">intersection_update({9})</div>
+					<div class="option drag" draggable="true">difference_update({9})</div>
 				</div><br>
 				<div class="buttons">
 					<button onclick="submitSetLearn()" class="submit submit-set">
