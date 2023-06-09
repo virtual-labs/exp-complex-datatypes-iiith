@@ -1,5 +1,3 @@
-### Procedure
-
 Select the data type you want to learn from the drop-down.
 
 There are two Learning modes for each data types in this experiment - 
