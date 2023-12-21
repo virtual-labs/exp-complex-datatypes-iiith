@@ -116,15 +116,16 @@ function submitListLearn() {
         let time = 1
         processList(elements[0].innerHTML)
         if (elements[0].innerHTML !== 'pop()') {
-            obs.innerHTML = 'You went wrong in this operation! Reset to try again.'
+            obs.innerHTML = 'You went wrong in the first operation! Reset to try again.'
             obs.classList.add('red')
             return
         }
         let answer = ['append(8)', 'sort()', 'reverse()']
+        let times = ['second', 'third', 'fourth']
         let interval = setInterval(() => {
             if (time < elements.length) {
                 if (elements[time].innerHTML !== answer[time - 1]) {
-                    obs.innerHTML = 'You went wrong in this operation! Reset to try again.'
+                    obs.innerHTML = `You went wrong in the ${times[time-1]} operation! Reset to try again.`
                     obs.classList.add('red')
                     return
                 }

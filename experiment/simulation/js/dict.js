@@ -68,7 +68,7 @@ function rebuildDict() {
     })
 }
 
-function processDict(operation) {
+function processDict(operation, time) {
     // console.log(operation)
     let obs = document.getElementById('dict-learn-observation')
     obs.classList.remove('green')
@@ -86,10 +86,13 @@ function processDict(operation) {
         }
         obs.innerHTML = `Removed 'dog': 'animal'`
     } else {
-        obs.innerHTML = 'You went wrong in this operation! Reset to try again.'
+        obs.innerHTML = `You went wrong in the ${time} operation! Reset to try again.`
         obs.classList.add('red')
+        rebuildDict()
+        return false
     }
     rebuildDict()
+    return true
 }
 
 function submitDictLearn() {
@@ -109,26 +112,30 @@ function submitDictLearn() {
         sub.disabled = true
         sub.style.cursor = 'default'
         let time = 1
-        processDict(elements[0].innerHTML)
+        let status = processDict(elements[0].innerHTML, 'first')
+        if (!status)
+            return
         let interval = setInterval(() => {
             if (time == 1) {
-                processDict(elements[1].innerHTML)
+                status = processDict(elements[1].innerHTML, 'second')
             } else if (time == 2) {
                 if (elements[2].innerHTML == 'keys()') {
                     obs.innerHTML = `Output: ${dict.key}`
                 } else {
-                    obs.innerHTML = 'You went wrong in this operation! Reset to try again.'
+                    obs.innerHTML = 'You went wrong in the third operation! Reset to try again.'
                     obs.classList.add('red')
                 }
             } else if (time == 3) {
                 if (dict.key.includes('pear') && !dict.key.includes('dog')) {
                     obs.innerHTML = 'You successfully completed the experiment!'
                     obs.classList.add('green')
-                } else {
-                    obs.innerHTML = 'You went wrong in this operation! Reset to try again.'
-                    obs.classList.add('red')
                 }
             } else {
+                sub.disabled = false
+                sub.style.cursor = 'pointer'
+                clearInterval(interval)
+            }
+            if(!status){
                 sub.disabled = false
                 sub.style.cursor = 'pointer'
                 clearInterval(interval)

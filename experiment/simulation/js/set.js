@@ -194,15 +194,16 @@ function submitSetLearn() {
         let time = 1
         let answer = ['update({10})','difference_update({9})', 'remove(7)', 'add(8)']
         if (!answer.includes(elements[0].innerHTML)) {
-            obs.innerHTML = 'You went wrong in this operation! Reset to try again.'
+            obs.innerHTML = 'You went wrong in the first operation! Reset to try again.'
             obs.classList.add('red')
             return
         }
+        let times = ['second', 'third', 'fourth']
         processSet(elements[0].innerHTML)
         let interval = setInterval(() => {
             if (time < elements.length) {
                 if (!answer.includes(elements[time].innerHTML)) {
-                    obs.innerHTML = 'You went wrong in this operation! Reset to try again.'
+                    obs.innerHTML = `You went wrong in the ${times[time-1]} operation! Reset to try again.`
                     obs.classList.add('red')
                     return
                 }
