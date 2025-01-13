@@ -78,10 +78,10 @@
         "d": "None of the above"
       },
        "explanations": {
-                          "a": "This option is the correct answer. In Python, the colon ":" is used as a slicing operator to access a range of elements from a tuple (or other sequence types).",
-                          "b": "This option is incorrect. The semicolon ";" is not used as an operator to access a range of elements from a tuple in Python.",
-                          "c": "This option is incorrect. While option a is the correct answer because ":" is the operator used for accessing a range of elements from a tuple, option b is incorrect because the semicolon ";" does not serve this purpose in Python",
-                          "d": "This option is incorrect because there is a correct answer among the given options. Option a correctly states that the ":" operator is used to access a range of elements from a tuple in Python."
+                          "a": "This option is the correct answer. In Python, the colon ':' is used as a slicing operator to access a range of elements from a tuple (or other sequence types).",
+                          "b": "This option is incorrect. The semicolon ';' is not used as an operator to access a range of elements from a tuple in Python.",
+                          "c": "This option is incorrect. While option a is the correct answer because ':' is the operator used for accessing a range of elements from a tuple, option b is incorrect because the semicolon ';' does not serve this purpose in Python",
+                          "d": "This option is incorrect because there is a correct answer among the given options. Option a correctly states that the ':' operator is used to access a range of elements from a tuple in Python."
       },
       "correctAnswer": "a",
       "difficulty": "intermediate"
