@@ -61,8 +61,8 @@
         "d": "None of the above"
       },
        "explanations": {
-                          "a": "This option is incorrect. While it is true that trying to access indices that are not present in a list will raise an error, the specific error that is raised in this case is an "IndexError". Therefore, option a is not the precise and accurate description of the error that occurs.",
-                          "b": "This option is the correct answer. When you try to access indices that are not present in a list, it will raise an "IndexError". This error indicates that the index you are trying to access is out of range or does not exist in the list. Python provides this error specifically for index-related issues.",
+                          "a": "This option is incorrect. While it is true that trying to access indices that are not present in a list will raise an error, the specific error that is raised in this case is an 'IndexError'. Therefore, option a is not the precise and accurate description of the error that occurs.",
+                          "b": "This option is the correct answer. When you try to access indices that are not present in a list, it will raise an 'IndexError'. This error indicates that the index you are trying to access is out of range or does not exist in the list. Python provides this error specifically for index-related issues.",
                           "c": "This option is incorrect. When you attempt to access non-existent indices in a list, it does not result in no output.",
                           "d": "This option is incorrect because there is a correct answer among the given options."
       },
@@ -96,8 +96,8 @@
       },
        "explanations": {
                           "a": "This option is the correct answer. When you use the slice notation student_names[1:2], it returns a new tuple that contains elements from index 1 (inclusive) to index 2 (exclusive) in the student_names tuple. In this case, the element at index 1 is 'Raj', and since the ending index is exclusive, the resulting tuple contains only the single element 'Raj'. The comma after 'Raj' indicates that it is a tuple with one element.",
-                          "b": "This option is incorrect. The slice student_names[1:2] does not include the element at index 2. Therefore, the resulting tuple does not include 'Selvi'. The correct answer is option a, which includes only the element at index 1, resulting in "('Raj',)".",
-                          "c": "This option is incorrect. Similar to option b, the slice student_names[1:2] does not include the element at index 2. Therefore, the resulting tuple does not include 'Selvi' or 'Mayank'. The correct answer is option a, which includes only the element at index 1, resulting in "('Raj',)".",
+                          "b": "This option is incorrect. The slice student_names[1:2] does not include the element at index 2. Therefore, the resulting tuple does not include 'Selvi'. The correct answer is option a, which includes only the element at index 1, resulting in '('Raj',)'.",
+                          "c": "This option is incorrect. Similar to option b, the slice student_names[1:2] does not include the element at index 2. Therefore, the resulting tuple does not include 'Selvi' or 'Mayank'. The correct answer is option a, which includes only the element at index 1, resulting in '('Raj',)'.",
                           "d": "This option is incorrect. The slice student_names[1:2] does not raise an error"
       },
       "correctAnswer": "a",
@@ -114,7 +114,7 @@
        "explanations": {
                           "a": "This option is incorrect. When you use the slice notation student_names[-1:-2], it returns an empty tuple. The starting index -1 refers to the last element in the tuple, and the ending index -2 refers to the element before the last element. However, when the starting index is greater than or equal to the ending index, the result is an empty tuple.",
                           "b": "This option is the correct answer. The slice student_names[-1:-2] results in an empty tuple. ",
-                          "c": "This option is incorrect. The slice student_names[-1:-2] does not include the element at index -2. Therefore, the resulting tuple does not include 'Selvi' or 'Mayank'. Additionally, since the starting index is greater than or equal to the ending index, the result is an empty tuple, not "('Raj', 'Selvi', 'Mayank')".",
+                          "c": "This option is incorrect. The slice student_names[-1:-2] does not include the element at index -2. Therefore, the resulting tuple does not include 'Selvi' or 'Mayank'. Additionally, since the starting index is greater than or equal to the ending index, the result is an empty tuple, not '('Raj', 'Selvi', 'Mayank')'.",
                           "d": "This option is incorrect. The slice student_names[-1:-2] does not raise an error."
       },
       "correctAnswer": "b",
