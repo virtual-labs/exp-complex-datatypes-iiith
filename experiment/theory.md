@@ -3,7 +3,7 @@ In this experiment we are going to learn about complex data types in python, usi
 
 |<p>1.</p><p>![](images/Aspose.Words.93fbe191-621d-44c4-913b-e200181c917b.001.png)</p>|<p>2.</p><p>![](images/Aspose.Words.93fbe191-621d-44c4-913b-e200181c917b.002.png)</p>|<p>3.</p><p>![](images/Aspose.Words.93fbe191-621d-44c4-913b-e200181c917b.003.png)</p>|
 | :- | :- | :- |
-|<p>4.</p><p>![](images/Aspose.Words.93fbe191-621d-44c4-913b-e200181c917b.004.png)</p>|<p>5.</p><p>![](images/Aspose.Words.93fbe191-621d-44c4-913b-e200181c917b.005.png)</p>|<p>6.</p><p>![](images/Aspose.Words.93fbe191-621d-44c4-913b-e200181c917b.006.png)</p>|
+|<p>4.</p><p>![](images/Aspose.Words.93fbe191-621d-44c4-913b-e200181c917b.004.png)</p>|<p>5.</p><p>![](images/Aspose.Words.93fbe191-621d-44c4-913b-e200181c917b.005.png)</p>|<p>6.</p><p>![](images/happy_coder.jpg)</p>|
 
 **Image 1**. Represents that sanjay is a 2nd year engineering student, as a part of his coursework, he was learning a subject known as “python programming”, one day while attending python programming class, the professor asked the entire class to create a railway management program by utilising all the complex data types which are available in python and demonstrate the working of the program in the document, this was a part of their assignment which carries maximum weightage. 
 
