@@ -23,10 +23,10 @@ In this article, we are going to understand 3 complex data types in python i.e  
 * * *
 - List in python can be created using square brackets i.e []
 - We may define a python list as shown in the below example to store individual student details such as  his/her name, roll no, stream, family income etc
-
-karthik\_details=['karthik',1004,'computer science',200000.00]
-
-- ` `In the above example we have defined a list named ‘karthik\_details’ along with his general(name, roll no,stream) as well as personal information(family annual income)    
+```py
+karthik_details=['karthik',1004,'computer science',200000.00]
+```
+- In the above example we have defined a list named ‘karthik\_details’ along with his general(name, roll no,stream) as well as personal information(family annual income)    
 
 **How to access a list element ?**
 * * *
@@ -48,15 +48,17 @@ Table 1.1
 
 - The above list has 4 items , so a list having 4 items will have indices which starts from 0 and ends at 3.
 - To access the first element present in the list the syntax is as follows:
-
-**print(karthik\_details[0])**
-
+```py
+print(karthik_details[0])
+```
 **o/p: karthik** 
 
 - When you try to access indices which are not present in the list, it will raise an IndexError as represented below:
+```py
+print(karthik_details[4])
+```
 
-**print(karthik_details[4])**
-```.py
+```
 \---------------------------------------------------------------------------
 
 IndexError                                Traceback (most recent call last)
@@ -83,9 +85,9 @@ Table 1.2
 
 - -1 index refers to the last element present in the list, -2 index refers to the second last element present in the list and so on.
 - To access the last element present in the list using negative indices , the syntax is given below:
-
-**print(karthik\_details[-1])**
-
+```py
+print(karthik_details[-1])
+```
 o/p: 200000.0
 
 **Python List append()**
@@ -93,9 +95,9 @@ o/p: 200000.0
 - The append() method is used to add an element to the end of the list. 
 - For example in the above mentioned list named as karthik\_details, you wish to insert student mother name , at that point of time you utilise append() method available in python
 - The syntax for append() method is as follows:
-
+```py
 list_name.append(item)
-
+```
 - If you want to append student mother name(string) to the end of the list, then the command would be karthik\_details.append(‘selvi’)
 - The updated list would be as follows:
 
@@ -126,7 +128,7 @@ Table 1.4
 
 - karthik_hobbie=[‘reading’].This list stores only the hobby of student named ‘karthik’
 - Now you want to add all the details present in karthik\_hobbie list to karthik\_details list and you want to convert both the lists into a single list.
-- To do the above mentioned task you utilize the **extend()** method available in python. I.e **karthik\_details.extend(karthik\_hobbie)**
+- To do the above mentioned task you utilize the **extend()** method available in python. I.e `karthik_details.extend(karthik_hobbie)`
 - The newly updated list would be as follows:
 
 
@@ -143,27 +145,27 @@ Table 1.5
 **Python list pop()**
 * * *
 - The pop() method is used to remove an item from the specified index in a list and it returns the item which has been removed
-- The syntax for pop() method is **list.pop(index)**
-- Observe the list displayed in table 1.5, **karthik_details.pop(0)**, will return ‘karthik’ because name of the student→ karthik is stored in 0th index , **karthik_details.pop(-1)** , will return ‘reading’ because student hobby→ reading is stored in index -1.
+- The syntax for pop() method is `list.pop(index)`
+- Observe the list displayed in table 1.5, `karthik_details.pop(0)`, will return ‘karthik’ because name of the student→ karthik is stored in 0th index , `karthik_details.pop(-1)` , will return ‘reading’ because student hobby→ reading is stored in index -1.
 
 **Python list reverse()**
 * * *
 - The reverse() method is used to reverse the list elements.
-- The syntax for reverse() method is **list.reverse()**
-- Observe the list displayed in table 1.5, **karthik\_details.reverse()** will display the list elements in reversed order i.e **['reading', 'selvi', 200000.0, 'computer science', 1004, 'karthik']**
+- The syntax for reverse() method is `list.reverse()`
+- Observe the list displayed in table 1.5, `karthik_details.reverse()` will display the list elements in reversed order i.e **['reading', 'selvi', 200000.0, 'computer science', 1004, 'karthik']**
 
 **Python list remove()**
 * * *
 - The remove() method is used to remove the first matching element from the list
-- The syntax for the remove method is **list.remove(element)**
+- The syntax for the remove method is `list.remove(element)`
 - If the element which you have mentioned does not exists in the list, it will return an ValueError 
-- Observe the list displayed in table 1.5, karthik\_details.remove(1004), will result in 1004 element getting removed from the list
+- Observe the list displayed in table 1.5, `karthik_details.remove(1004)`, will result in 1004 element getting removed from the list
 
 **Python list sort()**
 * * *
 - The sort() method is used to sort the elements in list
-- The syntax for sort method is **list.sort(reverse=True/False) ,** the reverse parameter is optional.
-- **list.sort(reverse=True)**, will sort the list in descending order, otherwise it will sort the list in ascending order.
+- The syntax for sort method is `list.sort(reverse=True/False)`, the reverse parameter is optional.
+- `list.sort(reverse=True)`, will sort the list in descending order, otherwise it will sort the list in ascending order.
 - Suppose that you have an list of alphabets i.e alpha=[‘b’,’d’,’c’,’a’,’f’,’e’], alpha.sort(), will display the output as ['a', 'b', 'c', 'd', 'e', 'f'] , alpha.sort(reverse=True) will display the output as ['f', 'e', 'd', 'c', 'b', 'a']
 
 
@@ -180,27 +182,27 @@ Table 1.5
 **Python tuple len()** 
 * * *
 - If you want to determine number of elements present inside a tuple, use len() function
-- Lets create a tuple which will consists of some college names i.e **college=(‘NMIMS’,’IIIT’,’IIT’,’NIT’)**
+- Lets create a tuple which will consists of some college names i.e `college=(‘NMIMS’,’IIIT’,’IIT’,’NIT’)`
 - Now, if you want to check the total number of elements present inside a college tuple, we utilize the len() function. 
-- **len(college)** will return the output as 4, because there are 4 elements present inside a college tuple.
+- `len(college)` will return the output as 4, because there are 4 elements present inside a college tuple.
 
 **Python tuple Slicing(:)**
 * * *
 - In order to access a range of elements from a tuple , use the slicing operator colon (:)
-- **college[1:3]**, will return tuple elements from index 1 to index 2 . The output will be IIIT , IIT
-- **college[-1]** will return tuple elements from backwards of the list. The output will be NIT
+- `college[1:3]`, will return tuple elements from index 1 to index 2 . The output will be IIIT , IIT
+- `college[-1]` will return tuple elements from backwards of the list. The output will be NIT
 
 **Python tuple count()** 
 * * *
 - In order to determine the number of times a specified value appears in a tuple, we can use the count() method.
-- For eg: you have a tuple of numbers i.e **numbers=(1,2,2,3,4,5,6,7,7,7)**
-- numbers.count(7) will return the output as 3, because there are 3 elements of number 7 present inside the tuple
+- For eg: you have a tuple of numbers i.e `numbers=(1,2,2,3,4,5,6,7,7,7)`
+- `numbers.count(7)` will return the output as 3, because there are 3 elements of number 7 present inside the tuple
 
 **Python tuple index()**
 * * *
 - The index() method is used to determine the first occurrence of the specified value
 - If the specified value is not found, then it raises an exception
-- **numbers=(1,2,2,3,4,5,6,7,7,7)** , numbers.index(2) will return the output as 1 because the first occurrence of 2 is present in index 1.
+- `numbers=(1,2,2,3,4,5,6,7,7,7)` , numbers.index(2) will return the output as 1 because the first occurrence of 2 is present in index 1.
 
 **What are dictionaries in python?**
 * * *
@@ -209,45 +211,45 @@ Table 1.5
 - A dictionary can be referred to as a ordered collection which is changeable and it does not allows duplicates
 - Dictionaries can be modified i.e we can change, add, remove items even after the dictionary is created
 - We cannot have 2 items in the dictionary with the same key
-- Let us consider a dictionary named college having the following keys and values. **college={"name":"IIIT","location":"hyderabad","rank":62,"category":"autonomous"}**
+- Let us consider a dictionary named college having the following keys and values. `college={"name":"IIIT","location":"hyderabad","rank":62,"category":"autonomous"}`
 - In the above dictionary name, location, rank & category are keys and IIIT,hyderabad, 62, autonomous are its corresponding values.
 
 **Python dictionary get()**
 * * *
 - The get() method is used to return the value of the specified key
-- The syntax for get() method is **dictionary_name.get(keyname,value)** → keyname is mandatory, value is optional
+- The syntax for get() method is `dictionary_name.get(keyname,value)` → keyname is mandatory, value is optional
 - college.get(“name”) will return IIIT , because we are trying to find what is the value for the key name inside college dictionary
 
 **Python dictionary keys()**
 * * *
 - The output of the keys() method would be a view object. The view object consists of all the keys present in the dictionary in the form of list
-- The syntax for the keys() method is **dictionary_name.keys()**
-- college.keys() will display all the keys present in the dictionary i.e **dict_keys(['name', 'location', 'rank', 'category'])**
+- The syntax for the keys() method is `dictionary_name.keys()`
+- college.keys() will display all the keys present in the dictionary i.e `dict_keys(['name', 'location', 'rank', 'category'])`
 
 **Python dictionary values()**
 * * *
 - Similar to keys(), values() method also returns a view object and the view object consists of all the values present in the dictionary in the form of list
-- The syntax for the keys() method is **dictionary_name.values()**
-- college.values() will display all the values present in the dictionary i.e **dict_values(['IIIT', 'hyderabad', 62, 'autonomous'])**
+- The syntax for the keys() method is `dictionary_name.values()`
+- college.values() will display all the values present in the dictionary i.e `dict_values(['IIIT', 'hyderabad', 62, 'autonomous'])`
 
 **Python dictionary items()**
 * * *
 - Similar to keys() & values() method, items() method also returns a view object and the view object consists of all the key-value pairs present in the dictionary in the form of tuples in a list
-- The syntax for the keys() method is **dictionary_name.items()**
-- college.items() will display all the values present in the dictionary i.e **dict_items([('name', 'IIIT'), ('location', 'hyderabad'), ('rank', 62), ('category', 'autonomous')])**
+- The syntax for the keys() method is `dictionary_name.items()`
+- college.items() will display all the values present in the dictionary i.e `dict_items([('name', 'IIIT'), ('location', 'hyderabad'), ('rank', 62), ('category', 'autonomous')])`
 
 **Python dictionary update()**
 * * *
 - When we want to insert specified items in the dictionary, we can use update() method
-- The syntax for update() method is **dictionary_name.update(iterable)** , iterable object consists of key-value pair , which will be inserted into dictionary
+- The syntax for update() method is `dictionary_name.update(iterable)` , iterable object consists of key-value pair , which will be inserted into dictionary
 - For eg: if we want to add another key value pair, i.e we want to add “landmark”:”gachibowli” into our college dictionary,we use update method
-- college.update({"landmark":"gachibowli"}), will update our dictionary and our newly updated dictionary would be **{'name': 'IIIT', 'location': 'hyderabad','rank': 62,'category': 'autonomous','landmark': 'gachibowli'}**
+- `college.update({"landmark":"gachibowli"})`, will update our dictionary and our newly updated dictionary would be **{'name': 'IIIT', 'location': 'hyderabad','rank': 62,'category': 'autonomous','landmark': 'gachibowli'}**
 
 **Python dictionary clear()**
 * * *
 - When we want to remove all the elements from the dictionary, we use clear() method
-- The syntax for clear() method is **dictionary\_name.clear()**
-- **college.clear()** , will remove all the elements from the dictionary
+- The syntax for clear() method is `dictionary_name.clear()`
+- `college.clear()` , will remove all the elements from the dictionary
 
 **What are sets in python?**
 * * *
@@ -258,15 +260,15 @@ Table 1.5
 
 **How to create a set in python?**
 * * *
-- Sets in python are created using curly brackets i.e **{}**
-- For eg: If you want to create a set of fruits then the syntax would be **set\_name={set\_elements} i.e fruits={‘apple’,’grapes’,’banana’,’kiwi’,’strawberry’}**
+- Sets in python are created using curly brackets i.e `{}`
+- For eg: If you want to create a set of fruits then the syntax would be `set_name={set_elements} i.e fruits={‘apple’, ’grapes’,’banana’,’kiwi’,’strawberry’}`
 
 **How to access set elements?**
 * * *
 - Since set is not indexed, you will be unable to access items in a set by referring to its index position
 - But you can use for loop to access set elements
 - To access the above set elements using for loop the code is displayed below:
-```.py
+```py
 for elements in fruits:
     print(elements)
 
@@ -280,25 +282,25 @@ kiwi
 **Python set add()**
 * * *
 - To add an element to a set , we can use add() method
-- To add new fruit named orange to the set we created above, the syntax would be **fruits.add(‘orange’)**
+- To add new fruit named orange to the set we created above, the syntax would be `fruits.add(‘orange’)`
 
 **Python set remove()**
 * * *
 - To remove an element from a set , we can use remove() method
-- To remove a fruit name ‘kiwi’ from the above set, the syntax would be **fruits.remove(‘kiwi’)**
+- To remove a fruit name ‘kiwi’ from the above set, the syntax would be `fruits.remove(‘kiwi’)`
 
 
 
-Now sanjay understood all the complex data types and he further decided to develop programs for the railway management system using lists, tuples,dictionaries and sets. 
+Now Sanjay understood all the complex data types and he further decided to develop programs for the railway management system using lists, tuples,dictionaries and sets. 
 
 **Image 3**. Represents that sanjay started writing the code for booking train tickets by using list data type. Before starting with the coding part , he first defined all the inputs and functionalities step by step so while writing code, he had a proper mind map regarding what he was doing. All the functionalities  and inputs which he wanted to include in his program is listed below:
 
-Step 1: He created a list of source stations from where the user can board a train. Initially he added only 3 stations in his list i.e he defined his list as: **source_stations=['nagercoil','kanyakumari','vellore']**
+Step 1: He created a list of source stations from where the user can board a train. Initially he added only 3 stations in his list i.e he defined his list as: `source_stations=['nagercoil','kanyakumari','vellore']`
 
-**Step 2**: He created a list of destination stations i.e **destination_stations=['goa','mumbai','delhi']**, the user would be able to get down only at the stations mentioned above
+**Step 2**: He created a list of destination stations i.e `destination_stations=['goa','mumbai','delhi']`, the user would be able to get down only at the stations mentioned above
 
 **Step 3**: further he created the following list:
-```.py
+```py
 passanger_name=[] → stores the passenger name
 
 passanger_age=[] → stores the passenger age
