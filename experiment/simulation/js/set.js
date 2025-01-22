@@ -92,7 +92,7 @@ function submitSetPractice() {
                     checkNumber(args[0])
                     set.num.add(parseInt(args[0]))
                     if(set.numOfCards == set.num.size)
-                        message(`${args[0]} was already there in the set`)
+                        message(`${args[0]} was already present in the set`)
                     else
                         message(`You added ${args[0]} to the set`)
                 } else

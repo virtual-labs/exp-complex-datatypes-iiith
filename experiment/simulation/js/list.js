@@ -146,7 +146,7 @@ function submitListLearn() {
                 console.log(sub.disabled)
                 clearInterval(interval)
             }
-        }, 2500);
+        }, 2000);
     }
 }
 
@@ -198,7 +198,7 @@ function submitListPractice() {
                     list.num.push(parseInt(args[0]))
                     message(`You added ${args[0]} to the list`)
                 } else
-                    error('You have exceeded maximum number of elements in the list')
+                    error('You have exceeded maximum number of elements in the list (display constraints)')
             }
             break;
         case 'pop':
@@ -233,8 +233,8 @@ function submitListPractice() {
             if (args)
                 error()
             else {
+                list.num = []
                 list.numOfCards = 0;
-                list.num.reduce((x) => false)
                 message("You cleared the list")
             }
             break
@@ -274,11 +274,14 @@ function submitListPractice() {
                 checkNumber(args[0])
                 checkNumber(args[1])
                 if (list.numOfCards < 12) {
-                    list.numOfCards += 1;
-                    list.num.splice(parseInt(args[0]), 0, parseInt(args[1]))
-                    message(`You added ${args[1]} at index ${args[0]} in the list`)
+                    if(parseInt(args[0]) >= 0 && parseInt(args[0]) <= list.numOfCards){
+                        list.numOfCards += 1;
+                        list.num.splice(parseInt(args[0]), 0, parseInt(args[1]))
+                        message(`You added ${args[1]} at index ${args[0]} in the list`)
+                    }else
+                        error('Enter a valid index to insert the element')
                 } else
-                    error('You have exceeded maximum number of elements in the list')
+                    error('You have exceeded maximum number of elements in the list (display constraints)')
             }
             break;
         default:
