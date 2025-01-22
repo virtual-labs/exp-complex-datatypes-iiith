@@ -1,0 +1,893 @@
+<!DOCTYPE html><html lang="en"><head>
+      <!--Google Tag Manager-->
+      <script class="gtm">
+        var dataLayer = [{
+        'labName': 'Virtual Lab',
+        'discipline': 'Test',
+        'college': 'IIITH',
+        'phase': 'Testing',
+        'expName': 'COMPLEX DATATYPES',
+        'expShortName': 'complex-datatypes'
+        }];
+    
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-5NMQ9NQ');
+      </script>
+      <!--End Google Tag Manager-->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="" name="description">
+    <meta content="" name="author">
+    
+    	<meta name="experiment-short-name" content="complex-datatypes">
+    	<meta name="developer-institute" content="IIITH">
+    	<meta name="learning-unit" content="COMPLEX DATATYPES">
+    	<meta name="task-name" content="Theory">
+    
+    <!-- For iPhone -->
+    <meta name="msapplication-TileColor" content="#4076e0">
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#4076e0">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#4076e0">
+    <title>Virtual Labs</title>
+    <link rel="shortcut icon" href="./assets/images/favicon.ico">
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha512-Oy18vBnbSJkXTndr2n6lDMO5NN31UljR8e/ICzVPrGpSud4Gkckb8yUpqhKuUNoE+o9gAb4O/rAxxw1ojyUVzg==" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&amp;family=Raleway&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./assets/css/github-markdown.min.css">
+    <link rel="stylesheet" href="./assets/css/vlabs-style.css">
+    <link rel="stylesheet" href="./assets/css/toast.css">
+    <link rel="stylesheet" href="./assets/katex_assets/katex.min.css">
+    
+    <script src="./assets/js/jquery-3.4.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+      h1 {
+      font-size: 1.8rem;
+      }
+      h2 {
+      font-size: 1.4rem;
+      }
+      h3 {
+      font-size: 1.2rem;
+      }
+
+      h2, h3 {
+      font-weight: 800;
+      }
+    </style>
+    
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"></head>
+  <body class="p-0 container-fluid vlabs-page d-flex flex-column justify-content-between">
+      <!--Google Tag Manager (noscript)-->
+      <noscript class="gtm">
+        <iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-5NMQ9NQ" style="display:none;visibility:hidden" width="0">
+        </iframe>
+      </noscript>
+      <!--End Google Tag Manager (noscript)-->
+  
+      <header class="vlabs-header sticky-top bg-white">
+        <nav class="p-0 navbar navbar-light d-flex align-items-stretch">
+          
+          <button class="navbar-toggler px-4" type="button" onclick="toggle()">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+      
+          <div class="d-flex justify-content-center">        
+            <a href="https://vlab.co.in" class="navbar-brand">
+              <img src="./assets/images/vlabs-color-small-moe.jpg" alt="vlabs logo" class="vlabs-logo">
+            </a>
+          </div>
+          
+          <div id="headerNavbar" class="d-none border-top flex-grow-1 d-lg-flex align-items-center justify-content-end">
+            <div class="svc-rating-display">
+                <rating-display spreadsheetid="1x12nhpp0QvnsA6x-O1sV4IA9SAbfVsq_wiexWkutOmU" sheetname="Experiment-Database" columnname="Experiment Short Name" columnvalue="complex-datatypes" imagesdirectory="./plugins/svc-rating/images/">
+                </rating-display>
+            </div>      <div class="svc-rating-submit">
+                <rating-submit title="Rate" this="" experiment="">
+                </rating-submit>
+            </div>      <bug-report id="bug-report" title="[BUG REPORT] COMPLEX DATATYPES" page-type="text" context-info="{&quot;organisation&quot;:&quot;Virtual Labs&quot;,&quot;developer_institute&quot;:&quot;IIITH&quot;,&quot;expname&quot;:&quot;COMPLEX DATATYPES&quot;,&quot;labname&quot;:&quot;Virtual Lab&quot;,&quot;phase&quot;:&quot;Testing&quot;}" checkbox-json="{&quot;text&quot;:[&quot;Insufficient Content&quot;],&quot;video&quot;:[&quot;Insufficient Content&quot;],&quot;assesment&quot;:[&quot;Incorrect Options&quot;,&quot;Incorrect Answer&quot;,&quot;Incorrect Question&quot;],&quot;assessment&quot;:[&quot;Incorrect Options&quot;,&quot;Incorrect Answer&quot;,&quot;Incorrect Question&quot;],&quot;simulation&quot;:[&quot;Simulation Not Working&quot;,&quot;Incorrect Results/Observations&quot;,&quot;Insufficient/Incorrect Instructions&quot;],&quot;DEFAULT&quot;:[&quot;Page Not Loading&quot;,&quot;Content Not Visible&quot;,&quot;Incorrect Content&quot;]}" button_style="border: none; color: #fff; background-color: #288ec8; text-align: center; font-size: 1.05rem; border-radius: 1em;padding: 0.6em 1.2em; margin: 0 10px" position="override" custom_button_class="v-button"></bug-report>
+          </div>
+        </nav>
+      </header>
+      <div class="container-fluid flex-fill d-flex flex-column vlabs-page-main">
+        <div class="row d-flex justify-content-between">
+          <div class="flex-column">
+          <div class="row py-4 px-4 breadcrumbs">
+          	<div class="title is-4 tools">Tools</div>
+          	<span class="mx-2">
+          		<i aria-hidden="true" class="fa fa-angle-right"></i>
+          	</span>
+          	<a href="performance-report.html" class="my-2 mx-3" target="_blank">
+          		<button class="v-button">Performance Tool</button>
+          	</a>
+          	<a href="validator-report.html" class="my-2 mx-3" target="_blank">
+          		<button class="v-button">Validation Tool</button>
+          	</a>
+          </div>
+          </div>
+        </div>
+        <div class="row flex-grow-1 d-flex flex-nowrap flex-column flex-lg-row">
+          <div class="modal fade popupmenu" id="popupMenu" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                  <div class="modal-content">
+                      <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">
+                              <a href="https://vlab.co.in" class="navbar-brand">
+                                  <img src="./assets/images/vlabs-color-small-moe.jpg" alt="vlabs logo" class="vlabs-logo">
+                              </a>
+                          </h5>
+                          <button type="button" class="btn-close align-self-center" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body nav-menu">
+                              <div>
+                                  <div class="d-flex nav-menu-body">
+                                      <a href="index.html" class="p-2 ">
+                                      Aim
+                                      </a>
+                                      
+                                  </div>
+                                  <div id="t-" class="collapse">
+                                      <div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+                                      </div>
+                                  </div>
+                              </div>
+                              <div>
+                                  <div class="d-flex nav-menu-body">
+                                      <a href="theory.html" class="p-2  current-item ">
+                                      Theory
+                                      </a>
+                                      
+                                  </div>
+                                  <div id="t-" class="collapse">
+                                      <div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+                                      </div>
+                                  </div>
+                              </div>
+                              <div>
+                                  <div class="d-flex nav-menu-body">
+                                      <a href="pretest.html" class="p-2 ">
+                                      Pretest
+                                      </a>
+                                      
+                                  </div>
+                                  <div id="t-" class="collapse">
+                                      <div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+                                      </div>
+                                  </div>
+                              </div>
+                              <div>
+                                  <div class="d-flex nav-menu-body">
+                                      <a href="procedure.html" class="p-2 ">
+                                      Procedure
+                                      </a>
+                                      
+                                  </div>
+                                  <div id="t-" class="collapse">
+                                      <div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+                                      </div>
+                                  </div>
+                              </div>
+                              <div>
+                                  <div class="d-flex nav-menu-body">
+                                      <a href="simulation.html" class="p-2 ">
+                                      Simulation
+                                      </a>
+                                      
+                                  </div>
+                                  <div id="t-" class="collapse">
+                                      <div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+                                      </div>
+                                  </div>
+                              </div>
+                              <div>
+                                  <div class="d-flex nav-menu-body">
+                                      <a href="posttest.html" class="p-2 ">
+                                      Posttest
+                                      </a>
+                                      
+                                  </div>
+                                  <div id="t-" class="collapse">
+                                      <div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+                                      </div>
+                                  </div>
+                              </div>
+                              <div>
+                                  <div class="d-flex nav-menu-body">
+                                      <a href="references.html" class="p-2 ">
+                                      References
+                                      </a>
+                                      
+                                  </div>
+                                  <div id="t-" class="collapse">
+                                      <div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+                                      </div>
+                                  </div>
+                              </div>
+                              <div>
+                                  <div class="d-flex nav-menu-body">
+                                      <a href="contributors.html" class="p-2 ">
+                                      Contributors
+                                      </a>
+                                      
+                                  </div>
+                                  <div id="t-" class="collapse">
+                                      <div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+                                      </div>
+                                  </div>
+                              </div>
+                              <div>
+                                  <div class="d-flex nav-menu-body">
+                                      <a href="feedback.html" class="p-2 ">
+                                      Feedback
+                                      </a>
+                                      
+                                  </div>
+                                  <div id="t-" class="collapse">
+                                      <div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+                                      </div>
+                                  </div>
+                              </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="nav flex-column sidebar nav-menu flex-shrink-0 px-lg-4 align-items-center align-items-lg-start hidden d-none d-lg-flex" id="menu">
+                <div>
+                    <div class="d-flex nav-menu-body">
+                        <a href="index.html" class="p-2 ">
+                        Aim
+                        </a>
+                        
+                    </div>
+                    <div id="t-" class="collapse">
+                        <div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="d-flex nav-menu-body">
+                        <a href="theory.html" class="p-2  current-item ">
+                        Theory
+                        </a>
+                        
+                    </div>
+                    <div id="t-" class="collapse">
+                        <div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="d-flex nav-menu-body">
+                        <a href="pretest.html" class="p-2 ">
+                        Pretest
+                        </a>
+                        
+                    </div>
+                    <div id="t-" class="collapse">
+                        <div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="d-flex nav-menu-body">
+                        <a href="procedure.html" class="p-2 ">
+                        Procedure
+                        </a>
+                        
+                    </div>
+                    <div id="t-" class="collapse">
+                        <div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="d-flex nav-menu-body">
+                        <a href="simulation.html" class="p-2 ">
+                        Simulation
+                        </a>
+                        
+                    </div>
+                    <div id="t-" class="collapse">
+                        <div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="d-flex nav-menu-body">
+                        <a href="posttest.html" class="p-2 ">
+                        Posttest
+                        </a>
+                        
+                    </div>
+                    <div id="t-" class="collapse">
+                        <div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="d-flex nav-menu-body">
+                        <a href="references.html" class="p-2 ">
+                        References
+                        </a>
+                        
+                    </div>
+                    <div id="t-" class="collapse">
+                        <div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="d-flex nav-menu-body">
+                        <a href="contributors.html" class="p-2 ">
+                        Contributors
+                        </a>
+                        
+                    </div>
+                    <div id="t-" class="collapse">
+                        <div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="d-flex nav-menu-body">
+                        <a href="feedback.html" class="p-2 ">
+                        Feedback
+                        </a>
+                        
+                    </div>
+                    <div id="t-" class="collapse">
+                        <div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+                        </div>
+                    </div>
+                </div>
+          </div>          <div class="vlabs-page-content px-5 pb-4 flex-grow-1 markdown-body">
+            <div class="text-center fix-spacing">
+              <h2 id="complex-datatypes">Complex Datatypes</h2>
+          
+            </div>
+              <p>In this experiment we are going to learn about complex data types in python, using Sanjay's real world examples.</p>
+          <table>
+          <thead>
+          <tr>
+          <th align="left"><p>1.</p><p><img src="images/Aspose.Words.93fbe191-621d-44c4-913b-e200181c917b.001.png" alt=""></p></th>
+          <th align="left"><p>2.</p><p><img src="images/Aspose.Words.93fbe191-621d-44c4-913b-e200181c917b.002.png" alt=""></p></th>
+          <th align="left"><p>3.</p><p><img src="images/Aspose.Words.93fbe191-621d-44c4-913b-e200181c917b.003.png" alt=""></p></th>
+          </tr>
+          </thead>
+          <tbody><tr>
+          <td align="left"><p>4.</p><p><img src="images/Aspose.Words.93fbe191-621d-44c4-913b-e200181c917b.004.png" alt=""></p></td>
+          <td align="left"><p>5.</p><p><img src="images/Aspose.Words.93fbe191-621d-44c4-913b-e200181c917b.005.png" alt=""></p></td>
+          <td align="left"><p>6.</p><p><img src="images/happy_coder.jpg" alt=""></p></td>
+          </tr>
+          </tbody></table>
+          <p><strong>Image 1</strong>. Represents that sanjay is a 2nd year engineering student, as a part of his coursework, he was learning a subject known as “python programming”, one day while attending python programming class, the professor asked the entire class to create a railway management program by utilising all the complex data types which are available in python and demonstrate the working of the program in the document, this was a part of their assignment which carries maximum weightage. </p>
+          <p><strong>Image 2</strong>. As Sanjay was absent during the lectures where the professor had taught complex data types in python, he starts panicking but decides to learn complex data types all by himself by taking help from the internet.</p>
+          <p>In this article, we are going to understand 3 complex data types in python i.e  lists, tuples and dictionaries.</p>
+          <p><strong>Let us first try to understand what are lists in python?</strong></p>
+          <hr>
+          <ul>
+          <li>Lists are one example of a built in data types which are available in python , the other built in datatypes which are available in python are Tuple, Set, Dictionary all can be used based on client requirements.</li>
+          <li>Python lists are mutable i.e we can modify the list elements even after the creation of list</li>
+          <li>One can store different types of collections in a list i.e it is possible to store elements of different data types(string, integer,float etc) inside a single list. </li>
+          <li>For eg: you want to store individual college student  details such as his/her name, roll no, stream, family income etc then at this point of time you can use list , because if you observe carefully there are different data types involved in the above scenario i.e student name(string) , roll no(integer) , stream(string), family income(double).</li>
+          <li>The items under lists must be comma separated and must be enclosed under square[] brackets </li>
+          </ul>
+          <p><strong>How to create a list in python?</strong></p>
+          <hr>
+          <ul>
+          <li>List in python can be created using square brackets i.e []</li>
+          <li>We may define a python list as shown in the below example to store individual student details such as  his/her name, roll no, stream, family income etc<pre><code class="language-py">karthik_details=['karthik',1004,'computer science',200000.00]
+          </code></pre>
+          </li>
+          <li>In the above example we have defined a list named ‘karthik_details’ along with his general(name, roll no,stream) as well as personal information(family annual income)    </li>
+          </ul>
+          <p><strong>How to access a list element ?</strong></p>
+          <hr>
+          <p>There are different ways from which elements can be accessed from the list </p>
+          <p><em><strong>Method 1:Access elements of a list by using index operator</strong></em> </p>
+          <hr>
+          <ul>
+          <li>Elements in the list can be accessed using index [] operator</li>
+          <li>List indices in python always starts from 0</li>
+          <li>Consider the below given list</li>
+          </ul>
+          <table>
+          <thead>
+          <tr>
+          <th align="left"><strong>List Attributes:</strong></th>
+          <th align="left">Name</th>
+          <th align="left">Roll no</th>
+          <th align="left">Stream</th>
+          <th align="left">Family annual income</th>
+          </tr>
+          </thead>
+          <tbody><tr>
+          <td align="left"><strong>List Elements:</strong></td>
+          <td align="left"><p>Karthik</p><p></p></td>
+          <td align="left"><p>1004</p><p></p></td>
+          <td align="left"><p>Computer science</p><p></p></td>
+          <td align="left"><p>200000.00</p><p></p></td>
+          </tr>
+          <tr>
+          <td align="left"><strong>List Index:</strong></td>
+          <td align="left">[0]</td>
+          <td align="left">[1]</td>
+          <td align="left">[2]</td>
+          <td align="left">[3]</td>
+          </tr>
+          </tbody></table>
+          <p>Table 1.1 </p>
+          <ul>
+          <li>The above list has 4 items , so a list having 4 items will have indices which starts from 0 and ends at 3.</li>
+          <li>To access the first element present in the list the syntax is as follows:<pre><code class="language-py">print(karthik_details[0])
+          </code></pre>
+          </li>
+          </ul>
+          <p><strong>o/p: karthik</strong> </p>
+          <ul>
+          <li>When you try to access indices which are not present in the list, it will raise an IndexError as represented below:<pre><code class="language-py">print(karthik_details[4])
+          </code></pre>
+          </li>
+          </ul>
+          <pre><code>\---------------------------------------------------------------------------
+          
+          IndexError                                Traceback (most recent call last)
+          
+          &lt;ipython-input-4-a60177b535e6&gt; in &lt;module&gt;
+          
+          ----&gt; 1 print(karthik_details[4])
+          
+          IndexError: list index out of range
+          </code></pre>
+          <p>Method 2: <em><strong>Accessing elements of the list by using negative indices</strong></em></p>
+          <hr>
+          <ul>
+          <li>Python List also provides the facility of accessing elements of the list by using negative indexing.</li>
+          <li>Observe the below given list </li>
+          </ul>
+          <table>
+          <thead>
+          <tr>
+          <th align="left"><strong>List Attributes:</strong></th>
+          <th align="left"><strong>Name</strong></th>
+          <th align="left"><strong>Roll no</strong></th>
+          <th align="left"><strong>Stream</strong></th>
+          <th align="left"><strong>Family annual income</strong></th>
+          </tr>
+          </thead>
+          <tbody><tr>
+          <td align="left"><strong>List Elements:</strong></td>
+          <td align="left"><p>Karthik</p><p></p></td>
+          <td align="left"><p>1004</p><p></p></td>
+          <td align="left"><p>Computer science</p><p></p></td>
+          <td align="left"><p>200000.00</p><p></p></td>
+          </tr>
+          <tr>
+          <td align="left"><strong>List Index:</strong></td>
+          <td align="left">[0]</td>
+          <td align="left">[1]</td>
+          <td align="left">[2]</td>
+          <td align="left">[3]</td>
+          </tr>
+          <tr>
+          <td align="left"><strong>Negative Index:</strong></td>
+          <td align="left">-4</td>
+          <td align="left">-3</td>
+          <td align="left">-2</td>
+          <td align="left">-1</td>
+          </tr>
+          </tbody></table>
+          <p>Table 1.2</p>
+          <ul>
+          <li>-1 index refers to the last element present in the list, -2 index refers to the second last element present in the list and so on.</li>
+          <li>To access the last element present in the list using negative indices , the syntax is given below:<pre><code class="language-py">print(karthik_details[-1])
+          </code></pre>
+          o/p: 200000.0</li>
+          </ul>
+          <p><strong>Python List append()</strong></p>
+          <ul>
+          <li>The append() method is used to add an element to the end of the list. </li>
+          <li>For example in the above mentioned list named as karthik_details, you wish to insert student mother name , at that point of time you utilise append() method available in python</li>
+          <li>The syntax for append() method is as follows:<pre><code class="language-py">list_name.append(item)
+          </code></pre>
+          </li>
+          <li>If you want to append student mother name(string) to the end of the list, then the command would be karthik_details.append(‘selvi’)</li>
+          <li>The updated list would be as follows:</li>
+          </ul>
+          <table>
+          <thead>
+          <tr>
+          <th align="left"><strong>List Attributes:</strong></th>
+          <th align="left"><strong>Name</strong></th>
+          <th align="left"><strong>Roll no</strong></th>
+          <th align="left"><strong>Stream</strong></th>
+          <th align="left"><strong>Family annual income</strong></th>
+          <th align="left"><strong>Mother name</strong></th>
+          </tr>
+          </thead>
+          <tbody><tr>
+          <td align="left"><strong>List Elements:</strong></td>
+          <td align="left"><p>Karthik</p><p></p></td>
+          <td align="left"><p>1004</p><p></p></td>
+          <td align="left"><p>Computer science</p><p></p></td>
+          <td align="left"><p>200000.00</p><p></p></td>
+          <td align="left">selvi</td>
+          </tr>
+          <tr>
+          <td align="left"><strong>List Index:</strong></td>
+          <td align="left">[0]</td>
+          <td align="left">[1]</td>
+          <td align="left">[2]</td>
+          <td align="left">[3]</td>
+          <td align="left">[4]</td>
+          </tr>
+          <tr>
+          <td align="left"><strong>Negative Index:</strong></td>
+          <td align="left">-5</td>
+          <td align="left">-4</td>
+          <td align="left">-3</td>
+          <td align="left">-2</td>
+          <td align="left">-1</td>
+          </tr>
+          </tbody></table>
+          <p>Table 1.3                        </p>
+          <p><code> </code><strong>Python list extend()</strong></p>
+          <hr>
+          <ul>
+          <li>The extend() method in python is utilised when there is a requirement to add the specified list element to the end of the current list</li>
+          <li>For example you have 2 lists as follows:</li>
+          <li>The below given list consists of details from a list named karthik_details </li>
+          <li>karthik_details=[‘karthik’,1004,’computer science’,200000.00,’selvi’] The below given list consists of details from a list named  karthik_hobbie</li>
+          </ul>
+          <table>
+          <thead>
+          <tr>
+          <th align="left"><strong>List Attribute:</strong></th>
+          <th align="left">Hobbie</th>
+          </tr>
+          </thead>
+          <tbody><tr>
+          <td align="left"><strong>List Element:</strong></td>
+          <td align="left">reading</td>
+          </tr>
+          <tr>
+          <td align="left"><strong>List Index:</strong></td>
+          <td align="left">0</td>
+          </tr>
+          <tr>
+          <td align="left"><strong>Negative Index:</strong></td>
+          <td align="left">-1</td>
+          </tr>
+          </tbody></table>
+          <p>Table 1.4</p>
+          <ul>
+          <li>karthik_hobbie=[‘reading’].This list stores only the hobby of student named ‘karthik’</li>
+          <li>Now you want to add all the details present in karthik_hobbie list to karthik_details list and you want to convert both the lists into a single list.</li>
+          <li>To do the above mentioned task you utilize the <strong>extend()</strong> method available in python. I.e <code>karthik_details.extend(karthik_hobbie)</code></li>
+          <li>The newly updated list would be as follows:</li>
+          </ul>
+          <table>
+          <thead>
+          <tr>
+          <th align="left"><strong>List Attributes:</strong></th>
+          <th align="left"><strong>Name</strong></th>
+          <th align="left"><strong>Roll no</strong></th>
+          <th align="left"><strong>Stream</strong></th>
+          <th align="left"><strong>Family annual income</strong></th>
+          <th align="left"><strong>Mother name</strong></th>
+          <th align="left"><strong>Hobbie</strong></th>
+          </tr>
+          </thead>
+          <tbody><tr>
+          <td align="left"><strong>List Elements:</strong></td>
+          <td align="left"><p>Karthik</p><p></p></td>
+          <td align="left"><p>1004</p><p></p></td>
+          <td align="left"><p>Computer science</p><p></p></td>
+          <td align="left"><p>200000.00</p><p></p></td>
+          <td align="left">selvi</td>
+          <td align="left">reading</td>
+          </tr>
+          <tr>
+          <td align="left"><strong>List Index:</strong></td>
+          <td align="left">[0]</td>
+          <td align="left">[1]</td>
+          <td align="left">[2]</td>
+          <td align="left">[3]</td>
+          <td align="left">[4]</td>
+          <td align="left">[5]</td>
+          </tr>
+          <tr>
+          <td align="left"><strong>Negative Index:</strong></td>
+          <td align="left">-6</td>
+          <td align="left">-5</td>
+          <td align="left">-4</td>
+          <td align="left">-3</td>
+          <td align="left">-2</td>
+          <td align="left">-1</td>
+          </tr>
+          </tbody></table>
+          <p>Table 1.5</p>
+          <ul>
+          <li>In the above table we can observe that 2 lists got converted into a single list.                 </li>
+          </ul>
+          <p><strong>Python list pop()</strong></p>
+          <hr>
+          <ul>
+          <li>The pop() method is used to remove an item from the specified index in a list and it returns the item which has been removed</li>
+          <li>The syntax for pop() method is <code>list.pop(index)</code></li>
+          <li>Observe the list displayed in table 1.5, <code>karthik_details.pop(0)</code>, will return ‘karthik’ because name of the student→ karthik is stored in 0th index , <code>karthik_details.pop(-1)</code> , will return ‘reading’ because student hobby→ reading is stored in index -1.</li>
+          </ul>
+          <p><strong>Python list reverse()</strong></p>
+          <hr>
+          <ul>
+          <li>The reverse() method is used to reverse the list elements.</li>
+          <li>The syntax for reverse() method is <code>list.reverse()</code></li>
+          <li>Observe the list displayed in table 1.5, <code>karthik_details.reverse()</code> will display the list elements in reversed order i.e <strong>['reading', 'selvi', 200000.0, 'computer science', 1004, 'karthik']</strong></li>
+          </ul>
+          <p><strong>Python list remove()</strong></p>
+          <hr>
+          <ul>
+          <li>The remove() method is used to remove the first matching element from the list</li>
+          <li>The syntax for the remove method is <code>list.remove(element)</code></li>
+          <li>If the element which you have mentioned does not exists in the list, it will return an ValueError </li>
+          <li>Observe the list displayed in table 1.5, <code>karthik_details.remove(1004)</code>, will result in 1004 element getting removed from the list</li>
+          </ul>
+          <p><strong>Python list sort()</strong></p>
+          <hr>
+          <ul>
+          <li>The sort() method is used to sort the elements in list</li>
+          <li>The syntax for sort method is <code>list.sort(reverse=True/False)</code>, the reverse parameter is optional.</li>
+          <li><code>list.sort(reverse=True)</code>, will sort the list in descending order, otherwise it will sort the list in ascending order.</li>
+          <li>Suppose that you have an list of alphabets i.e alpha=[‘b’,’d’,’c’,’a’,’f’,’e’], alpha.sort(), will display the output as ['a', 'b', 'c', 'd', 'e', 'f'] , alpha.sort(reverse=True) will display the output as ['f', 'e', 'd', 'c', 'b', 'a']</li>
+          </ul>
+          <p><strong>What are tuples in python?</strong></p>
+          <hr>
+          <ul>
+          <li>Tuples are similar to list, the only difference between tuples and list are , tuples are immutable i.e we will not be able to change the elements of a tuple once assigned, whereas lists are mutable i.e we will be able to change the elements present in the list .</li>
+          </ul>
+          <p><strong>How to create tuples?</strong></p>
+          <hr>
+          <ul>
+          <li>We can create a tuple by placing all the elements inside a round parenthesis () separated by comma</li>
+          <li>Tuple may contain items from different data types i.e string, float, integer, double etc</li>
+          <li>If you want to modify a tuple, you need to convert the tuple into a list, modify the list and again convert the list back into the tuple.</li>
+          </ul>
+          <p><strong>Python tuple len()</strong> </p>
+          <hr>
+          <ul>
+          <li>If you want to determine number of elements present inside a tuple, use len() function</li>
+          <li>Lets create a tuple which will consists of some college names i.e <code>college=(‘NMIMS’,’IIIT’,’IIT’,’NIT’)</code></li>
+          <li>Now, if you want to check the total number of elements present inside a college tuple, we utilize the len() function. </li>
+          <li><code>len(college)</code> will return the output as 4, because there are 4 elements present inside a college tuple.</li>
+          </ul>
+          <p><strong>Python tuple Slicing(:)</strong></p>
+          <hr>
+          <ul>
+          <li>In order to access a range of elements from a tuple , use the slicing operator colon (:)</li>
+          <li><code>college[1:3]</code>, will return tuple elements from index 1 to index 2 . The output will be IIIT , IIT</li>
+          <li><code>college[-1]</code> will return tuple elements from backwards of the list. The output will be NIT</li>
+          </ul>
+          <p><strong>Python tuple count()</strong> </p>
+          <hr>
+          <ul>
+          <li>In order to determine the number of times a specified value appears in a tuple, we can use the count() method.</li>
+          <li>For eg: you have a tuple of numbers i.e <code>numbers=(1,2,2,3,4,5,6,7,7,7)</code></li>
+          <li><code>numbers.count(7)</code> will return the output as 3, because there are 3 elements of number 7 present inside the tuple</li>
+          </ul>
+          <p><strong>Python tuple index()</strong></p>
+          <hr>
+          <ul>
+          <li>The index() method is used to determine the first occurrence of the specified value</li>
+          <li>If the specified value is not found, then it raises an exception</li>
+          <li><code>numbers=(1,2,2,3,4,5,6,7,7,7)</code> , numbers.index(2) will return the output as 1 because the first occurrence of 2 is present in index 1.</li>
+          </ul>
+          <p><strong>What are dictionaries in python?</strong></p>
+          <hr>
+          <ul>
+          <li>Dictionaries store data in key:value format</li>
+          <li>Dictionaries are defined using curly brackets {} , and they consists of keys and values</li>
+          <li>A dictionary can be referred to as a ordered collection which is changeable and it does not allows duplicates</li>
+          <li>Dictionaries can be modified i.e we can change, add, remove items even after the dictionary is created</li>
+          <li>We cannot have 2 items in the dictionary with the same key</li>
+          <li>Let us consider a dictionary named college having the following keys and values. <code>college={"name":"IIIT","location":"hyderabad","rank":62,"category":"autonomous"}</code></li>
+          <li>In the above dictionary name, location, rank &amp; category are keys and IIIT,hyderabad, 62, autonomous are its corresponding values.</li>
+          </ul>
+          <p><strong>Python dictionary get()</strong></p>
+          <hr>
+          <ul>
+          <li>The get() method is used to return the value of the specified key</li>
+          <li>The syntax for get() method is <code>dictionary_name.get(keyname,value)</code> → keyname is mandatory, value is optional</li>
+          <li>college.get(“name”) will return IIIT , because we are trying to find what is the value for the key name inside college dictionary</li>
+          </ul>
+          <p><strong>Python dictionary keys()</strong></p>
+          <hr>
+          <ul>
+          <li>The output of the keys() method would be a view object. The view object consists of all the keys present in the dictionary in the form of list</li>
+          <li>The syntax for the keys() method is <code>dictionary_name.keys()</code></li>
+          <li>college.keys() will display all the keys present in the dictionary i.e <code>dict_keys(['name', 'location', 'rank', 'category'])</code></li>
+          </ul>
+          <p><strong>Python dictionary values()</strong></p>
+          <hr>
+          <ul>
+          <li>Similar to keys(), values() method also returns a view object and the view object consists of all the values present in the dictionary in the form of list</li>
+          <li>The syntax for the keys() method is <code>dictionary_name.values()</code></li>
+          <li>college.values() will display all the values present in the dictionary i.e <code>dict_values(['IIIT', 'hyderabad', 62, 'autonomous'])</code></li>
+          </ul>
+          <p><strong>Python dictionary items()</strong></p>
+          <hr>
+          <ul>
+          <li>Similar to keys() &amp; values() method, items() method also returns a view object and the view object consists of all the key-value pairs present in the dictionary in the form of tuples in a list</li>
+          <li>The syntax for the keys() method is <code>dictionary_name.items()</code></li>
+          <li>college.items() will display all the values present in the dictionary i.e <code>dict_items([('name', 'IIIT'), ('location', 'hyderabad'), ('rank', 62), ('category', 'autonomous')])</code></li>
+          </ul>
+          <p><strong>Python dictionary update()</strong></p>
+          <hr>
+          <ul>
+          <li>When we want to insert specified items in the dictionary, we can use update() method</li>
+          <li>The syntax for update() method is <code>dictionary_name.update(iterable)</code> , iterable object consists of key-value pair , which will be inserted into dictionary</li>
+          <li>For eg: if we want to add another key value pair, i.e we want to add “landmark”:”gachibowli” into our college dictionary,we use update method</li>
+          <li><code>college.update({"landmark":"gachibowli"})</code>, will update our dictionary and our newly updated dictionary would be <strong>{'name': 'IIIT', 'location': 'hyderabad','rank': 62,'category': 'autonomous','landmark': 'gachibowli'}</strong></li>
+          </ul>
+          <p><strong>Python dictionary clear()</strong></p>
+          <hr>
+          <ul>
+          <li>When we want to remove all the elements from the dictionary, we use clear() method</li>
+          <li>The syntax for clear() method is <code>dictionary_name.clear()</code></li>
+          <li><code>college.clear()</code> , will remove all the elements from the dictionary</li>
+          </ul>
+          <p><strong>What are sets in python?</strong></p>
+          <hr>
+          <ul>
+          <li>Sets are used to store collections of data which are not ordered.</li>
+          <li>All the elements present in the set are not changeable and does not have any index</li>
+          <li>Set cannot consists of any duplicate elements</li>
+          <li>Once your set is created you cannot change/modify set elements but you can add new elements to your set</li>
+          </ul>
+          <p><strong>How to create a set in python?</strong></p>
+          <hr>
+          <ul>
+          <li>Sets in python are created using curly brackets i.e <code>{}</code></li>
+          <li>For eg: If you want to create a set of fruits then the syntax would be <code>set_name={set_elements} i.e fruits={‘apple’, ’grapes’,’banana’,’kiwi’,’strawberry’}</code></li>
+          </ul>
+          <p><strong>How to access set elements?</strong></p>
+          <hr>
+          <ul>
+          <li>Since set is not indexed, you will be unable to access items in a set by referring to its index position</li>
+          <li>But you can use for loop to access set elements</li>
+          <li>To access the above set elements using for loop the code is displayed below:
+          ```py
+          for elements in fruits:
+            print(elements)</li>
+          </ul>
+          <p>strawberry
+          grapes
+          apple
+          banana
+          kiwi</p>
+          <pre><code>
+          **Python set add()**
+          * * *
+          - To add an element to a set , we can use add() method
+          - To add new fruit named orange to the set we created above, the syntax would be `fruits.add(‘orange’)`
+          
+          **Python set remove()**
+          * * *
+          - To remove an element from a set , we can use remove() method
+          - To remove a fruit name ‘kiwi’ from the above set, the syntax would be `fruits.remove(‘kiwi’)`
+          
+          
+          
+          Now Sanjay understood all the complex data types and he further decided to develop programs for the railway management system using lists, tuples,dictionaries and sets. 
+          
+          **Image 3**. Represents that sanjay started writing the code for booking train tickets by using list data type. Before starting with the coding part , he first defined all the inputs and functionalities step by step so while writing code, he had a proper mind map regarding what he was doing. All the functionalities  and inputs which he wanted to include in his program is listed below:
+          
+          Step 1: He created a list of source stations from where the user can board a train. Initially he added only 3 stations in his list i.e he defined his list as: `source_stations=['nagercoil','kanyakumari','vellore']`
+          
+          **Step 2**: He created a list of destination stations i.e `destination_stations=['goa','mumbai','delhi']`, the user would be able to get down only at the stations mentioned above
+          
+          **Step 3**: further he created the following list:
+          ```py
+          passanger_name=[] → stores the passenger name
+          
+          passanger_age=[] → stores the passenger age
+          
+          passanger_birth_list=['Upper_Birth','Middle_Birth','Lower_birth'] → stores different types of birth available
+          
+          birth_assigned=[] → stores the birth which is assigned to passenger based on his/her age
+          
+          seat_no=[] → stores seat number assigned to passengers
+          
+          boarding_station=[] → stores the passenger boarding station
+          </code></pre>
+          <p><strong>Step 4</strong>: He kept an input statement which asks the user to enter name of the station from where the wish to board train, only if the user enters the name of the station which is present inside source_station list, the user is further allowed to proceed, otherwise an appropriate message is displayed to the user and the program terminates </p>
+          <p><strong>Step 5</strong>: If the source station entered by the user in step(4) exists then the user is again asked to enter his/her destination station. If the destination station which is entered by the user is present inside destionation_station list ,the user is further allowed to proceed, otherwise an appropriate message is displayed to the user and the program terminates</p>
+          <p><strong>Step 6</strong>:He kept an input statement which asks the user to input his/her name(stored in passanger_name list), his/her age(stored in passanger_age list), from which station the user wishes to board the train from. (stored in boarding_station list)</p>
+          <p><strong>Step 7</strong>: If the age entered by the passenger is less than or equal to 10 and greater than or equal to 60 then the program automatically assigns lower birth to the passenger and all the births assigned to the passenger by the program are stored inside the birth_assigned list, and along with the birth respective seat number. </p>
+          <p><strong>Step 8</strong>: All the assigned seat number, birth type , train details are displayed to the user in the form of a receipt. </p>
+          <p><strong>Step 9</strong>: Now since lists are mutable , he decided to provide a functionality which will allow the user to change his/her boarding stations (from the list of stations available in source_station list) </p>
+          <p>At any point in time </p>
+          <p><strong>Image 4</strong> represents that next day, he tried to write code for the same program which is written above, but this time he decided to utilise tuple data type instead of list </p>
+          <p>All the list which were created above were converted into tuples , now since tuples are immutable , he was not able to  provide a functionality which will allow the user to change his/her boarding stations (from  stations available in source_stations tuple) At any point in time.</p>
+          <p><strong>Image 5</strong> represents that after writing programs using list and tuples data types, he created another program by using dictionary data types. He utilised dictionary to create food menu(which consisted of food name and price in the form of key value pair) which are available in the train canteen and it would be beneficial for all the passengers travelling on the train to have a look at the menu and order food in the train accordingly. By utilizing set data type, he created a set which consists of all the stations where the train will halt during the journey from source to destination station</p>
+          <p><strong>Image 6</strong> represents that sanjay is happy , because all his codes are working fine and he would be able to submit his assignment before the deadline</p>
+          
+          </div>
+          <div class="bug-report-mobile">
+              <bug-report id="bug-report" title="[BUG REPORT] COMPLEX DATATYPES" page-type="text" context-info="{&quot;organisation&quot;:&quot;Virtual Labs&quot;,&quot;developer_institute&quot;:&quot;IIITH&quot;,&quot;expname&quot;:&quot;COMPLEX DATATYPES&quot;,&quot;labname&quot;:&quot;Virtual Lab&quot;,&quot;phase&quot;:&quot;Testing&quot;}" checkbox-json="{&quot;text&quot;:[&quot;Insufficient Content&quot;],&quot;video&quot;:[&quot;Insufficient Content&quot;],&quot;assesment&quot;:[&quot;Incorrect Options&quot;,&quot;Incorrect Answer&quot;,&quot;Incorrect Question&quot;],&quot;assessment&quot;:[&quot;Incorrect Options&quot;,&quot;Incorrect Answer&quot;,&quot;Incorrect Question&quot;],&quot;simulation&quot;:[&quot;Simulation Not Working&quot;,&quot;Incorrect Results/Observations&quot;,&quot;Insufficient/Incorrect Instructions&quot;],&quot;DEFAULT&quot;:[&quot;Page Not Loading&quot;,&quot;Content Not Visible&quot;,&quot;Incorrect Content&quot;]}" position="override" button_style="
+                          position: fixed; 
+                          bottom: 20px;
+                          right: 20px;
+                          z-index: 1;
+                          font-size: 0;
+                          padding: 25px;
+                          border-radius: 50%;
+                          border: none;
+                          background-color: #0fc0ff;
+                          background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAAtCAYAAAA6GuKaAAAAAXNSR0IArs4c6QAABiFJREFUaEPFmVuMFEUUhv/TM7uwoBGVyG22u7ZnYGG5REETo8RA1BhFIka8ABFf0PCgDxhFEpCLqAlE1OiTiSj4gFGjD0QBETQaEqPRICALSHdPV+8YQQJBA+wuO1PHdMNcWGame2ZWqMfuc/nq1KlT1acJAzhShjFVAUsYdL8G3HjRdA7gHwna5uahLR91dnaeb9QlNWrA1+/o6GjuPnv2DQ30LICKNhk4qLF63PK8g434rejATJhjKa6m9WazOzOZzKlKTmYAcc8QnxEwJwqIAk5STpvpZJwD1eTHjR43PKflhtkZ2+ovVxbaTJiTSVM/gzCYGIebu4fc1nmi80w5J0nDWA7Qq1GACzLMR3pV7pZMJtNdTs/UzelE6msAQ0BYb7vuS6VyZaGTungGhPfygkRYZ7nusv4OEonEDc2xuEfA0JqgATBhieO6b/fXE0IM1pgPECgVvGP+x/bksFDo1JhUguPZI8FMAz0+zzFtSjqd9p8VRlJvew7E79QKHNgEDjrSndRfNyXEGmasLK4KttmeOysU2hdIGm0vA/xKUZh32VLeW6psCrGMmO+uB5qIeEh398P7jx8/m9cP9pGm9vtpmQ9WjHDzUSkPRYJOpVKDuK9vP0Dj8goMfsSR8ot6IKPoJI22XUBpEHitLWUx6heNVC15pmHMItCXBYeKPUZsLlFWVYNQsVg2nU7v82XaW1tHZ4lGhUEztOlEKOQ4A/b5XHZyuc0aWqdNIbYSY3aY00veM/9te3KE/ywlxGpmrKpJP8h5ftCR8qtyeqHQY3XdVNAO5vMskvMGoRWrT9Ke90QlX6HQF6N16Y4OI28Ampn/jatcxx+ZzJ8NQScSiZZBWvzJwAhhJoCKUQhkaoVmnAZoJcC9WowOH02nf6gWl0iRLpQk3ZwOym0n0DVVg10rNAAF7Ig1xedYltUbtpCRoZO6Po1J+z7S6VcHdLCIClusLnfBgED7NVv1ZX8lYGKYwbrSo8Qogxc4Um5pOD1Mo20DgZ+PBFxPTpcYJuBUljDRdd1jdW/EcYnEmKwWSxNR05WADnwo2mB3pV+oGzopxDowlkYGbjDSF9ILpwd1D2mtdB2uuhEv3D+yfwG4/opCB5WVnrZk+v1yfqtCJ3X9TpC2pybggYj0BYcf29KdXwe0WArCuqsCzSxtT4qq0GareStIXXo3JjxGwNSrAh0crMFFq3jYEJ9wpPygkB6mYZwg0PCaAcsp1Hm4RPFtS5eK0LpxvqayVs3DlYIO7r0K8xUhlufRGKNrupLmFQcImsEZBhWaOxq4y5ZyRvXqIcSnYDwaZdkukRkgaGqK32RZ1on+/qt/buliFRFWXxXokonXBJ3S22Yz8darAc2sdjqed1/NddpvnMQUHwPRdTWBD0R6EBbbrltoGJX6D71PJ3V9E0h76kpCMzirNTWNLpfPPkcodNDXi6m9QLGqhE6gwUgzaKMj04sq+QmF9hVrjnYj0IwejmvtjuN4DUEbhjEqztgLoqCXEToagQavsKV8rZqPSJH2DaSEmMGMXZHSpE5oZnzneK7fL8w1DJ1sTU6CltvEwPj/88OWwRYx77Y9b3HD0KYuvqUL/Y5oo85I542TooesrnTF8yE0PUwh5hGj6tfxZTNpEBqKvUE9QyfW9bnV3t5+bV9P7yECxuTBFGOvRn5v5eJgTLzsUhUFmuGCcLJoBiNL/ZT7bVFYiWrrnTSM9QC9WBSmzy2ZnluqI4QYGQcWM/O8Qi+7EjSjB4xtTNqHjuf4HVHO20q1tiZZi/k/j1r8Z8zcRxyfanfZv/dnrJgeYw1jQo6xr+SOfY5j2oRq9VMIIWLA7QSMslz3raDGG8ZMJhoPpR1QmvrFdd2eSoFKGm0rAF5bfM97bCnvKp2c/64idFLXd4C0woWFwMstKV+PthPrk/L/R/aeOfcbCBOKq8uLLCk3llos/0tON+8hUt+U5O1Rao5PjtIcrA+3qOWvDEC78wFlIO1I1wyFTuptC0G8uWSZHrCl3N4oUFT9NiE2a4yFQW6DLUfKsaHQU0aMGHq2pWULM98Bpncdzy35yxXVdf1yftXK9vS8CUVjtBjWHHXdn0qt/Qf/x1JblU8EiAAAAABJRU5ErkJggg==);
+                          background-repeat: no-repeat;
+                          background-position: center;
+                          background-size: 30px;
+                          filter: invert(1);">
+              </bug-report>
+          </div>        </div>
+      </div>
+      <footer class="text-light pt-2 vlabs-footer d-flex flex-column">
+        <div class="row px-5 mx-0">
+          <div class="col d-flex flex-column">
+            <span class="font-weight-bold vlabs-footer-sect-name pb-2 mb-3">Community Links</span>
+            <a href="https://www.sakshat.ac.in/" class="text-light">Sakshat Portal</a>
+            <a href="http://outreach.vlabs.ac.in/" class="text-light">Outreach Portal</a>
+            <a href="https://vlab.co.in/faq" class="text-light">FAQ: Virtual Labs</a>
+          </div>
+          <div class="col d-flex flex-column">
+            <span class="font-weight-bold vlabs-footer-sect-name pb-2 mb-3">Contact Us</span>
+            <span> Phone: General Information: 011-26582050 </span>
+            <span> Email: support@vlabs.ac.in </span>
+          </div>
+          <div class="col d-flex flex-column">
+            <span class="font-weight-bold vlabs-footer-sect-name pb-2 mb-3">Follow Us</span>
+            <div class="social-links">
+      	<a class="p-2 mt-1 mr-2 d-inline-flex justify-content-center align-items-center" style="background: #55acee;" href="https://twitter.com/TheVirtualLabs">
+      	  <i class="fab fa-twitter"></i>
+      	</a>
+      	<a class="p-2 mt-1 mr-2 d-inline-flex justify-content-center align-items-center" style="background: #3b5998;" href="https://www.facebook.com/Virtual-Labs-IIT-Delhi-301510159983871/">
+      	  <i class="fab fa-facebook"></i>
+      	</a>
+      	<a class="p-2 mt-1 mr-2 d-inline-flex justify-content-center align-items-center" style="background: #e52d27;" href="https://www.youtube.com/watch?v=asxRaOgk6a0">
+      	  <i class="fab fa-youtube"></i>
+      	</a>
+      	<a class="p-2 mt-1 mr-2 d-inline-flex justify-content-center align-items-center" style="background: #2867B2;" href="https://in.linkedin.com/in/virtual-labs-008ba9136">
+      	  <i class="fab fa-linkedin"></i>
+      	</a>
+            </div>
+          </div>
+        </div>
+        <div class="m-0 py-2 text-center" style="font-family: &quot;Open Sans&quot;, sans-serif; background: #212121;">
+          <a class="text-primary font-weight-bold" href="https://www.gnu.org/licenses/agpl-3.0.en.html"> AGPL 3.0 </a>
+          &nbsp;&amp;&nbsp;
+          <a class="text-primary font-weight-bold" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"> Creative Commons (CC BY-NC-SA 4.0) </a>
+        </div>
+      </footer>
+    <script src="./assets/js/toggleSidebar.js"></script>
+    <script src="./assets/js/event-handler.js"></script>
+
+
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register("sw.js");
+        });
+      }
+    </script>
+  
+
+<script type="module" src="https://cdn.vlabs.ac.in/bug-report/vlabs-bug-report.js"></script><script type="module" src="plugins/svc-rating/index.js"></script><script type="module" src="plugins/svc-rating/config.js"></script><script type="module" src="https://apis.google.com/js/api.js"></script></body></html>

@@ -1,0 +1,210 @@
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "Lists in python allows you to store different data types",
+      "answers": {
+        "a": "True",
+        "b": "False",
+        "c": "Neither true nor false",
+        "d": "None of the above"
+      },
+       "explanations": {
+                          "a": "This option is the correct answer. Lists in Python can store different data types. Unlike some other programming languages, Python lists are flexible and can hold elements of different data types, such as integers, strings, floats, and even other lists. ",
+                           "b": "This option is incorrect. Lists in Python do allow you to store different data types. Therefore, the statement is not false.",
+                           "c": "This option is incorrect. The statement in the question can be determined as true, as explained in option a. It is not a case where the statement is neither true nor false.",
+                           "d": "This option is incorrect because there is a correct answer among the given options."
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "student_names=('karthik','Raj','Selvi','Mayank','Rupali'), **len(student_names)** will return _______",
+      "answers": {
+        "a": "4",
+        "b": "5",
+        "c": "3",
+        "d": "Error"
+      },
+       "explanations": {
+                          "a": "This option is incorrect. The len() function returns the number of elements in a sequence or collection. In this case, the variable student_names is a tuple with five elements: 'karthik', 'Raj', 'Selvi', 'Mayank', and 'Rupali'. Therefore, len(student_names) will return the number of elements in the tuple, which is 5, not 4.",
+                          "b": "This option is the correct answer. The len() function returns the number of elements in a sequence or collection. In this case, the variable student_names is a tuple with five elements: 'karthik', 'Raj', 'Selvi', 'Mayank', and 'Rupali'. Therefore, len(student_names) will return 5.",
+                          "c": "This option is incorrect. The variable student_names is a tuple with five elements, not three. Therefore, len(student_names) will not return 3.",
+                          "d": "This option is incorrect. There is no error in the given code."
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "student_info={\"name\":\"Prasad\",\"Age\":24,\"Hometown\":\"mumbai\",\"Occupation\":\"Engineer\"}, **student_info.keys()** will return _________",
+      "answers": {
+        "a": "(['name', 'Age', 'Hometown', 'Occupation'])",
+        "b": "(['Prasad',24, 'mumbai', 'Engineer'])",
+        "c": "Error",
+        "d": "None of the above"
+      },
+       "explanations": {
+                          "a": "This option is the correct answer. The student_info.keys() method returns a view object that contains the keys of the student_info dictionary. In this case, the keys are 'name', 'Age', 'Hometown', and 'Occupation'. The view object represents the keys as a list-like structure, which can be converted to a list. Therefore, student_info.keys() will return (['name', 'Age', 'Hometown', 'Occupation']).",
+                          "b": "This option is incorrect. The student_info.keys() method returns the keys of the dictionary, not the values. Therefore, it will not return (['Prasad', 24, 'mumbai', 'Engineer'])",
+                          "c": "This option is incorrect. There is no error in the given code. ",
+                          "d": "This option is incorrect because there is a correct answer among the given options."
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "When you try to access indices which are not present in the list what will happen?",
+      "answers": {
+        "a": "It will raise an error ",
+        "b": "It will raise an IndexError",
+        "c": "No output",
+        "d": "None of the above"
+      },
+       "explanations": {
+                          "a": "This option is incorrect. While it is true that trying to access indices that are not present in a list will raise an error, the specific error that is raised in this case is an 'IndexError'. Therefore, option a is not the precise and accurate description of the error that occurs.",
+                          "b": "This option is the correct answer. When you try to access indices that are not present in a list, it will raise an 'IndexError'. This error indicates that the index you are trying to access is out of range or does not exist in the list. Python provides this error specifically for index-related issues.",
+                          "c": "This option is incorrect. When you attempt to access non-existent indices in a list, it does not result in no output.",
+                          "d": "This option is incorrect because there is a correct answer among the given options."
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "In order to access a range of elements from a tuple, which of the following operator is used?",
+      "answers": {
+        "a": ":",
+        "b": ";",
+        "c": "Both (a) and (b)",
+        "d": "None of the above"
+      },
+       "explanations": {
+                          "a": "This option is the correct answer. In Python, the colon ':' is used as a slicing operator to access a range of elements from a tuple (or other sequence types).",
+                          "b": "This option is incorrect. The semicolon ';' is not used as an operator to access a range of elements from a tuple in Python.",
+                          "c": "This option is incorrect. While option a is the correct answer because ':' is the operator used for accessing a range of elements from a tuple, option b is incorrect because the semicolon ';' does not serve this purpose in Python",
+                          "d": "This option is incorrect because there is a correct answer among the given options. Option a correctly states that the ':' operator is used to access a range of elements from a tuple in Python."
+      },
+      "correctAnswer": "a",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "student_names=('karthik','Raj','Selvi','Mayank','Rupali'), **student_names[1:2]** will return?",
+      "answers": {
+        "a": "('Raj',)",
+        "b": "('Raj', 'Selvi')",
+        "c": "('Raj', 'Selvi', 'Mayank')",
+        "d": "Error"
+      },
+       "explanations": {
+                          "a": "This option is the correct answer. When you use the slice notation student_names[1:2], it returns a new tuple that contains elements from index 1 (inclusive) to index 2 (exclusive) in the student_names tuple. In this case, the element at index 1 is 'Raj', and since the ending index is exclusive, the resulting tuple contains only the single element 'Raj'. The comma after 'Raj' indicates that it is a tuple with one element.",
+                          "b": "This option is incorrect. The slice student_names[1:2] does not include the element at index 2. Therefore, the resulting tuple does not include 'Selvi'. The correct answer is option a, which includes only the element at index 1, resulting in '('Raj',)'.",
+                          "c": "This option is incorrect. Similar to option b, the slice student_names[1:2] does not include the element at index 2. Therefore, the resulting tuple does not include 'Selvi' or 'Mayank'. The correct answer is option a, which includes only the element at index 1, resulting in '('Raj',)'.",
+                          "d": "This option is incorrect. The slice student_names[1:2] does not raise an error"
+      },
+      "correctAnswer": "a",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "student_names=('karthik','Raj','Selvi','Mayank','Rupali'), **student_names[-1:-2]** will return?",
+      "answers": {
+        "a": "('Rupali',)",
+        "b": "()",
+        "c": "('Raj', 'Selvi', 'Mayank')",
+        "d": "Error"
+      },
+       "explanations": {
+                          "a": "This option is incorrect. When you use the slice notation student_names[-1:-2], it returns an empty tuple. The starting index -1 refers to the last element in the tuple, and the ending index -2 refers to the element before the last element. However, when the starting index is greater than or equal to the ending index, the result is an empty tuple.",
+                          "b": "This option is the correct answer. The slice student_names[-1:-2] results in an empty tuple. ",
+                          "c": "This option is incorrect. The slice student_names[-1:-2] does not include the element at index -2. Therefore, the resulting tuple does not include 'Selvi' or 'Mayank'. Additionally, since the starting index is greater than or equal to the ending index, the result is an empty tuple, not '('Raj', 'Selvi', 'Mayank')'.",
+                          "d": "This option is incorrect. The slice student_names[-1:-2] does not raise an error."
+      },
+      "correctAnswer": "b",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "Which of the following datatypes once created does not allows you to modify or change elements?",
+      "answers": {
+        "a": "Set",
+        "b": "List",
+        "c": "Tuples",
+        "d": "None of the above"
+      },
+       "explanations": {
+                          "a": "This option is incorrect. Sets in Python are mutable, which means you can add, remove, or modify elements in a set after it has been created. Therefore, sets allow you to modify or change elements.",
+                          "b": "This option is incorrect. Lists in Python are mutable, which means you can modify or change elements in a list. You can add, remove, or update elements in a list after it has been created.",
+                          "c": "This option is the correct answer. Tuples in Python are immutable, which means once a tuple is created, you cannot modify or change its elements.",
+                          "d": "This option is incorrect because there is a correct answer among the given options."
+      },
+      "correctAnswer": "c",
+      "difficulty": "intermediate"
+    },
+   
+    {
+      "question": "numbers=(1,2,2,3,4,5,6,7,7,7), numbers.count(2) will return the output as ?",
+      "answers": {
+        "a": "2",
+        "b": "3",
+        "c": "4",
+        "d": "Error"
+      },
+       "explanations": {
+                          "a": "This option is the correct answer. When you use the count() method on the tuple numbers with the argument 2, it will count the number of occurrences of the value 2 in the tuple. In the given tuple, the value 2 appears twice, so the count() method will return the output as 2.",
+                          "b": "This option is incorrect. The value 2 appears only twice in the tuple numbers, not three times. Therefore, the count() method will not return 3.",
+                          "c": "This option is incorrect. The value 2 appears only twice in the tuple numbers, not four times. Therefore, the count() method will not return 4.",
+                          "d": "This option is incorrect. The count() method does not raise an error in this scenario"
+      },
+      "correctAnswer": "a",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "student_info={\"name\":\"Prasad\",\"Age\":24,\"Hometown\":\"mumbai\",\"Occupation\":\"Engineer\"}, **student_info.items()** will return?",
+      "answers": {
+        "a": "([('name', 'Prasad'), ('Age', 24), ('Hometown', 'mumbai'), ('Occupation', 'Engineer')])",
+        "b": "(['name', 'Age', 'Hometown', 'Occupation'])",
+        "c": "(['Prasad', 24, 'mumbai', 'Engineer'])",
+        "d": "Error"
+      },
+       "explanations": {
+                          "a": "This option is the correct answer. When you use the items() method on the dictionary student_info, it returns a view object that contains tuples of key-value pairs from the dictionary. Each tuple represents a key-value pair in the format ('key', 'value')",
+                          "b": "This option is incorrect. The items() method returns tuples of key-value pairs, not just the keys. Therefore, it will not return ['name', 'Age', 'Hometown', 'Occupation'].",
+                          "c": "This option is incorrect. The items() method returns tuples of key-value pairs, not just the values. Therefore, it will not return ['Prasad', 24, 'mumbai', 'Engineer'].",
+                          "d": "This option is incorrect. The items() method does not raise an error in this scenario."
+      },
+      "correctAnswer": "a",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "fruits={'apple','grapes','banana','kiwi','strawberry'}, fruits.index(0) will return _____",
+      "answers": {
+        "a": "apple",
+        "b": "grapes",
+        "c": "AttributeError",
+        "d": "IndexError"
+      },
+       "explanations": {
+                          "a": "This option is incorrect. The index() method is used to find the index of an element in a list, not in a set. Since fruits is a set, the index() method is not applicable, and it will raise an error.",
+                          "b": "This option is incorrect for the same reason as option a. The index() method cannot be used with sets, so it will raise an error.",
+                          "c": "This option is the correct answer. When you try to use the index() method on a set, it raises an AttributeError because sets do not support indexing or have a specific order. Sets are unordered collections of unique elements, and they do not have a notion of indices.",
+                          "d": "This option is incorrect. The IndexError is raised when you try to access an index that is out of range in a sequence like a list or tuple."
+      },
+      "correctAnswer": "c",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "numbers=(1,2,2,3,4,5,6,7,7,7), numbers.index(7) will return the output as?",
+      "answers": {
+        "a": "2",
+        "b": "5",
+        "c": "6",
+        "d": "7"
+      },
+       "explanations": {
+                          "a": "This option is incorrect. The index() method returns the index of the first occurrence of the specified element in a tuple. In the given tuple numbers, the first occurrence of the element 7 is at index 6, not at index 2.",
+                          "b": "This option is incorrect. Similarly to option a, the first occurrence of the element 7 in the numbers tuple is at index 6, not at index 5.",
+                          "c": "This option is incorrect. The index 6 corresponds to the element 6 in the numbers tuple, not the element 7.",
+                          "d": "This option is the correct answer. The index() method returns the index of the first occurrence of the specified element in a tuple. In the given numbers tuple, the first occurrence of the element 7 is at index 7."
+      },
+      "correctAnswer": "d",
+      "difficulty": "advanced"
+    }
+  ]
+}

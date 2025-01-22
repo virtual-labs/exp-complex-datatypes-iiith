@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script defer src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Fira+Mono&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="./css/main.css">
+</head>
+
+<body>
+	<div class="main-container">
+		<div class="box thin">
+			<h3 class="header">Let's learn Complex Data Types!</h3>
+			<label for="experiment" class="experiment-label">Select Data Type</label>
+			<select name="experiment" id="experiment" class="select" style="display: block;"
+				onchange="changeExperiment()">
+				<option value="list" selected>List</option>
+				<option value="dictionary">Dictionary</option>
+				<option value="set">Set</option>
+			</select>
+			<label for="mode" class="experiment-label" style="margin-bottom: 10%;">Select learning mode</label>
+			<select name="mode" id="mode" class="select" onchange="changeExperiment()">
+				<option value="learn" selected>Learn</option>
+				<option value="practice">Practice</option>
+			</select>
+		</div>
+		<div class="list-learn experiment">
+			<div class="box learn-box">
+				<h3 class="header">Objective</h3><br>
+				<p class="task">Make a program that modifies the list given below to display numbers from 1 to 8 in
+					descending order.<br><br>Input List is:</p>
+				<p class="input" id="input-list"></p><br>
+				<p class="task">Final List required is: </p>
+				<p class="input">list = [8,7,6,5,4,3,2,1]</p>
+			</div>
+			<div class="box learn-box">
+				<h3 class="header">Complete the program</h3>
+				<div class="program">
+					>>> list.<div class="blank blank-list drag" draggable="true"></div><br>
+					>>> list.<div class="blank blank-list drag" draggable="true"></div><br>
+					>>> list.<div class="blank blank-list drag" draggable="true"></div><br>
+					>>> list.<div class="blank blank-list drag" draggable="true"></div><br>
+				</div>
+				<div class="options">
+					<div class="option drag" draggable="true">pop()</div>
+					<div class="option drag" draggable="true">remove(8)</div>
+					<div class="option drag" draggable="true">append(8)</div>
+					<div class="option drag" draggable="true">reverse()</div>
+					<div class="option drag" draggable="true">insert(0,8)</div>
+					<div class="option drag" draggable="true">sort()</div>
+				</div><br>
+				<div class="buttons">
+					<button onclick="submitListLearn()" class="submit">
+						Submit
+					</button>
+					<button onclick="reload()" class="reset">
+						Reset
+					</button>
+				</div>
+			</div>
+		</div>
+		<div class="list-practice" style="display: none;">
+			<div class="box practice-box" style="min-height: 60vh;">
+				<h3 class="header">Fill this blank with any python list function and see that change happen in the list
+				</h3><br>
+				<div class="practice-functions">
+					<h4 style="display: inline;">Supported functions: </h4>
+					<p style="display: inline;">append(value), pop(), clear(), count(value), insert(index,value),
+						remove(value), reverse(), sort()</p><br><br>
+					<h4 style="display: inline;">Syntax: </h4>
+					<p style="display: inline;">list.&lt;function&gt;</p>
+				</div>
+				<div class="practice-div">
+					<h4>Enter command: </h4>
+					<input type="text" class="practice-command" id="list-practice-command"
+						onkeypress="enterTextField(event,'list')">
+				</div>
+				<button onclick="submitListPractice()" id="list-practice-submit" class="submit">Submit</button>
+				<br>
+				<div class="observations">
+					<h3 style="text-align: center;display: block;">Observations</h3>
+					<p id="list-practice-observation"></p>
+				</div>
+				<div>
+					<div class="wrapper" style="margin-bottom: 5%;">
+						<div class="cards" style="width: 150%; translate: -15%"></div>
+						<div class="observations"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="dictionary-learn experiment" style="display: none;">
+			<div class="box learn-box" style="display: inline-block;">
+				<h3 class="header">Objective</h3>
+				<p class="task">Make a program that converts the initial to the final dictionary and print all the fruit
+					names.<br><br>Input is:</p>
+				<p class="input" id="input-list" style="font-size: large;">{'apple': 'red','dog': 'animal',<br>'pear':
+					'green'}</p><br>
+				<p class="task">Final Dictionary required is: </p>
+				<p class="input" style="font-size: large;">{'apple': 'red','pear': 'green',<br>'kiwi': 'brown'}</p>
+			</div>
+			<div class="box learn-box">
+				<h3 class="header">Complete the program</h3>
+				<div class="program">
+					dictionary.<div class="blank blank-dict drag" draggable="true"></div><br>
+					dictionary.<div class="blank blank-dict drag" draggable="true"></div><br>
+					print(dictionary.<div class="blank blank-dict drag" draggable="true"></div>)<br>
+				</div><br>
+				<div class="options">
+					<div class="option drag" draggable="true">values()</div>
+					<div class="option drag" draggable="true">update({'kiwi':'brown'})</div>
+					<div class="option drag" draggable="true">keys()</div>
+					<div class="option drag" draggable="true">popitem()</div>
+					<div class="option drag" draggable="true">pop('dog')</div>
+					<div class="option drag" draggable="true">add('kiwi','brown')</div>
+				</div><br>
+				<div class="buttons">
+					<button onclick="submitDictLearn()" class="submit submit-dict">
+						Submit
+					</button>
+					<button onclick="reload()" class="reset">
+						Reset
+					</button>
+				</div>
+			</div>
+		</div>
+		<div class="dictionary-practice" style="display: none;">
+			<div class="box practice-box" style="min-height: 60vh;">
+				<h3 class="header">Fill this blank with any python dictionary function and see that change happen in the
+					dictionary
+				</h3><br>
+				<div class="practice-functions">
+					<h4 style="display: inline;">Supported functions: </h4>
+					<p style="display: inline;">update({key:value}),pop(key),popitem(),clear(),</p><br><br>
+					<h4 style="display: inline;">Syntax: </h4>
+					<p style="display: inline;">dict.&lt;function&gt; or dict[key] = value</p>
+				</div>
+				<div class="practice-div">
+					<h4>Enter command: </h4>
+					<input type="text" class="practice-command" id="dict-practice-command"
+						onkeypress="enterTextField(event,'dict')">
+				</div>
+				<button onclick="submitDictPractice()" id="dict-practice-submit" class="submit">Submit</button>
+				<br>
+				<div class="observations">
+					<h3 style="text-align: center;display: block;">Observations</h3>
+					<p id="dict-practice-observation"></p>
+				</div>
+				<div>
+					<div class="wrapper" style="margin-bottom: 5%;">
+						<div class="cards-dictionary" style="width: 150%; translate: -15%"></div>
+						<div class="observations-dict"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="set-learn experiment" style="display: none;">
+			<div class="box learn-box">
+				<h3 class="header">Objective</h3><br>
+				<p class="task">Make a program that modifies the set given below to make it a set of the first five
+					even
+					numbers.<br><br>Input Set is:
+				</p>
+				<p class="input" id="input-set"></p><br>
+				<p class="task">Final Set required is: </p>
+				<p class="input">set = {2,4,6,8,10}</p>
+			</div>
+			<div class="box learn-box">
+				<h3 class="header">Complete the program</h3>
+				<div class="program">
+					>>> set.<div class="blank blank-set drag" draggable="true"></div><br>
+					>>> set.<div class="blank blank-set drag" draggable="true"></div><br>
+					>>> set.<div class="blank blank-set drag" draggable="true"></div><br>
+					>>> set.<div class="blank blank-set drag" draggable="true"></div><br>
+				</div>
+				<div class="options">
+					<div class="option drag" draggable="true">add(8)</div>
+					<div class="option drag" draggable="true">add({10})</div>
+					<div class="option drag" draggable="true">update({10})</div>
+					<div class="option drag" draggable="true">remove(7)</div>
+					<div class="option drag" draggable="true">intersection_update({9})</div>
+					<div class="option drag" draggable="true">difference_update({9})</div>
+				</div><br>
+				<div class="buttons">
+					<button onclick="submitSetLearn()" class="submit submit-set">
+						Submit
+					</button>
+					<button onclick="reload()" class="reset">
+						Reset
+					</button>
+				</div>
+			</div>
+		</div>
+		<div class="set-practice" style="display: none;">
+			<div class="box practice-box" style="min-height: 60vh;">
+				<h3 class="header">Fill this blank with any python set function and see that change happen in the
+					set
+				</h3><br>
+				<div class="practice-functions">
+					<h4 style="display: inline;">Supported functions: </h4>
+					<p style="display: inline;">add(value), pop(), remove(value), clear()</p><br><br>
+					<h4 style="display: inline;">Syntax: </h4>
+					<p style="display: inline;">set.&lt;function&gt;</p>
+				</div>
+				<div class="practice-div">
+					<h4>Enter command: </h4>
+					<input type="text" class="practice-command" id="set-practice-command"
+						onkeypress="enterTextField(event,'set')">
+				</div>
+				<button onclick="submitSetPractice()" id="set-practice-submit" class="submit">Submit</button>
+				<br>
+				<div class="observations">
+					<h3 style="text-align: center;display: block;">Observations</h3>
+					<p id="set-practice-observation"></p>
+				</div>
+				<div>
+					<div class="wrapper" style="margin-bottom: 5%;">
+						<div class="cards-set" style="width: 150%; translate: -15%"></div>
+						<div class="observations-set"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="list-learn">
+		<div class="observations">
+			<h3 style="text-align: center;display: block;">Observations</h3>
+			<p id="list-learn-observation"></p>
+		</div>
+		<div>
+			<div class="wrapper">
+				<div class="cards"></div>
+			</div>
+		</div>
+	</div>
+	<div class="dictionary-learn" style="display: none;">
+		<div class="observations">
+			<h3 style="text-align: center;display: block;">Observations</h3>
+			<p id="dict-learn-observation"></p>
+		</div>
+		<div>
+			<div class="wrapper">
+				<div class="cards-dictionary"></div>
+			</div>
+		</div>
+	</div>
+	<div class="set-learn" style="display: none;">
+		<div class="observations">
+			<h3 style="text-align: center;display: block;">Observations</h3>
+			<p id="set-learn-observation"></p>
+		</div>
+		<div>
+			<div class="wrapper">
+				<div class="cards-set"></div>
+			</div>
+		</div>
+	</div>
+
+	<script src="./js/main.js"></script>
+	<script src="./js/list.js"></script>
+	<script src="./js/set.js"></script>
+	<script src="./js/dict.js"></script>
+<script src="../assets/js/iframeResize.js"></script>
+          
+          </body>
+
+</html>
