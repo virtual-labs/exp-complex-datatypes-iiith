@@ -1,39 +1,137 @@
 {
-  "version": 2.0,
-  "questions": [
-    {
-      "question": "This is a Sample Question 1?",
-      "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
-      },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
-      },
-      "correctAnswer": "a",
-      "difficulty": "beginner"
-    },
-    {
-      "question": "This is a Sample Question 2?",
-      "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
-      },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
-      },
-      "correctAnswer": "c",
-      "difficulty": "beginner"
-    }
-  ]
+	"version": 2.0,
+	"questions": [
+		{
+			"question": "Lists in python are not mutable",
+			"answers": {
+				"a": "True",
+				"b": "False",
+				"c": "Neither true nor false",
+				"d": "None of the above"
+			},
+			"correctAnswer": "b",
+			"difficulty": "beginner"
+		},
+		{
+			"question": "Lists in python can be created using curly brackets",
+			"answers": {
+				"a": "False",
+				"b": "True",
+				"c": "Neither true nor false",
+				"d": "None of the above"
+			},
+			"correctAnswer": "a",
+			"difficulty": "beginner"
+		},
+		{
+			"question": "You can modify a tuple by converting the tuple into a list, and again convert the list back into tuple?",
+			"answers": {
+				"a": "False",
+				"b": "True",
+				"c": "Neither true nor false",
+				"d": "None of the above"
+			},
+			"correctAnswer": "b",
+			"difficulty": "beginner"
+		},
+		{
+			"question": "A dictionary can consist of 2 items with the same key?",
+			"answers": {
+				"a": "True",
+				"b": "False",
+				"c": "Neither true nor false",
+				"d": "None of the above"
+			},
+			"correctAnswer": "a",
+			"difficulty": "beginner"
+		},
+		{
+			"question": "Tuples in python are _____;  and lists are ______",
+			"answers": {
+				"a": "immutable, mutable",
+				"b": "mutable,immutable",
+				"c": "Both (a) and (b)",
+				"d": "None of the above"
+			},
+			"correctAnswer": "a",
+			"difficulty": "intermediate"
+		},
+		{
+			"question": "Which of the following datatypes does not contains duplicate elements",
+			"answers": {
+				"a": "Set",
+				"b": "List",
+				"c": "Tuples",
+				"d": "None of the above"
+			},
+			"correctAnswer": "a",
+			"difficulty": "intermediate"
+		},
+		{
+			"question": "List indices in python always starts from ______",
+			"answers": {
+				"a": "1",
+				"b": "0",
+				"c": "-1",
+				"d": "None of the above"
+			},
+			"correctAnswer": "b",
+			"difficulty": "intermediate"
+		},
+		{
+			"question": "In list sort() method, the reverse parameter is mandatory ",
+			"answers": {
+				"a": "True",
+				"b": "False",
+				"c": "Cannot be determined",
+				"d": "None of the above"
+			},
+			"correctAnswer": "b",
+			"difficulty": "intermediate"
+		},
+		{
+			"question": "Which of the following data types stores data in key-value format",
+			"answers": {
+				"a": "List",
+				"b": "Set",
+				"c": "Dictionaries",
+				"d": "Tuples"
+			},
+			"correctAnswer": "c",
+			"difficulty": "advanced"
+		},
+		{
+			"question": "list.sort(reverse=’True’) will sort the list in _______ order",
+			"answers": {
+				"a": "Descending",
+				"b": "Ascending",
+				"c": "No change in the list",
+				"d": "None of the above"
+			},
+			"correctAnswer": "b",
+			"difficulty": "advanced"
+		},
+		{
+			"question": "Which of the following method you would use if you wanted to add a new key-value pair to your already existing dictionary?",
+			"answers": {
+				"a": "append()",
+				"b": "add()",
+				"c": "update()",
+				"d": "None of the above"
+			},
+			"correctAnswer": "c",
+			"difficulty": "advanced"
+		},
+		{
+			"question": "Which of the following method is used to add elements at the end of a list?",
+			"answers": {
+				"a": "append",
+				"b": "extend",
+				"c": "pop",
+				"d": "reverse"
+			},
+			"correctAnswer": "a",
+			"difficulty": "advanced"
+		}
+	]
 }
